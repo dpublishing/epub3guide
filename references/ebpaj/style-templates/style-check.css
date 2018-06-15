@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+
+/* ファイル情報
+----------------------------------------------------------------
+【内容】
+チェック用スタイル
+
+【CSSファイルバージョン】
+ver.1.1.1
+
+【当ファイル更新時の電書協EPUB 3 制作ガイドバージョン】
+ver.1.1.3
+
+【細目】
+・Windows 用フォント指定
+・チェック用領域
+
+【更新履歴】
+2014/08/25 ver.1.1.1
+・「特定RS対策用」指定を削除
+
+2012/12/07 ver.1.1.0
+・ファイル更新時の電書協EPUB 3 制作ガイドバージョン表記を追加
+
+2012/08/21 ver.1.0b1
+・公開版
+---------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------
+ * Windows 用フォント指定
+ * ------------------------------------------------------------- */
+
+/* フォントセット指定
+---------------------------------------------------------------- */
+/* 横組み用 */
+@font-face {
+  font-family: "serif-ja";
+  src: local("ＭＳ 明朝");
+}
+@font-face {
+  font-family: "sans-serif-ja";
+  src: local("ＭＳ ゴシック");
+}
+/* 縦組み用 */
+@font-face {
+  font-family: "serif-ja-v";
+  src: local("@ＭＳ 明朝");
+}
+@font-face {
+  font-family: "sans-serif-ja-v";
+  src: local("@ＭＳ ゴシック");
+}
+
+
+/* 組み方向のデフォルトフォント指定
+----------------------------------------------------------------
+@付きフォント指定が不要になるまでは、
+組み方向が変わるとき明朝で上書き（書体を継承しない）
+---------------------------------------------------------------- */
+.hltr { font-family: serif-ja, serif; }
+.vrtl { font-family: serif-ja-v, serif-ja, serif; }
+
+/* 組み方向の入れ子対策 */
+.vrtl .hltr { font-family: serif-ja, serif; }
+.hltr .vrtl { font-family: serif-ja-v, serif-ja, serif; }
+
+
+/* 書体指定
+---------------------------------------------------------------- */
+/* 横組み用 */
+.hltr .mfont { font-family: serif-ja, serif; }
+.hltr .gfont { font-family: sans-serif-ja, sans-serif;}
+/* 縦組み用 */
+.vrtl .mfont { font-family: serif-ja-v, serif-ja, serif; }
+.vrtl .gfont { font-family: sans-serif-ja-v, sans-serif-ja, sans-serif; }
+
+/* 組み方向の入れ子対策 */
+/* 縦組み中の横組み用 */
+.vrtl .hltr .mfont { font-family: serif-ja, serif; }
+.vrtl .hltr .gfont { font-family: sans-serif-ja, sans-serif; }
+/* 横組み中の縦組み用 */
+.hltr .vrtl .mfont { font-family: serif-ja-v, serif-ja, serif; }
+.hltr .vrtl .gfont { font-family: sans-serif-ja-v, sans-serif-ja, sans-serif; }
+
+
+
