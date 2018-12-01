@@ -1367,6 +1367,7 @@ application/epub+zip
 
  unique-identifier="unique-id"
 
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ rendition: http://www.idpf.org/vocab/rendition/#"
 >
 
     <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -1405,6 +1406,10 @@ application/epub+zip
 
         <meta property="dcterms:modified">2014-01-01T00:00:00Z</meta>
 
+        <!-- iBook指定字體 -->
+
+        <meta property="ibooks:specified-fonts">true</meta>
+
     </metadata>
 
     <manifest>
@@ -1439,9 +1444,9 @@ application/epub+zip
 
         <!-- xhtml -->
 
-        <item media-type="application/xhtml+xml" id="p-cover"       href="xhtml/p-cover.xhtml"/>
+        <item media-type="application/xhtml+xml" id="p-cover"       href="xhtml/p-cover.xhtml properties="svg""/>
 
-        <item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml"/>
+        <item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml properties="svg""/>
 
         <item media-type="application/xhtml+xml" id="p-titlepage"   href="xhtml/p-titlepage.xhtml"/>
 
@@ -1467,9 +1472,13 @@ application/epub+zip
 
     <spine page-progression-direction="rtl">
 
-        <itemref linear="yes" idref="p-cover"       properties="page-spread-left"/>
+        <itemref linear="yes" idref="p-cover"       properties="rendition:layout-pre-paginated 
+													    rendition:spread-none 
+													    rendition:page-spread-center"/>
 
-        <itemref linear="yes" idref="p-fmatter-001" properties="page-spread-left"/>
+        <itemref linear="yes" idref="p-fmatter-001" properties="rendition:layout-pre-paginated 
+														rendition:spread-auto 
+														page-spread-left"/>
 
         <itemref linear="yes" idref="p-titlepage"   properties="page-spread-left"/>
 
@@ -1581,6 +1590,10 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
 
         <meta name="viewport" content="width=圖寬,height=圖高" />
 
+        <style type="text/css">
+          html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+        </style>
+
         <title>書名</title>
 
     </head>
@@ -1590,7 +1603,7 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             width="100%" height="100%" viewBox="0 0 圖寬 圖高">
-            <image width="圖寬" height="圖高" xlink:href="cover.jpg（封面圖檔名）"/>
+            <image width="圖寬" height="圖高" xlink:href="../image/cover.jpg（封面圖檔名）"/>
         </svg>
 
     </body>
@@ -1608,6 +1621,14 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
 * 封面頁到書名頁之間的頁面，方便上全稱為正文前
 
 * 圖片頁使用SVG Wrapping，**必需**於OPF檔案的`<manifest>`項目加入`properties="svg"`，且於`<spine>`項目加入`properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-x"`
+
+* 圖片頁於`<head>`內不帶入預設的CSS，而以以下CSS取代：  
+
+```
+<style type="text/css">
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+</style>
+```
 
 * RS需要支援圖片頁`rendition:page-spread-x`指定的左頁（`left`）與右頁（`right`），推薦支援置中（`center`）
 
@@ -1653,6 +1674,10 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
 
         <meta name="viewport" content="width=圖寬,height=圖高" />
 
+        <style type="text/css">
+          html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+        </style>
+
         <title>書名</title>
 
     </head>
@@ -1662,7 +1687,7 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
          <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             width="100%" height="100%" viewBox="0 0 圖寬 圖高">
-            <image width="圖寬" height="圖高" xlink:href="p-fmatter-001.jpg（圖檔名）"/>
+            <image width="圖寬" height="圖高" xlink:href="../image/kuchie-001.jpg（圖檔名）"/>
         </svg>
 
     </body>
@@ -3329,7 +3354,7 @@ u,.em-line { text-decoration: underline;}
 
 * 要以哪款字型製作圖片，依照出版社指示
 
-* 背景為透明，請以8bit PNG格式保存
+* 背景為白色或者透明，請以8bit PNG格式保存
 
 **CSS Class**
 
