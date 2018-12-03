@@ -50,11 +50,9 @@ EPUB 3內使用HTML5與CSS3等網頁技術，各作業系統與瀏覽器組版�
 
 依照本文件所製作的EPUB範本提供如下：
 
-> TODO: 改為正式的 EPUB sample file URL
-
-* [Fixed Layout 固定版面](https://這邊要放 LINK)
-
-* [Reflow 文字書](https://這邊要放 LINK)
+* [Fixed Layout 固定版面](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20FXL%20sample.epub)
+* [Reflow 文字書  直排](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_%E7%9B%B4%E6%8E%92.epub)
+* [Reflow 文字書  橫排](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_%E6%A9%AB%E6%8E%92.epub)
 
 ----
 
@@ -1058,23 +1056,14 @@ http://www.pagina-online.de/produkte/epub-checker/
 ```
 
 root 資料夾
-
 ├ mimetype
-
 ├ META-INF 資料夾
-
 │ └ container.xml
-
 └ item 資料夾
-
    ├ standard.opf
-
    ├ navigation-documents.xhtml
-
    ├ image 資料夾
-
    ├ style 資料夾
-
    └ xhtml 資料夾
 
 ```
@@ -3006,11 +2995,13 @@ application/epub+zip
 
 
 
-## 格式一覽
+## 樣式一覽
 
-> TODO: 補 CSS sample file
+> 說明：關於本節中提及之樣式表範本以及使用本樣式表製作之文字書範例，可由此處下載：
 
-> 說明：關於本節中提及之樣式表範本，可由此處下載：http://...
+* [樣式表範本](https://github.com/dpublishing/epub3guide/tree/master/samples/style_template)
+* [Reflow 文字書  直排](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_%E7%9B%B4%E6%8E%92.epub)
+* [Reflow 文字書  橫排](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_%E6%A9%AB%E6%8E%92.epub)
 
 ### 段落
 
@@ -4793,53 +4784,35 @@ class="float-clear-end"   : 解除行尾位置文繞圖
 ```
 
 book-style.css                 ……XHTML所連結的檔案。
-
 │                             讀取各CSS檔案以符合RS規格避免BUG
-
 │                         也準備供各作品客製化的空間
-
 │
-
 │
-
 │ /* 透過@import讀取以下的CSS檔案 */
-
 │
-
 ├ style-reset.css            ……初始化用樣式表
-
 │
-
 ├ style-standard.css         ……基本樣式表
-
 │
-
 ├ style-advance.css          ……支援邏輯方向與排版方向轉換的樣式表（可不使用
-
 │
-
+├ font.css                   ……內嵌字體樣式表（可不使用
+│
 ├ (style-***.css)            ……出版社自用樣式表（各出版社須自行準備，需自付責任）
-
 │
-
 └ (style-check.css)          ……於Windows瀏覽器上直排時讓字型直立用於確認的樣式表
-
                           （上架交貨時取消讀入）
-
+                          
 ```
 
 #### <u>固定版面型</u>
 
-> TODO: 修正為 `-tw` 的版本
-
 ```
 
-fixed-layout-jp.css            ……XHTML所連結的檔案。
-
+fixed-layout.css            ……XHTML所連結的檔案。
                                固定版面不支援@import也沒關係
-
                                   不使用其他樣式表
-
+                                  
 ```
 
 ### CSS檔案的使用規則
