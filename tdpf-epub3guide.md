@@ -464,6 +464,15 @@ EPUB規範中雖推薦使用MathML來顯示計算公式，但現在各瀏覽器�
 
 間隔號U+00B7並非所有的字體都為全形符號，RS採用字體需要將其造為全形。間隔號也可使用・  `U+30FB KATAKANA MIDDLE DOT`，RS採用字體必需包含此字元。
 
+此外，也推薦使用以下西文標點：
+
+標點名稱 | Unicode | 直排時轉90度
+------- | ------------ | --------
+' 省略符號（Apostrophe） | U+0027 | 否
+" 引號（Quotation Mark） | U+0022 | 否
+“ 左引號（LEFT DOUBLE QUOTATION MARK） | U+201C | 否
+” 右引號（RIGHT DOUBLE QUOTATION MARK） | U+201D | 否
+
 ### 固定版面EPUB
 
 EPUB 3.0的固定版面分為兩種，一種為圖片為主，一種則是利用HTML、CSS與JavaScript等技術達到動態表現。由於能夠完整支援後者的RS數量不多，本文件僅止於使用圖片的前者。
@@ -968,7 +977,7 @@ ex / in / cm / mm / pt / pc
 
 ### 圖片與內容文件與推薦、限制尺寸及容量不同的對應方式
 
-目前各RS考量到硬體性能，會對XHTML的內容文件的檔案大小及圖片尺寸設定上限。例如XHTML檔案不得過大，如超過1MB等；圖片檔案總像素不得超過350萬像素等。同時也會提供推薦尺寸，例如雜誌單頁圖片建議長邊為2048像素等。
+目前各RS考量到硬體性能，會對XHTML的內容文件的檔案大小及圖片尺寸設定上限。例如XHTML檔案不得過大，如超過1MB等；圖片檔案總像素不得超過350萬像素等。同時也會提供推薦尺寸，例如雜誌、漫畫單頁圖片建議長邊為2048像素等。
 
 出版社需要提供檔案大於限制時的處理方式，如切割、縮放；以及小於推薦尺寸時的處理方式，如放大，保持原尺寸等。
 
@@ -1358,6 +1367,7 @@ application/epub+zip
 
  unique-identifier="unique-id"
 
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ rendition: http://www.idpf.org/vocab/rendition/#"
 >
 
     <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -1396,6 +1406,10 @@ application/epub+zip
 
         <meta property="dcterms:modified">2014-01-01T00:00:00Z</meta>
 
+        <!-- iBook指定字體 -->
+
+        <meta property="ibooks:specified-fonts">true</meta>
+
     </metadata>
 
     <manifest>
@@ -1430,9 +1444,9 @@ application/epub+zip
 
         <!-- xhtml -->
 
-        <item media-type="application/xhtml+xml" id="p-cover"       href="xhtml/p-cover.xhtml"/>
+        <item media-type="application/xhtml+xml" id="p-cover"       href="xhtml/p-cover.xhtml properties="svg""/>
 
-        <item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml"/>
+        <item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml properties="svg""/>
 
         <item media-type="application/xhtml+xml" id="p-titlepage"   href="xhtml/p-titlepage.xhtml"/>
 
@@ -1458,9 +1472,13 @@ application/epub+zip
 
     <spine page-progression-direction="rtl">
 
-        <itemref linear="yes" idref="p-cover"       properties="page-spread-left"/>
+        <itemref linear="yes" idref="p-cover"       properties="rendition:layout-pre-paginated 
+													    rendition:spread-none 
+													    rendition:page-spread-center"/>
 
-        <itemref linear="yes" idref="p-fmatter-001" properties="page-spread-left"/>
+        <itemref linear="yes" idref="p-fmatter-001" properties="rendition:layout-pre-paginated 
+														rendition:spread-auto 
+														page-spread-left"/>
 
         <itemref linear="yes" idref="p-titlepage"   properties="page-spread-left"/>
 
@@ -1532,6 +1550,22 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
 
 * 沒有封面圖片時，RS需要加入代替圖片
 
+```OPF
+
+<manifest>
+
+  <item media-type="application/xhtml+xml" href="p-cover.xhtml" id="p=cover.xhtml" properties="svg" />
+
+</manifest>
+
+<spine>
+
+  <itemref linear="yes" idref="p-cover" properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-center"/>
+
+</spine>
+
+```
+
 ```html
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1554,19 +1588,23 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
 
         <meta charset="UTF-8"/>
 
-        <title>書名</title>
+        <meta name="viewport" content="width=圖寬,height=圖高" />
 
-        <link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+        <style type="text/css">
+          html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+        </style>
+
+        <title>書名</title>
 
     </head>
 
     <body epub:type="cover" class="p-cover">
 
-        <div class="main">
-
-        <p><img class="fit" src="../image/cover.jpg" alt=""/></p>
-
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100%" height="100%" viewBox="0 0 圖寬 圖高">
+            <image width="圖寬" height="圖高" xlink:href="../image/cover.jpg（封面圖檔名）"/>
+        </svg>
 
     </body>
 
@@ -1582,7 +1620,35 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
 
 * 封面頁到書名頁之間的頁面，方便上全稱為正文前
 
+* 圖片頁使用SVG Wrapping，**必需**於OPF檔案的`<manifest>`項目加入`properties="svg"`，且於`<spine>`項目加入`properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-x"`
+
+* 圖片頁於`<head>`內不帶入預設的CSS，而以以下CSS取代：  
+
+```
+<style type="text/css">
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+</style>
+```
+
+* RS需要支援圖片頁`rendition:page-spread-x`指定的左頁（`left`）與右頁（`right`），推薦支援置中（`center`）
+
 * 不限使用圖片頁
+
+```OPF
+
+<manifest>
+
+  <item media-type="application/xhtml+xml" href="p-fmatter-001.xhtml" id="p-fmatter-001.xhtml" properties="svg" />
+
+</manifest>
+
+<spine>
+
+  <itemref linear="yes" idref="p-fmatter-001" properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-left"/>
+
+</spine>
+
+```
 
 ```html
 
@@ -1606,19 +1672,23 @@ class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Righ
 
         <meta charset="UTF-8"/>
 
-        <title>書名</title>
+        <meta name="viewport" content="width=圖寬,height=圖高" />
 
-        <link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+        <style type="text/css">
+          html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+        </style>
+
+        <title>書名</title>
 
     </head>
 
     <body class="p-image">
 
-        <div class="main">
-
-        <p><img class="fit" src="../image/kuchie-001.jpg" alt=""/></p>
-
-        </div>
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100%" height="100%" viewBox="0 0 圖寬 圖高">
+            <image width="圖寬" height="圖高" xlink:href="../image/kuchie-001.jpg（圖檔名）"/>
+        </svg>
 
     </body>
 
@@ -3284,7 +3354,7 @@ u,.em-line { text-decoration: underline;}
 
 * 要以哪款字型製作圖片，依照出版社指示
 
-* 背景為透明，請以8bit PNG格式保存
+* 背景為白色或者透明，請以8bit PNG格式保存
 
 **CSS Class**
 
