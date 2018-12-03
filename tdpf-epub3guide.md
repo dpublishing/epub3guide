@@ -5033,5 +5033,4 @@ id只要在各XHTML檔案中不重複的話就沒問題，但考量到EPUB中有
 ## 與電書協EPUB 3 Authoring Guide的差異
 
 > TODO: 待補
-
-本指引係參考日本電子書協會…
+
