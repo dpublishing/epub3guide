@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+
+/* 檔案資訊
+----------------------------------------------------------------
+【内容】
+確認用樣式表
+
+【CSS檔案版本】
+ver.1
+
+【細節】
+・指定Windows用字形
+
+【更新紀錄】
+2016/10/13 ver.1.0b
+・初版
+---------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------
+ * 指定Windows用字形
+ * ------------------------------------------------------------- */
+
+/* 指定字型
+---------------------------------------------------------------- */
+/* 横排用 */
+@font-face {
+  font-family: "serif-tw";
+  src: local("新細明體");
+}
+@font-face {
+  font-family: "sans-serif-tw";
+  src: local("微軟正黑體");
+}
+@font-face {
+  font-family: "cursive-tw";
+  src: local("標楷體");
+}
+/* 直排用 */
+@font-face {
+  font-family: "serif-tw-v";
+  src: local("@新細明體");
+}
+@font-face {
+  font-family: "sans-serif-tw-v";
+  src: local("@微軟正黑體");
+}
+@font-face {
+  font-family: "cursive-tw-v";
+  src: local("@標楷體");
+}
+
+/* 依排版方向設定預設字型
+----------------------------------------------------------------
+在不需要透過@指定字型前，
+改變排版方向時優先以明體顯示（字體不會繼承）
+---------------------------------------------------------------- */
+.hltr { font-family: serif-tw, serif; }
+.vrtl { font-family: serif-tw-v, serif-tw, serif; }
+
+/* 對應內文排版方向不同時 */
+.vrtl .hltr { font-family: serif-tw, serif; }
+.hltr .vrtl { font-family: serif-tw-v, serif-tw, serif; }
+
+
+/* 指定字型
+---------------------------------------------------------------- */
+/* 横排用 */
+.hltr .mfont { font-family: serif-tw, serif; }
+.hltr .gfont { font-family: sans-serif-tw, sans-serif;}
+.hltr .kfont { font-family: cursive-tw, cursive;}
+
+/* 直排用 */
+.vrtl .mfont { font-family: serif-tw-v, serif-tw, serif; }
+.vrtl .gfont { font-family: sans-serif-tw-v, sans-serif-tw, sans-serif; }
+.vrtl .kfont { font-family: cursive-tw-v, cursive-tw, cursive; }
+
+/* 對應內文排版方向不同時 */
+/* 直排中的橫排用 */
+.vrtl .hltr .mfont { font-family: serif-tw, serif; }
+.vrtl .hltr .gfont { font-family: sans-serif-tw, sans-serif; }
+.vrtl .hltr .kfont { font-family: cursive-tw, cursive; }
+
+/* 橫排中的直排用 */
+.hltr .vrtl .mfont { font-family: serif-tw-v, serif-tw, serif; }
+.hltr .vrtl .gfont { font-family: sans-serif-tw-v, sans-serif-tw, sans-serif; }
+.hltr .vrtl .kfont { font-family: cursive-tw-v, cursive-tw, cursive; }
+
+
+

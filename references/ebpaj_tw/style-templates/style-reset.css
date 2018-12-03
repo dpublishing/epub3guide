@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+
+/* 檔案資訊
+----------------------------------------------------------------
+【内容】
+重設CSS
+
+【CSS檔案版本】
+ver.1
+
+【細節】
+・css reset
+
+【更新紀錄】
+2016/10/13 ver.1.0b
+・初版
+---------------------------------------------------------------- */
+
+
+/* css reset
+---------------------------------------------------------------- */
+body {
+  margin:         0;
+  padding:        0;
+  font-size:      100%;
+  vertical-align: baseline;
+  line-height:    1.75;
+  background:     transparent;
+
+  word-spacing:   normal;
+  letter-spacing: normal;
+  white-space:    normal;
+  word-wrap:      break-word;
+  text-align:     justify;
+
+  -webkit-line-break: normal;
+  -webkit-word-break: normal;
+  -webkit-hyphens: auto;
+  -webkit-text-underline-position: under left;
+}
+div,p {
+  display: block;
+  width:   auto;
+  height:  auto;
+  margin:  0;
+  padding: 0;
+}
+body,div,p {
+  text-indent: 0;
+}
+body > p,
+div  > p {
+  text-indent: inherit;
+}
+h1,h2,h3,h4,h5,h6 {
+  display:     block;
+  margin:      0;
+  padding:     0;
+  font-size:   100%;
+  font-weight: inherit;
+  background:  transparent;
+}
+img {
+  width:          auto;
+  height:         auto;
+  margin:         0;
+  padding:        0;
+  border:         none;
+  vertical-align: baseline;
+  background:     transparent;
+}
+a {
+  font-style:      inherit;
+  font-weight:     inherit;
+  text-decoration: inherit;
+  color:           inherit;
+  background:      transparent;
+}
+
+
