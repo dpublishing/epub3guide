@@ -2,6 +2,7 @@
 @import "style-reset.css";
 @import "style-standard.css";
 @import "style-advance.css";
+@import "font.css";
 
 /* -------------------------------------------------------------
 當使用Windows確認時，請加上下面的CSS。
@@ -55,6 +56,82 @@ ver. 1
   font-family: serif-tw-v,serif-tw, serif;
 }
 
+/* 標題預設樣式
+---------------------------------------------------------------- */
+
+/* 直排用 */
+.vrtl h1 {
+  font-size: 1.6rem;
+  margin: 0 1rem;
+}
+.vrtl h2 {
+  font-size: 1.4rem;
+  margin: 0 1.1rem;
+}
+.vrtl h3 {
+  font-size: 1.2rem;
+  margin: 0 1.2rem;
+}
+.vrtl h4 {
+  font-size: 1rem;
+  margin: 0 1.3rem;
+}
+.vrtl h5 {
+  font-size: 1rem;
+  margin: 0 0.4rem;
+}
+.vrtl h6 {
+  font-size: 1rem;
+  margin: 0 0.4rem;
+}
+
+/* 橫排用 */
+.hltr h1 {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+.hltr h2 {
+  font-size: 1.4rem;
+  margin: 1.1rem 0;
+}
+.hltr h3 {
+  font-size: 1.2rem;
+  margin: 1.2rem 0;
+}
+.hltr h4 {
+  font-size: 1rem;
+  margin: 1.3rem 0;
+}
+.hltr h5 {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+.hltr h6 {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+
+/* 引言預設預設樣式
+---------------------------------------------------------------- */
+
+/* 直排用 */
+.vrtl blockquote {
+  margin: 2rem 1.8rem 0;
+}
+
+/* 橫排用 */
+.hltr blockquote {
+  margin: 1.8rem 0rem 1.8rem 2rem;
+}
+
+/* 段落預設行距與對齊方式
+---------------------------------------------------------------- */
+
+p {
+  line-height: 1.7;
+  text-align: justify;
+  font-family: serif-tw, serif;
+}
 
 /* 連結
 ---------------------------------------------------------------- */
@@ -199,59 +276,7 @@ a.note:active {
 }
 
 
-/* 標題設定（上：横排　下：直排）
----------------------------------------------------------------- */
-/* 書名頁 */
-.hltr .tobira-midashi {
-}
-.vrtl .tobira-midashi {
-}
-/* 大標 */
-.hltr .oo-midashi {
-}
-.vrtl .oo-midashi {
-}
-/* 中標 */
-.hltr .naka-midashi {
-}
-.vrtl .naka-midashi {
-}
-/* 小標 */
-.hltr .ko-midashi {
-}
-.vrtl .ko-midashi {
-}
-
-
-/* 封面頁
-----------------------------------------------------------------
-顯示區域不顯示邊界
-預設置放於正中間
----------------------------------------------------------------- */
-body.p-cover {
-  margin:     0;
-  padding:    0;
-  text-align: center;
-}
-body.p-cover .main {
-}
-
-
-/* 只有圖片的頁面画像のみのページ
-----------------------------------------------------------------
-顯示區域不顯示邊界
-預設置放於正中間
----------------------------------------------------------------- */
-body.p-image {
-  margin:     0;
-  padding:    0;
-  text-align: center;
-}
-body.p-image .main {
-}
-
-
-/* 以文字為主的頁面
+/* 文字頁面
 ---------------------------------------------------------------- */
 body.p-text {
 }

@@ -35,16 +35,9 @@ body {
   text-align:     justify;
 
   -webkit-line-break: normal;
-  -epub-line-break:   normal;
-
   -webkit-word-break: normal;
-  -epub-word-break:   normal;
-
   -webkit-hyphens: auto;
-  -epub-hyphens:   auto;
-
   -webkit-text-underline-position: under left;
-  -epub-text-underline-position:   under left;
 }
 div,p {
   display: block;

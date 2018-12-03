@@ -66,19 +66,12 @@ ver. 1
 html,
 .hltr {
   -webkit-writing-mode: horizontal-tb;
-  -epub-writing-mode:   horizontal-tb;
 }
 /* 直排用 */
 .vrtl {
   -webkit-writing-mode: vertical-rl;
-  -epub-writing-mode:   vertical-rl;
 }
-/*
-.vltr {
-  -webkit-writing-mode: vertical-lr;
-  -epub-writing-mode:   vertical-lr;
-}
-*/
+
 
 
 /* 設定html
@@ -155,6 +148,7 @@ html {
 }
 
 
+
 /* Block元素的位置對齊
 ---------------------------------------------------------------- */
 /* 絕對方向（橫排只能用於左右、直排只能用於上下方向） */
@@ -193,12 +187,12 @@ html {
 /* 設定連結
 ---------------------------------------------------------------- */
 /* 基本設定 */
-/* 橫排：底線　直排：右線 */
+/* 橫排：底線　直排：左線 */
 .hltr a {
   text-decoration: underline;
 }
 .vrtl a {
-  text-decoration: overline;
+  text-decoration: underline;
 }
 /* 連結文字色彩（預設值為藍色） */
 a:link,
@@ -285,7 +279,6 @@ img.gaiji-wide {
   -webkit-text-combine:         horizontal;
   -webkit-text-combine-upright: all;
   text-combine-upright:         all;
-  -epub-text-combine:           horizontal;
 }
 
 
@@ -297,15 +290,12 @@ img.gaiji-wide {
   -webkit-text-combine:         horizontal;
   -webkit-text-combine-upright: all;
   text-combine-upright:         all;
-  -epub-text-combine:           horizontal;
 }
 .upright {
   -webkit-text-orientation: upright;
-  -epub-text-orientation:   upright;
 }
 .sideways {
   -webkit-text-orientation: sideways;
-  -epub-text-orientation:   sideways;
 }
 
 
@@ -346,7 +336,7 @@ img.gaiji-wide {
 /* 標準 */
 .lspacing-normal { letter-spacing: normal; }
 
-/* クリア */
+/* 不加間隔 */
 .lspacing-0,
 .lspacing-0em   { letter-spacing: 0; }
 
@@ -560,7 +550,7 @@ hr {
   text-decoration: underline;
 }
 .vrtl .em-line {
-  text-decoration: overline;
+  text-decoration: underline;
 }
 
 /* 【橫排】底線　【直排】左線 */
@@ -568,7 +558,7 @@ hr {
   text-decoration: overline;
 }
 .vrtl .em-line-outside {
-  text-decoration: underline;
+  text-decoration: overline;
 }
 
 
@@ -1494,19 +1484,15 @@ hr {
 ---------------------------------------------------------------- */
 .line-break-auto {
   -webkit-line-break: auto;
-  -epub-line-break:   auto;
 }
 .line-break-loose {
   -webkit-line-break: loose;
-  -epub-line-break:   loose;
 }
 .line-break-normal {
   -webkit-line-break: normal;
-  -epub-line-break:   normal;
 }
 .line-break-strict {
   -webkit-line-break: strict;
-  -epub-line-break:   strict;
 }
 
 
@@ -1514,15 +1500,13 @@ hr {
 ---------------------------------------------------------------- */
 .word-break-normal {
   -webkit-word-break: normal;
-  -epub-word-break:   normal;
 }
 .word-break-break-all {
   -webkit-word-break: break-all;
-  -epub-word-break:   break-all;
+  word-break: break-all;
 }
 .word-break-keep-all {
   -webkit-word-break: keep-all;
-  -epub-word-break:   keep-all;
 }
 
 
