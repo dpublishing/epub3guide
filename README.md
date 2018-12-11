@@ -27,3 +27,14 @@ EPUB 3內使用HTML5與CSS3等網頁技術，各作業系統與瀏覽器組版�
 最終希望海內外各販售平台在提供閱讀程式時，能夠滿足本文件中的各項需求，以能夠完整呈現出版社所製作出的EPUB 3電子書，減少針對不同平台修改、調整的麻煩，降低書檔流通的障礙，讓電子書流通更為穩定確實。
 
 本文件依照IDPF所公布的EPUB 3.01規範為基礎，並且EPUB 3.1規範。規範中未普遍實作，但為出版社重要需求的部分以附件提出，希望能取得海內外閱讀程式開發商的共識，作為添補修正。
+
+### 範本全文
+
+- [Markdown](https://github.com/dpublishing/epub3guide/blob/master/tdpf-epub3guide.md)
+- [EPUB](https://github.com/dpublishing/epub3guide/blob/master/samples/台灣EPUB%203製作指引.epub)
+
+### 參考範例
+
+- [Fixed Layout範本](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20FXL%20sample.epub)
+- [Reflow 直排範本](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_直排.epub)
+- [Reflow 橫排範本](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_橫排.epub)
