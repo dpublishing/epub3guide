@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+<h2>滿版圖片</h2>
+
+<p class="indent-2em">流式書籍中的滿版圖片分為兩種：</p>
+
+<ul>
+<li>單頁的圖片頁：如書名頁、章名頁、章與章之間的插畫</li>
+<li>內文中的圖片頁：如整頁的圖片。</li>
+</ul>
+
+<h3>・單頁圖片頁</h3>
+
+<p class="indent-2em">單頁圖片頁希望佔整頁空間，建議使用Fixed Layout的方式製作。</p>
+
+<p class="indent-2em">內頁請參考Fixed Layout使用SVG Wrapping的方式製作。</p>
+
+<p><br/></p>
+<p>需要在OPF檔案的&lt;manifest&gt;中做properties="svg"宣告：</p>
+
+<pre class="m-start-2em"><code>&lt;manifest&gt;
+&lt;item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml" properties="svg"/&gt;
+&lt;/manifest&gt;</code></pre>
+
+<p>也需要在&lt;spine>中宣告Fixed Layout頁面：</p>
+
+<pre class="m-start-2em"><code>&lt;spine&gt;
+&lt;itemref linear="yes" idref="p-fmatter-001" properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-left"/&gt;
+&lt;/spine&gt;</code></pre>
+
+<p class="indent-2em">請注意，閱讀程式不一定會按照指定的左右頁正常呈現。</p>
+
+<h3>・內文圖片頁</h3>
+
+<p class="indent-2em">內文圖片頁可使用預設的CSS class="fit"，語法如：</p>
+
+<pre class="m-start-2em"><code>&lt;p&gt;&lt;img src="../image/img-001.jpg class="fit" alt="圖片說明"/&gt;&lt;/p&gt;</code></pre>
+
+<p><img src="../image/img-001.jpg" class="fit" alt="圖片說明"/></p>
+
+</div>
+</body>
+</html>

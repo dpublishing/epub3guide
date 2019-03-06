@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+<h2 id="toc_index_1" class="align-center">對閱讀程式的需求</h2>
+
+<hr/>
+
+<p class="indent-2em">本章節針對閱讀程式（Reading System, 以下稱為<code>RS</code>）的技術面進行說明。</p>
+
+<p class="indent-2em">EPUB 3內的各種內容，包括包裝文件、導覽文件、內容文件、樣式表等通稱為「文件檔案」。</p>
+
+<h3 id="toc_index_2" class="gfont">文件檔案的基礎</h3>
+
+<h4 id="toc_index_3"><u>文字編碼</u></h4>
+
+<p class="indent-2em">文件檔案使用<code>UTF-8</code>編碼</p>
+
+<p class="indent-2em">不管是否有BOM（Byte Order Mark）都<strong>需要</strong>能夠解譯。</p>
+
+<p class="indent-2em">但本文件<strong>建議</strong>儲存為沒有BOM的文件。</p>
+
+<h4 id="toc_index_4"><u>換行符號</u></h4>
+
+<p class="indent-2em">文件檔案中的換行代碼為<code>CR+LF</code>、<code>CR</code>與<code>LF</code>，無論使用哪一種都<strong>需要</strong>能夠正確解譯。</p>
+
+<p class="indent-2em">同一份文件檔案混用換行代碼時不在此限。</p>
+
+<p class="indent-2em">本文件<strong>建議</strong>同一份文件中不要混用不同的換行代碼。</p>
+
+<h4 id="toc_index_5"><u>原始碼中的空白、換行與註解處理</u></h4>
+
+<p class="indent-2em">文件檔案中記述規則與及解譯以XHTML規則為依據。</p>
+
+<p class="indent-2em">適當忽略原始碼中的註解行、可任意配置元素中屬性的順序，各屬性間如果有一個以上的空白、換行或Tab等，請適當解譯，與支援Web標準的現代瀏覽器具備相同的嚴謹度與自由性。</p>
+	    </div>
+    </body>
+</html>

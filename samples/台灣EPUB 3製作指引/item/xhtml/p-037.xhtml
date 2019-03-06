@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>內文頁</u></h4>
+
+<p class="indent-2em">[檔名：p-***.xhtml（範例為<code>p-002.xhtml</code>）]</p>
+
+<p class="indent-2em">備註：除了沒有<code>epub:type="cover"</code>以外，和封面頁相同</p>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/<span class="color-red">fixed-layout.css</span>"/&gt;
+        &lt;meta name="viewport" content="width=<span class="color-blue">848</span>, height=<span class="color-blue">1200</span>"/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="main"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             width="100%" height="100%" viewBox="0 0 <span class="color-blue">848 1200</span>"&gt;
+                &lt;image width="<span class="color-blue">848</span>" height="<span class="color-blue">1200</span>" xlink:href="../image/<span class="color-red">i-002.jpg</span>"/&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+
+<h4 id="toc_index_2"><u>內文ImageMap（Clickable Map）頁面</u></h4>
+
+<p class="indent-2em">[檔名：p-***.xhtml（範例為<code>p-001.xhtml</code>）]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>a元素的<code>xlink:href</code>屬性，請記載要連結的檔案名稱</li>
+<li>rect元素的x與y屬性，請記載點擊範圍開始位置（左上）的座標</li>
+<li>rect元素的width與height屬性，請記載點擊範圍的尺寸</li>
+</ul>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/<span class="color-red">fixed-layout.css</span>"/&gt;
+        &lt;meta name="viewport" content="width=<span class="color-blue">848</span>, height=<span class="color-blue">1200</span>"/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="main"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             width="100%" height="100%" viewBox="0 0 <span class="color-blue">848 1200</span>"&gt;
+                &lt;image width="<span class="color-blue">848</span>" height="<span class="color-blue">1200</span>" xlink:href="../image/<span class="color-red">i-001.jp</span>g"/&gt;
+                <span class="color-black">&lt;a xlink:href="p-002.xhtml" target="_top"&gt;&lt;rect fill-opacity="0.0" x="476" y="1000" width="300" height="60"/&gt;&lt;/a&gt;
+                &lt;a xlink:href="p-colophon.xhtml" target="_top"&gt;&lt;rect fill-opacity="0.0" x="476" y="1075" width="300" height="60"/&gt;&lt;/a&gt;</span>
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h2 id="toc_index_1">範本：固定版面型</h2>
+
+<p class="indent-2em">固定版面型範本，RS在實作上需要注意兩點：</p>
+
+<p class="indent-2em">一是內頁圖片使用SVG Wrapping，透過SVG語法來包覆圖片，放大到整頁滿版顯示。二是透過ImageMap功能，做到應用於目錄等內頁連結。</p>
+
+<h3 id="toc_index_2">必要的設定檔案</h3>
+
+<blockquote>
+  <p class="indent-2em">TODO: markdown 不易標示顏色，此處需改寫</p>
+</blockquote>
+
+<p class="indent-2em">關於範本內的顏色標注</p>
+
+<p class="indent-2em">灰色：全作品共通部分（原則上不進行更動）</p>
+
+<p class="indent-2em">藍色：全作品共通部分中，依照作品不同而須變更的部分</p>
+
+<p class="indent-2em">紅色：使用範本時特別需要注意的部分</p>
+
+<p class="indent-2em">黑色：非固定部分（依照作品與出版社而可有所差異）</p>
+
+<h4 id="toc_index_3"><u>mimetype</u></h4>
+
+<p class="indent-2em">[檔名：mimetype]</p>
+
+<p class="indent-2em">備註：與文字重排型相同</p>
+
+<pre><code>
+<span class="color-gray">application/epub+zip</span>
+
+</code></pre>
+
+<h4 id="toc_index_4"><u>META-INF中的container.xml</u></h4>
+
+<p class="indent-2em">[檔名：container.xml]</p>
+
+<p class="indent-2em">備註：與文字重排型相同</p>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0"?&gt;
+&lt;container
+ version="1.0"
+ xmlns="urn:oasis:names:tc:opendocument:xmlns:container"
+&gt;
+    &lt;rootfiles&gt;
+        &lt;rootfile
+         full-path="item/standard.opf"
+         media-type="application/oebps-package+xml"
+        /&gt;
+    &lt;/rootfiles&gt;
+&lt;/container&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h2 id="toc_index_1">範本：流式版型</h2>
+
+<h3 class="gfont" id="toc_index_2">必要的設定檔案</h3>
+
+<p class="indent-2em">關於範本內的顏色標注</p>
+
+<p class="indent-2em"><span class="color-gray">灰色</span>：全作品共通部分（原則上不進行更動）</p>
+
+<p class="indent-2em"><span class="color-blue">藍色</span>：全作品共通部分中，依照作品不同而須變更的部分</p>
+
+<p class="indent-2em"><span class="color-red">紅色</span>：使用範本時特別需要注意的部分</p>
+
+<p class="indent-2em"><span class="color-black">黑色</span>：非固定部分（依照作品與出版社而可有所差異）</p>
+
+<h4 id="toc_index_3"><u>mimetype</u></h4>
+
+<p class="indent-2em">[檔名：mimetype]</p>
+
+<pre><code><span class="color-gray">application/epub+zip</span>
+</code></pre>
+
+<h4 id="toc_index_4"><u>META-INF中的container.xml</u></h4>
+
+<p class="indent-2em">[檔名：container.xml]</p>
+
+<pre><code><span class="color-gray">&lt;?xml version="1.0"?&gt;
+&lt;container
+ version="1.0"
+ xmlns="urn:oasis:names:tc:opendocument:xmlns:container"
+&gt;
+&lt;rootfiles&gt;
+    &lt;rootfile
+     full-path="item/standard.opf"
+     media-type="application/oebps-package+xml"
+    /&gt;
+&lt;/rootfiles&gt;
+&lt;/container&gt;</span>
+</code></pre>
+
+<h4 id="toc_index_5"><u>導覽文件</u></h4>
+
+<p class="indent-2em">[檔名：navigation-documents.xhtml]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>連結項目與列表層級依照作品內容修改。</li>
+<li>若出版社沒有特別指示，僅提供封面頁、目錄頁、版權頁的連結即可。</li>
+<li>本規格不支援在導覽文件中加入沒有連結的項目。</li>
+<li>導覽文件的顯示方式，由RS自行決定。</li>
+<li>若要讓導覽文件作為本文內的目錄頁顯示時，請參考後面本文頁面的範例，加入樣式表。</li>
+</ul>
+
+<pre><code>html
+	
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"/&gt;
+&lt;title&gt;<span class="color-blue">Navigation</span>&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;nav <span class="color-red">epub:type="toc"</span> id="toc"&gt;
+    &lt;h1&gt;<span class="color-blue">目錄</span>&lt;/h1&gt;
+    &lt;ol&gt;
+        <span class="color-black">&lt;li&gt;&lt;a href="xhtml/p-cover.xhtml"&gt;封面&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="xhtml/p-toc.xhtml"&gt;目錄&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="xhtml/p-colophon.xhtml"&gt;版權頁&lt;/a&gt;&lt;/li&gt;</span>
+        &lt;/ol&gt;
+        &lt;/nav&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</span>
+</code></pre>
+
+<h4 id="toc_index_6"><u>OPF檔案</u></h4>
+
+<p class="indent-2em">[檔名：standard.opf]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>當RS具備顯示<code>&lt;dc:title&gt;</code>資訊功能時，預設會在RS內某一處顯示全部的記載內容。</li>
+<li>當RS具備顯示<code>&lt;dc:creator&gt;</code>資訊功能時，預設會將複數<code>&lt;dc:creator&gt;</code>於RS內某一處顯示全部的記載內容。（連結複數作者的符號與角色，由RS自行決定之）</li>
+<li>作者名要一一分開，還是於單一<code>&lt;dc:creator&gt;</code>中記載全部作者，由出版社自行決定。若分別顯示，必須按照出版社給與各作者的「role」值，以及作者的顯示順序顯示。</li>
+<li>檔案id（<code>unique-identifier</code>）原則上使用<code>urn:isbn:xxxxxxxxxxxx</code>，ISBN間不加連字號。沒有ISBN時，輸入UUID。</li>
+<li>更新日期沒有特別指定時，輸入製作日期。</li>
+<li>更新日期不應該對讀者顯示。</li>
+<li>封面圖片在沒有特別指示下，為了便於辨識，請使用相同檔案名（cover.jpg)。</li>
+<li>書為橫排時，將<code>&lt;spine&gt;</code>中的<code>page-progression-direction</code>的<code>rtl</code>改為<code>ltr</code>，或者刪除，即沒有指定<code>page-progression-direction</code>時，預設為橫排書。</li>
+</ul>
+
+<pre><code>xml 
+	    
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="<span class="color-blue">unique-id</span>"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ rendition: http://www.idpf.org/vocab/rendition/#"
+&gt;
+
+&lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+
+	&lt;!-- 書名 --&gt;
+	&lt;dc:title id="title"&gt;<span class="color-blue">書名</span>&lt;/dc:title&gt;
+
+	&lt;!-- 作者名 --&gt;
+	&lt;dc:creator id="creator01"&gt;<span class="color-blue">作者名１</span>&lt;/dc:creator&gt;
+	&lt;meta refines="#creator01" property="role" scheme="marc:relators"&gt;<span class="color-blue">aut</span>&lt;/meta&gt;
+	&lt;meta refines="#creator01" property="display-seq"&gt;<span class="color-blue">1</span>&lt;/meta&gt;
+	&lt;dc:creator id="creator02"&gt;<span class="color-blue">作者名２</span>&lt;/dc:creator&gt;
+	&lt;meta refines="#creator02" property="role" scheme="marc:relators"&gt;<span class="color-blue">aut</span>&lt;/meta&gt;
+	&lt;meta refines="#creator02" property="display-seq"&gt;<span class="color-blue">2</span>&lt;/meta&gt;
+
+	&lt;!-- 出版社名 --&gt;
+	&lt;dc:publisher id="publisher"&gt;<span class="color-blue">出版社名</span>&lt;/dc:publisher&gt;
+
+	&lt;!-- 語言 --&gt;
+	&lt;dc:language&gt;zh-TW&lt;/dc:language&gt;
+
+	&lt;!-- 檔案id --&gt;
+	&lt;dc:identifier id="<span class="color-blue">unique-id</span>"&gt;<span class="color-blue">urn:uuid:d7a8d311-7cd0-40df-9443-65847561decf</span>&lt;/dc:identifier&gt;
+
+	&lt;!-- 更新日期 --&gt;
+	&lt;meta property="dcterms:modified"&gt;<span class="color-blue">2014-01-01T00:00:00Z</span>&lt;/meta&gt;
+
+	&lt;!-- iBook指定字體 --&gt;
+	&lt;meta property="ibooks:specified-fonts"&gt;true&lt;/meta&gt;
+
+&lt;/metadata&gt;
+
+&lt;manifest&gt;
+
+	&lt;!-- navigation —&gt;
+	&lt;item media-type="application/xhtml+xml" id="<span class="color-blue">toc</span>" href="<span class="color-blue">navigation-documents.xhtml</span>" <span class="color-red">properties="nav"</span>/&gt;
+
+	&lt;!-- style --&gt;
+	&lt;item media-type="text/css" id="book-style"	href="style/book-style.css"/&gt;
+	&lt;item media-type="text/css" id="style-reset"	href="style/style-reset.css"/&gt;
+	&lt;item media-type="text/css" id="style-standard"	href="style/style-standard.css"/&gt;
+	&lt;item media-type="text/css" id="style-advance"	href="style/style-advance.css"/&gt;
+	&lt;item media-type="text/css" id="style-check"	href="style/style-check.css"/&gt;
+	&lt;item media-type="text/css" id="font"			href="style/font.css"/&gt;
+
+	&lt;!-- image --&gt;
+	&lt;item media-type="image/<span class="color-blue">jpeg</span>" id="cover"      	href="image/cover.<span class="color-blue">jpg</span>" <span class="color-red">properties="cover-image"</span>/&gt;
+	<span class="color-black">&lt;item media-type="image/png"  id="logo-bunko"	href="image/logo-bunko.png"/&gt;
+	&lt;item media-type="image/jpeg" id="kuchie-001"	href="image/kuchie-001.jpg"/&gt;
+	&lt;item media-type="image/jpeg" id="img-001"	href="image/img-001.jpg"/&gt;
+	&lt;item media-type="image/jpeg" id="ad-001"		href="image/ad-001.jpg"/&gt;
+
+	&lt;!-- xhtml --&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-cover"		href="xhtml/p-cover.xhtml" <span class="color-red">properties="svg"</span>/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-fmatter-001"	href="xhtml/p-fmatter-001.xhtml" <span class="color-red">properties="svg"</span>/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-titlepage"		href="xhtml/p-titlepage.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-caution"		href="xhtml/p-caution.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-toc"			href="xhtml/p-toc.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-001"			href="xhtml/p-001.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-002"			href="xhtml/p-002.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-003"			href="xhtml/p-003.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-004"			href="xhtml/p-004.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-005"			href="xhtml/p-005.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-colophon"		href="xhtml/p-colophon.xhtml"/&gt;
+	&lt;item media-type="application/xhtml+xml" id="p-ad-001"		href="xhtml/p-ad-001.xhtml"/&gt;</span>
+
+&lt;/manifest&gt;
+
+&lt;spine page-progression-direction="<span class="color-blue">rtl</span>"&gt;
+
+	<span class="color-black">&lt;itemref linear="yes" idref="p-cover"		<span class="color-red">properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-center"</span>/&gt;
+	&lt;itemref linear="yes" idref="p-fmatter-001"	<span class="color-red">properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-left"</span>/&gt;
+	&lt;itemref linear="yes" idref="p-titlepage"	properties="page-spread-left"/&gt;
+	&lt;itemref linear="yes" idref="p-caution"		properties="page-spread-left"/&gt;
+	&lt;itemref linear="yes" idref="p-toc"		properties="page-spread-left"/&gt;
+	&lt;itemref linear="yes" idref="p-001"		properties="page-spread-left"/&gt;
+	&lt;itemref linear="yes" idref="p-002"		properties="page-spread-left"/&gt;
+	&lt;itemref linear="yes" idref="p-003"		properties="page-spread-left"/&gt;
+	&lt;itemref linear="yes" idref="p-004"/&gt;
+	&lt;itemref linear="yes" idref="p-005"/&gt;
+	&lt;itemref linear="yes" idref="p-colophon"	properties="page-spread-left"/&gt;
+	&lt;itemref linear="yes" idref="p-ad-001"/&gt;</span>
+
+&lt;/spine&gt;
+
+&lt;/package&gt;</span>
+</code></pre>
+
+</div>
+    </body>
+</html>

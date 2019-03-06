@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="unique-id"
+ prefix="rendition: http://www.idpf.org/vocab/rendition/#"
+>
+
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<!-- 書名 -->
+<dc:title id="title">台灣EPUB 3製作指引　固定版面範本</dc:title>
+
+<!-- 作者名 -->
+<dc:creator id="creator01">台灣數位出版聯盟</dc:creator>
+<meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
+<meta refines="#creator01" property="display-seq">1</meta>
+
+<dc:creator id="creator02">作者名２</dc:creator>
+<meta refines="#creator02" property="role" scheme="marc:relators">aut</meta>
+<meta refines="#creator02" property="display-seq">2</meta>
+
+<!-- 出版社名 -->
+<dc:publisher id="publisher">出版社名</dc:publisher>
+
+
+<!-- 語言 -->
+<dc:language>zh-TW</dc:language>
+
+<!-- 檔案id -->
+<dc:identifier id="unique-id">urn:uuid:860ddf31-55a4-449a-8cc9-3c1837657a15</dc:identifier>
+
+<!-- 更新時間 -->
+<meta property="dcterms:modified">2019-01-01T00:00:00Z</meta>
+
+<!-- Fixed-Layout Documents -->
+<meta property="rendition:layout">pre-paginated</meta>
+<meta property="rendition:spread">landscape</meta>
+
+
+
+</metadata>
+
+<manifest>
+
+<!-- navigation -->
+<item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
+
+<!-- style -->
+<item media-type="text/css" id="fixed-layout" href="style/fixed-layout.css"/>
+
+<!-- image -->
+<item media-type="image/jpeg" id="cover"      href="image/cover.jpg" properties="cover-image"/>
+<item media-type="image/jpeg" id="i-white"    href="image/i-white.jpg"/>
+<item media-type="image/jpeg" id="i-001"      href="image/i-001.jpg"/>
+<item media-type="image/jpeg" id="i-002"      href="image/i-002.jpg"/>
+<item media-type="image/jpeg" id="i-003"      href="image/i-003.jpg"/>
+<item media-type="image/jpeg" id="i-004"      href="image/i-004.jpg"/>
+<item media-type="image/jpeg" id="i-005"      href="image/i-005.jpg"/>
+<item media-type="image/jpeg" id="i-006"      href="image/i-006.jpg"/>
+<item media-type="image/jpeg" id="i-007"      href="image/i-007.jpg"/>
+<item media-type="image/jpeg" id="i-colophon" href="image/i-colophon.jpg"/>
+
+
+<!-- xhtml -->
+<item media-type="application/xhtml+xml" id="p-cover"    href="xhtml/p-cover.xhtml"    properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-white"    href="xhtml/p-white.xhtml"    properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-001"      href="xhtml/p-001.xhtml"      properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-002"      href="xhtml/p-002.xhtml"      properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-003"      href="xhtml/p-003.xhtml"      properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-004"      href="xhtml/p-004.xhtml"      properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-005"      href="xhtml/p-005.xhtml"      properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-006"      href="xhtml/p-006.xhtml"      properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-007"      href="xhtml/p-007.xhtml"      properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-colophon" href="xhtml/p-colophon.xhtml" properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-white2"   href="xhtml/p-white2.xhtml"   properties="svg"/>
+
+</manifest>
+
+<spine page-progression-direction="rtl">
+
+<itemref linear="yes" idref="p-cover"    properties="rendition:page-spread-center"/>
+<itemref linear="yes" idref="p-white"    properties="page-spread-right"/>
+<itemref linear="yes" idref="p-001"      properties="page-spread-left"/>
+<itemref linear="yes" idref="p-002"      properties="page-spread-right"/>
+<itemref linear="yes" idref="p-003"      properties="page-spread-left"/>
+<itemref linear="yes" idref="p-004"      properties="page-spread-right"/>
+<itemref linear="yes" idref="p-005"      properties="page-spread-left"/>
+<itemref linear="yes" idref="p-006"      properties="page-spread-right"/>
+<itemref linear="yes" idref="p-007"      properties="page-spread-left"/>
+<itemref linear="yes" idref="p-colophon" properties="page-spread-right"/>
+<itemref linear="yes" idref="p-white2"   properties="page-spread-left"/>
+
+</spine>
+
+</package>

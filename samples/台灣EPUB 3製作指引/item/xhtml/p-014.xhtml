@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">固定版面EPUB</h3>
+
+<p class="indent-2em">EPUB 3.0的固定版面分為兩種，一種為圖片為主，一種則是利用HTML、CSS與JavaScript等技術達到動態表現。由於能夠完整支援後者的RS數量不多，本文件僅止於使用圖片的前者。</p>
+
+<p class="indent-2em">使用圖片構成的固定版面，使用SVG Wrapping語法處理。將SVG語法直接記載於XHTML中，所能使用的圖片格式與文字重排（reflow）格式相同。頁面上的連結與目錄也使用SVG格式，在圖片經縮放後也能對應到對的位置。</p>
+
+<p class="indent-2em">除封面頁外，製作檔案時頁數必須成對。</p>
+
+<p class="indent-2em">只有封面頁（書籍檔案中第一頁）按照EPUB Fixed Layout語法，在spine中的itemref元素中指定為<code>properties="rendition:page-spread-center"</code>，以單頁呈現。封面只要不會影響到後續頁面的顯示順序，可以不需要置放於畫面的正中央。</p>
+	    </div>
+    </body>
+</html>

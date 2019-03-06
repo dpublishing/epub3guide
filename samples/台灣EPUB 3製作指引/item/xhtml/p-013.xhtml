@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">標點符號</h3>
+
+<p class="indent-2em">中文標點符號目前尚未有指定標準Unicode字碼的對應文件，這裡列舉出推薦使用的字碼，期許出版社與製作者在製作書籍檔案時使用。RS端必須保證以下字碼的正確顯示，同時也列出高頻率使用，須於直排中向右轉90度（透過字型功能達到）的標點符號。</p>
+
+<table id="table_index_1">
+<thead>
+<tr>
+  <th>標點名稱</th>
+  <th>Unicode</th>
+  <th>直排時轉90度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>逗號（，）</td>
+  <td>U+FF0C</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>句號（。）</td>
+  <td>U+3002</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>頓號（、）</td>
+  <td>U+3001</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>冒號（：）</td>
+  <td>U+FF1A</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>分號（；）</td>
+  <td>U+FF1B</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>驚嘆號（！）</td>
+  <td>U+FF01</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>問號（？）</td>
+  <td>U+FF1F</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>間隔號（・）</td>
+  <td>U+00B7</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>刪節號（……）</td>
+  <td>U+2026</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>破折號（—）</td>
+  <td>U+2014</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>分隔號（／）</td>
+  <td>U+FF0F</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>連接號（～）</td>
+  <td>U+FF5E</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>前引號（「）</td>
+  <td>U+300C</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>後引號（」）</td>
+  <td>U+300D</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>前雙引號（『）</td>
+  <td>U+300E</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>後雙引號（』）</td>
+  <td>U+300F</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>前括號（（）</td>
+  <td>U+FF08</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>後括號（））</td>
+  <td>U+FF09</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>前書名號（《）</td>
+  <td>U+300A</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>後書名號（》）</td>
+  <td>U+300B</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>前篇名號（〈）</td>
+  <td>U+3008</td>
+  <td>是</td>
+</tr>
+<tr>
+  <td>後篇名號（〉）</td>
+  <td>U+3009</td>
+  <td>是</td>
+</tr>
+</tbody>
+</table>
+
+<p class="indent-2em">破折號由兩個EM DASH（U+2014）構成，RS使用字體需要使用字體功能使其連結。若出版社希望在任何狀況下都讓破折號連結時，可以使用─ <code>U+2500 BOX DRAWINGS LIGHT HORIZONTAL</code>代替，RS也必需讓此符號於直排時向右轉90度。</p>
+
+<p class="indent-2em">刪節號U+2026在中文顯示時，無論橫排或直排，都應該為置於中央的三點符號，RS內建字體必需符合此規則。Unicode中近似的符號⋯ <code>U+22EF MIDLINE HORIZONTAL ELLIPSIS</code>由於在Android舊版系統上無法顯示，故不建議出版社使用。</p>
+
+<p class="indent-2em">間隔號U+00B7並非所有的字體都為全形符號，RS採用字體需要將其造為全形。間隔號也可使用・  <code>U+30FB KATAKANA MIDDLE DOT</code>，RS採用字體必需包含此字元。</p>
+
+<p class="indent-2em">此外，也推薦使用以下西文標點：</p>
+
+<table id="table_index_2">
+<thead>
+<tr>
+  <th>標點名稱</th>
+  <th>Unicode</th>
+  <th>直排時轉90度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>' 省略符號（Apostrophe）</td>
+  <td>U+0027</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>" 引號（Quotation Mark）</td>
+  <td>U+0022</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>“ 左引號（LEFT DOUBLE QUOTATION MARK）</td>
+  <td>U+201C</td>
+  <td>否</td>
+</tr>
+<tr>
+  <td>” 右引號（RIGHT DOUBLE QUOTATION MARK）</td>
+  <td>U+201D</td>
+  <td>否</td>
+</tr>
+</tbody>
+</table>
+	    </div>
+    </body>
+</html>

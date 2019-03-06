@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>目錄頁</u></h4>
+
+<p class="indent-2em">[檔名：p-toc.xhtml]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>若使用導覽文件作為書內目錄的話，不需要加入此頁</li>
+<li>內容與排版方向，依照作品而有所不同</li>
+<li>沒有特別指示的狀況下，連結的頁面需要加入id定位</li>
+<li>沒有特別指示的狀況下，跳轉後頁面不需要設定返回目錄頁的連結</li>
+<li>標題元素等使用的class不是固定，可自行變更（可如<code>&lt;h1 class="gfont font-1em30"&gt;</code>這樣，直接在Class裡指定尺寸與字體等）</li>
+</ul>
+
+<pre><code class="html">
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-blue">vrtl</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body <span class="color-red">class="p-toc"</span>&gt;
+        &lt;div class="main"&gt;
+            <span class="color-black">&lt;h1&gt;<span class="color-cyan">□</span>目錄標題&lt;/h1&gt;
+            &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="p-001.xhtml#toc-001"&gt;目錄項目１&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;<span class="color-blue">□</span>&lt;a href="p-002.xhtml#toc-002"&gt;&lt;span class="font-0em80"&gt;目錄項目２&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;<span class="color-blue">□</span>&lt;a href="p-002.xhtml#toc-003"&gt;&lt;span class="font-0em80"&gt;目錄項目３&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

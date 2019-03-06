@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">文字與字體</h3>
+
+<h4 id="toc_index_2"><u>需包含的文字數量</u></h4>
+
+<p class="indent-2em">所使用的字型<strong>必需</strong>包含Unicode 1.0中日韓共同表意漢字共20,914字，<strong>推薦</strong>支援到Unicode 3.0包含Ext-A在內共27,496字。若RS需要在香港地區提供服務，則<strong>必需</strong>包含香港增補字符集HKSCS-2008的5,009字元。</p>
+
+<p class="indent-2em">英文與數字則<strong>必需</strong>包含Basic Latin與Latin-1 Supplement共256字元，其餘語言文字不需編碼，顯示其他文字時，RS需要使用其他語系的字型退回（Fallback）顯示。</p>
+
+<h4 id="toc_index_3"><u>字體</u></h4>
+
+<p class="indent-2em">閱讀程式<strong>必需</strong>提供字型，以支援以下兩種字體</p>
+
+<ul>
+<li>等寬的明體字型</li>
+<li>等寬的黑體字型</li>
+</ul>
+
+<p class="indent-2em"><strong>推薦</strong>閱讀程式支援以下字體，以提供最佳排版表現</p>
+
+<ul>
+<li>等寬的楷體字型</li>
+</ul>
+
+<p class="indent-2em">同時以上字型<strong>必需</strong>如下指定為「Generic font family」供書檔顯示對應</p>
+
+<pre><code>.mfont        Serif             ：明體
+.gfont        Sans-Serif        ：黑體
+.kfont        Cursive           ：楷體
+</code></pre>
+
+<blockquote>
+  <p class="gfont">說明：每款RS所採用的字型不同，為避免出版社製作時需以窮舉方式指定個別字型名稱，RS需要預先做好CSS Generic family與使用字型的對應。EPUB中指定為serif的段落，會直接套用RS所提供的明體字。</p>
+</blockquote>
+
+<p class="indent-2em">當字型尺寸一致時，以上三字體的em尺寸<strong>必需</strong>相同。</p>
+
+<p class="indent-2em">當使用樣式表如text-orientation改變文字方向時，em尺寸<strong>必需</strong>保持不變。</p>
+
+<p class="indent-2em">三字體顯示上的寬度需要一致，不得有大幅度的差別，且中心線<strong>必需</strong>對齊。</p>
+
+<p class="indent-2em">當RS不提供楷體字型時，則<strong>必需</strong>將Cursive指定為黑體作為替代字型。</p>
+
+<h4 id="toc_index_4"><u>直排時的文字方向</u></h4>
+
+<p class="indent-2em">字型規格上，<strong>必需</strong>依照Unicode Consortium所提供的文件UTR#50，將特定字碼於直排時轉向。</p>
+
+<pre><code>Unicode® Technical Report #50 UNICODE VERTICAL TEXT LAYOUT
+http://unicode.org/reports/tr50/
+</code></pre>
+
+<blockquote>
+  <p class="gfont">說明：當出版社製作EPUB檔案時，標點符號會使用字型轉向功能自動轉向，所以<strong>不得</strong>使用直排字符，如﹁︽等。UTR#50涵蓋字元過多，故<strong>必需</strong>支援的符號如附件。</p>
+</blockquote>
+
+<p class="indent-2em">符合UTR#50定義的文字，在直排時須自動轉向，若需要手動轉向，RS必須支援以下兩種語法：</p>
+
+<pre><code>直立：                  text-orientation: upright;
+向右旋轉90度：          text-orientation: sideways;
+</code></pre>
+
+<blockquote>
+  <p class="gfont">說明：半形英文與數字採用upright轉正時，許多RS無法置放於文字中線上，這時可以採用-text-combine作為替代方案，但本CSS屬性主要是供英文數字組合轉正排列使用，請盡量避免。</p>
+</blockquote>
+
+<h4 id="toc_index_5"><u>直排時的對齊</u></h4>
+
+<p class="indent-2em">圖片與直立文字，請依循CSS Writing Modes Level 3中<code>4.2 Text Baselines</code>的<code>central</code>排列，也就是置於文字的中線上。</p>
+
+<pre><code>CSS Writing Modes Level 3
+http://www.w3.org/TR/2014/CR-css-writing-modes-3-20140320/#central-baseline
+</code></pre>
+	    </div>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h2 id="toc_index_1" class="align-center">基本製作方式</h2>
+
+<hr/>
+
+<p class="indent-2em">製作電子書時請依照以下規則製作檔案。</p>
+
+<p class="indent-2em">關於檔案、資料夾名稱以及原始碼的命名規則，依照製作者不同會有不同的做法，但考量到未來修正時會造成麻煩，所以推進盡可能使用範本中提供的方法進行。</p>
+
+<h3 class="gfont" id="toc_index_2">使用最新版的EPUBCHECK，檔案不能有任何錯誤（Error）</h3>
+
+<pre><code>IDPF/epubcheck @ GitHub
+https://github.com/IDPF/epubcheck/
+
+若需要圖形介面版本，可使用：Pagina EPUB-CHECKER
+http://www.pagina-online.de/produkte/epub-checker/
+</code></pre>
+
+<p class="indent-2em">請注意，像iBooks等閱讀程式，在讀入EPUB後會加入專用的檔案，造成EPUBCHECK檢查時出現錯誤。請注意這種會改變原有檔案的RS。檢查時請使用製作好的原始檔案，不要放進RS後再取出進行檢查。</p>
+
+<h3 class="gfont" id="toc_index_3">基本的資料夾構成與檔案名</h3>
+
+<pre><code>root 資料夾
+├ mimetype
+├ META-INF 資料夾
+│ └ container.xml
+└ item 資料夾
+   ├ standard.opf
+   ├ navigation-documents.xhtml
+   ├ image 資料夾
+   ├ style 資料夾
+   └ xhtml 資料夾
+</code></pre>
+
+<ul>
+<li>root資料夾名稱可自行指定</li>
+<li>檔案與資料夾名稱基本上為小寫英文（META-INF以及其他有明確規定者除外）</li>
+<li>置放素材用的資料夾配合OPF裡的&lt;item&gt;元素，命名為「item」（規範上可自行更改）。</li>
+<li>素材請放進item資料夾中的指定資料夾，請不要另外製作。</li>
+</ul>
+
+<pre><code>圖片檔案　　　：「image」資料夾
+CSS檔案　　　：「style」資料夾
+xhtml檔案　　：「xhtml」資料夾
+</code></pre>
+<ul>
+<li>以下檔案請不要修改（直接使用範本中的檔案）
+
+<ul>
+<li>root資料夾裡的「mimetype」</li>
+<li>「META-INF」資料夾裡的「container.xml」</li>
+</ul></li>
+<li>各檔案的特別頁面，如書名與章名頁，建議與內文檔案以檔名做出區別。</li>
+</ul>
+
+<blockquote>
+  <p class="gfont">說明：RS在處理EPUB內部資料夾的實作上，必須要能夠讀取item資料夾中子資料夾內的內容，也就是需要支援第二層路徑。</p>
+</blockquote>
+
+<h3 class="gfont" id="toc_index_4">檔案規格</h3>
+
+<ul>
+<li>底本為跨頁的圖片或照片，請將左右頁結合成一張圖片，以對齊頁寬的方式插入。</li>
+<li>請於底本換頁處，將內容切割成不同的XHTML檔案
+<ul>
+<li>沒有換頁的作品，請將單一檔案控制在256KB上下。附近有標題時，於標題前分割；沒有標題時，於空行位置分割。</li>
+</ul></li>
+<li>檔案的title全部填入書名<ul>
+<li>XHTML文件中的<code>&lt;title&gt;~&lt;/title&gt;</code>間請輸入書名，建議可以輸入該章節的章名。</li>
+<li>RS可以讀取各XHTML中的<code>&lt;title&gt;</code>來顯示在畫面之上，例如作為頁眉顯示。所以製作時請輸入正確的資訊。</li>
+</ul></li>
+<li>epub-type僅用於封面、導覽文件與註解<ul>
+<li>EPUB規範中<code>epub:type</code>語法可用來標注各頁與各區塊的功能。</li>
+<li>但若完全按照規範進行，會使得製作變得相當複雜，這裡僅推薦使用三項功能：<ul>
+<li>封面頁面：<code>&lt;body epub:type="cover" class="p-cover"&gt;</code></li>
+<li>導覽文件：<code>&lt;nav epub:type="toc" id="toc"&gt;</code></li>
+<li>註解：請參考前面的記述語法。</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 class="gfont" id="toc_index_5">簡單的編碼規則</h3>
+
+<ul>
+<li>文字編碼推薦使用UTF-8（無BOM）。</li>
+<li>換行代碼：CR/LF於單一文件中不要混用。</li>
+<li>不推薦使用本文件中未提及的HTML與CSS元素。</li>
+<li>不加入出版社指定外的註解（Comment）</li>
+<li>Class名稱使用邏輯方式記載</li>
+<li>Class與CSS在直排與橫排中，方向會有變化，現在Class使用邏輯方向，待未來CSS成熟後，可以直接對應。</li>
+</ul>
+
+<pre><code>行頭　　　　：start         （直：top     横：left）
+行末　　　　：end           （直：bottom  横：right）
+行的前方　　：before        （直：right   横：top）
+行的後方　　：after         （直：left    横：bottom）
+</code></pre>
+
+<ul>
+<li>但在頁面整體設定上，當頁面只有圖片時為橫排，使用top/right/bottom/left也沒關係。</li>
+<li>此外，在CSS中，行的頭尾正中方向為center，並且作為class名稱。</li>
+<li>為了方便起見，頁面方向（行的前後方向）正中視為middle。</li>
+<li>本文內元素內各屬性的記載順序為<code>epub:type → class → id → src/href → alt → 其他</code></li>
+<li>為了避免過於複雜，<code>&lt;p&gt;</code>盡量不要指定class。</li>
+<li>本文XHTML文件中HTML各元素的記述是否要換行。
+
+<ul>
+<li><code>&lt;div&gt;</code>等區塊元素，必需於開始與結束標籤前後換行。</li>
+<li>但<code>&lt;p&gt;</code>與標題用的<code>&lt;h1&gt;~&lt;h6&gt;</code>開始標籤之後與關閉標籤之前，請不要換行。</li>
+<li>行內元素（<code>&lt;span&gt;</code>等），原則上不換行。</li>
+<li><code>&lt;a&gt;</code>的狀況。當<code>&lt;a&gt;</code>不是包覆區塊元素（包括<code>&lt;p&gt;</code>在內）時，請不要換行。</li>
+</ul>
+</li></ul>
+
+<pre><code>html
+×		&lt;h1&gt;
+		文字
+		&lt;/h1&gt;
+
+		&lt;div&gt;&lt;p&gt;文字&lt;/p&gt;&lt;/div&gt;
+
+○		&lt;h1&gt;文字&lt;/h1&gt;
+
+		&lt;div&gt;
+			&lt;p&gt;文字&lt;/p&gt;
+		&lt;/div&gt;
+</code></pre>
+ 
+<p class="indent-2em">此外，當元素內的變化太多，而不曉得層級對應關係時，請不要繼續使用既有的class，而使用專用的class。</p>
+
+<p class="indent-2em">像是「想要讓特定角色的台詞使用特別字體」、「信件內文想要加上框線」遇到這些可能會進行樣式修正的部分。與提在元素內加入多數class達到效果，不如新增定義專用的class。</p>
+</div>
+    </body>
+</html>

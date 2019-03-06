@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>章名頁</u></h4>
+
+<p class="indent-2em">[檔名：p-xxx.xhtml]  (本例為<code>p-001.xhtml</code>)</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>內容與排版方向，依照作品而有所不同</li>
+<li>關於由目錄連結連入的id指定位置（本文頁面相同）
+<ul>
+<li>沒有特別指示下，若有與目錄項目相同的標題元素，將id指定於該處</li>
+<li>若沒有標題元素（例如只有圖片等）或者在標題前有需要顯示的內容的話，請在連結內容前最接近的<code>&lt;p&gt;</code>或<code>&lt;div&gt;</code>等於CSS中指定為{display: block;}等元素（區塊層級元素）加上id</li>
+</ul></li>
+<li>檔案名使用如「p-001」三位連續編號時，若超過三位數時，請自行挑整檔案名稱</li>
+<li>標題元素等使用的class不是固定，可自行變更（可如<code>&lt;h1 class="gfont font-1em30"&gt;</code>這樣，直接在Class裡指定尺寸與字體等）</li>
+</ul>
+
+<pre><code class="html">
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-blue">vrtl</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body <span class="color-red">class="p-tobira"</span>&gt;
+        &lt;div class="main"&gt;
+            <span class="color-black">&lt;p class="tobira-midashi" id="toc-001"&gt;第一章<span class="color-cyan">□</span>天地玄黃宇宙洪荒&lt;/p&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+</div>
+    </body>
+</html>

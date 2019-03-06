@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>電子版用的說明頁面</u></h4>
+
+<p class="indent-2em">[檔名：p-caution.xhtml]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>內容與排版方向，依照出版社與作品而不同。</li>
+<li>本頁預設適用於所有書籍，說明「版面與文字尺寸與印刷書有所不同」，可以追加各作品特別需要注意之處。若沒有特別指示，可以刪除。</li>
+</ul>
+
+<pre><code class="html">
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-blue">vrtl</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body <span class="color-red">class="p-caution"</span>&gt;
+        &lt;div class="main"&gt;
+            <span class="color-black">&lt;p&gt;說明與印刷書的差異，禁止複製轉載等等。&lt;/p&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

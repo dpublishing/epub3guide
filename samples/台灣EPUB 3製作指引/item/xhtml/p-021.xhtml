@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">XHTML文件檔案</h3>
+
+<h4 id="toc_index_2"><u>關於範本內的顏色標注</u></h4>
+
+<p class="indent-2em"><span class="color-gray">灰色</span>：全作品共通部分（原則上不進行更動）</p>
+
+<p class="indent-2em"><span class="color-blue">藍色</span>：全作品共通部分中，依照作品不同而須變更的部分</p>
+
+<p class="indent-2em"><span class="color-red">紅色</span>：使用範本時特別需要注意的部分</p>
+
+<p class="indent-2em"><span class="color-black">黑色</span>：非固定部分（依照作品與出版社而可有所差異）</p>
+
+<p class="indent-2em"><span class="color-cyan">淺藍色的□</span>：代表全形空白</p>
+
+<h4 id="toc_index_3"><u>關於排版方向</u></h4>
+
+<p class="indent-2em">排版方向於各頁的<code>&lt;html&gt;</code>中依以下記載方式指定</p>
+
+<pre><code>class="hltr"：横排 排版方向 h（Horizontal）        行方向 ltr（Left To Right）
+class="vrtl"：直排 排版方向 v（Vertical）          行方向 rtl（Right To Left）
+</code></pre>
+
+<ul>
+<li>目前CSS3尚不支援「直排的ltr」。</li>
+<li>只有圖片的頁面，為將圖片放在正中央，採用橫排。</li>
+</ul>
+
+<h4 id="toc_index_4"><u>封面頁</u></h4>
+
+<p class="indent-2em">[檔名：p-cover.xhtml]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>預設為置放為正中央</li>
+<li>除圖片以外，不加入任何內容</li>
+<li>沒有封面圖片時，RS需要加入代替圖片</li>
+</ul>
+
+<pre><code>OPF
+
+<span class="color-gray">&lt;manifest&gt;
+	&lt;item media-type="application/xhtml+xml" href="p-cover.xhtml" id="p=cover.xhtml" <span class="color-red">properties="svg"</span> /&gt;
+&lt;/manifest&gt;
+
+&lt;spine&gt;
+	&lt;itemref linear="yes" idref="p-cover" <span class="color-red">properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-center"</span>/&gt;
+&lt;/spine&gt;</span>
+
+</code></pre>
+<pre><code><span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;meta name="viewport" content="width=<span class="color-black">圖寬</span>,height=<span class="color-black">圖高</span>" /&gt;
+        <span class="color-red">&lt;style type="text/css"&gt;
+          html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+        &lt;/style&gt;</span>
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body <span class="color-red">epub:type="cover" class="p-cover"</span>&gt;
+        &lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100%" height="100%" viewBox="0 0 <span class="color-black">圖寬 圖高</span>"&gt;
+            &lt;image width="<span class="color-black">圖寬</span>" height="<span class="color-black">圖高</span>" xlink:href="<span class="color-black">../image/cover.jpg（封面圖檔名）</span>"/&gt;
+        &lt;/svg&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+
+<h4 id="toc_index_5"><u>正文前（本例為插畫）</u></h4>
+
+<p class="indent-2em">[檔名：p-fmatter-***.xhtml]（本例為「p-fmatter-001.xhtml」</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>封面頁到書名頁之間的頁面，方便上全稱為正文前</li>
+<li>圖片頁使用SVG Wrapping，<strong>必需</strong>於OPF檔案的<code>&lt;manifest&gt;</code>項目加入<code>properties="svg"</code>，且於<code>&lt;spine&gt;</code>項目加入<code>properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-x"</code></li>
+<li>圖片頁於<code>&lt;head&gt;</code>內不帶入預設的CSS，而以以下CSS取代：</li>
+</ul>
+
+<pre><code>&lt;style type="text/css"&gt;
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+&lt;/style&gt;
+</code></pre>
+
+<ul>
+<li>RS需要支援圖片頁<code>rendition:page-spread-x</code>指定的左頁（<code>left</code>）與右頁（<code>right</code>），推薦支援置中（<code>center</code>）</li>
+<li>不限使用圖片頁</li>
+</ul>
+
+<pre><code class="OPF">
+<span class="color-gray">&lt;manifest&gt;
+  &lt;item media-type="application/xhtml+xml" href="p-fmatter-001.xhtml" id="p-fmatter-001.xhtml" <span class="color-red">properties="svg"</span> /&gt;
+&lt;/manifest&gt;
+
+&lt;spine&gt;
+  &lt;itemref linear="yes" idref="p-fmatter-001" <span class="color-red">properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-left"</span>/&gt;
+&lt;/spine&gt;</span>
+</code></pre>
+
+<pre><code class="html">
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;meta name="viewport" content="width=<span class="color-black">圖寬</span>,height=<span class="color-black">圖高</span>" /&gt;
+        <span class="color-red">&lt;style type="text/css"&gt;
+          html, body { margin: 0; padding: 0; width: 100%; height: 100%;}
+        &lt;/style&gt;</span>
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body class="p-image"&gt;
+         &lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100%" height="100%" viewBox="0 0 <span class="color-black">圖寬 圖高</span>"&gt;
+            &lt;image width="<span class="color-black">圖寬</span>" height="<span class="color-black">圖高</span>" xlink:href="<span class="color-black">../image/kuchie-001.jpg（圖檔名）</span>"/&gt;
+        &lt;/svg&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>
