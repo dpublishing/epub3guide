@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="vrtl"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2>文字排列方向</h2>
+
+<p class="indent-2em">文字書分為「直排」與「橫排」兩種。</p>
+
+<p class="indent-2em">請依照排版方向做以下調整：</p>
+
+<h3 class="gfont">・橫排書</h3>
+
+<h4 class="gfont">。OPF檔案</h4>
+
+<p class="indent-2em">需要在<span class="gfont bg-gainsboro">&lt;spine&gt;</span>中設定翻頁方向，由右向左如：</p>
+
+<p class="indent-2em"><span class="gfont bg-gainsboro">&lt;spine page-progression-direction="rtl"&gt;</span></p>
+
+<p class="indent-2em">或者不設定，預設為橫排書的向左翻頁。</p>
+
+<p class="gfont indent-2em"><span class="gfont bg-gainsboro">&lt;spine&gt;</span></p>
+
+<h4 class="gfont">。內容（html）檔案</h4>
+
+<p class="indent-2em">需要在<span class="gfont bg-gainsboro">&lt;html&gt;</span>內加入<span class="gfont bg-gainsboro">class="hltr"</span>，內文行文則會由左而右、行由上而下排列。</p>
+
+<h3 class="gfont">・直排書</h3>
+
+
+<h4 class="gfont">。OPF檔案</h4>
+
+<p class="indent-2em">需要在&lt;spine&gt;中設定翻頁方向，由左向右如：</p>
+
+<p class="gfont indent-2em"><span class="gfont bg-gainsboro">&lt;spine page-progression-direction="ltr"&gt;</span></p>
+
+<h4 class="gfont">。內容（html）檔案</h4>
+
+<p class="indent-2em">需要在<span class="gfont bg-gainsboro">&lt;html&gt;</span>內加入<span class="gfont bg-gainsboro">class="vrtl"</span>，內文行文則會由上而下，行由右而左排列。</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="vrtl"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2>標題與內文段落的行排列處理</h2>
+
+<p class="indent-2em">「標題字級以及標題字前後的空間」，以及「預設行距及對齊方式」請於book-style.css中進行調整設計。</p>
+
+<p class="indent-2em">以外，請參考以下語法對內容進行調整設計</p>
+
+<h3 id="toc-018">・對齊方式</h3>
+
+<p class="indent-2em">對齊方式原則上全部預設使用CSS text-align: justify，讓所有內容齊頭尾對齊，也就是遇到預設避頭尾點的狀況時，會自動加入字距讓每一行齊頭尾對齊。若在設計上有其他考量，可以針對個別元素進行以下調整。</p>
+
+<p><br/></p>
+
+<p class="align-start">使用class="align-start"來對齊行頭，行尾不會自動對齊。</p>
+
+<p class="align-center">使用class="align-center"來置中。</p>
+
+<p class="align-end">使用class="align-end"來對齊行尾，用於署名等。</p>
+
+<h3 id="toc-019">・行距</h3>
+
+<p class="indent-2em">預設行距為1.7，也就是內文段落行與行間的間隔為0.7個預設字級，而在標題上，則是指定標題文字字級的0.7倍。</p>
+
+<p class="indent-2em">行距可使用以下語法調整倍數。</p>
+
+<p><br/></p>
+
+<p><span class="line-height-normal">使用class=""line-height-normal"<br/>行距為預設值。</span></p>
+
+<p><span class="line-height-1em">使用class=""line-height-1em"<br/>行距為0。</span></p>
+
+<p><span class="line-height-1em50">使用class=""line-height-1em50"<br/>行距為0.5字級。</span></p>
+
+<p><span class="line-height-1em75">使用class=""line-height-1em75"<br/>行距為0.75字級。</span></p>
+
+<p><span class="line-height-2em">使用class=""line-height-2em"<br/>行距為1字級。</span></p>
+
+<p><span class="line-height-2em50">使用class=""line-height-2em50"<br/>行距為1.5字級。</span></p>
+
+<p><span class="line-height-3em">使用class=""line-height-3em"<br/>行距為2字級。</span></p>
+
+<p><span class="line-height-3em50">使用class=""line-height-3em50"<br/>行距為2.5字級。</span></p>
+
+<p><span class="line-height-4em">使用class=""line-height-4em"<br/>行距為3字級。</span></p>
+
+<p><span class="line-height-4em50">使用class=""line-height-4em50"<br/>行距為3.5字級。</span></p>
+
+<p><span class="line-height-5em">使用class=""line-height-5em"<br/>行距為4字級。</span></p>
+
+<h3 id="toc-020">・字距</h3>
+
+<p>預設不加入字距，也不建議在內文加入字距，僅推薦使用於標題等具設計的元素上。</p>
+
+<p><br/></p>
+
+<p><span class="lspacing-normal">使用class="lspacing-normal"，字距為預設值</span></p>
+
+<p><span class="lspacing-0em">使用class="lspacing-0em"，字距為0</span></p>
+
+<p><span class="lspacing-0em10">使用class="lspacing-0em10"，字距為0.1字級</span></p>
+
+<p><span class="lspacing-0em20">使用class="lspacing-0em20"，字距為0.2字級</span></p>
+
+<p><span class="lspacing-0em25">使用class="lspacing-0em25"，字距為0.25字級</span></p>
+
+<p><span class="lspacing-0em30">使用class="lspacing-0em30"，字距為0.3字級</span></p>
+
+<p><span class="lspacing-0em33">使用class="lspacing-0em33"，字距為0.33字級</span></p>
+
+<p><span class="lspacing-0em40">使用class="lspacing-0em40"，字距為0.4字級</span></p>
+
+<p><span class="lspacing-0em50">使用class="lspacing-0em50"，字距為0.5字級</span></p>
+
+<p><span class="lspacing-0em60">使用class="lspacing-0em60"，字距為0.6字級</span></p>
+
+<p><span class="lspacing-0em67">使用class="lspacing-0em67"，字距為0.67字級</span></p>
+
+<p><span class="lspacing-0em70">使用class="lspacing-0em70"，字距為0.7字級</span></p>
+
+<p><span class="lspacing-0em75">使用class="lspacing-0em75"，字距為0.75字級</span></p>
+
+<p><span class="lspacing-0em80">使用class="lspacing-0em80"，字距為0.8字級</span></p>
+
+<p><span class="lspacing-0em90">使用class="lspacing-0em90"，字距為0.9字級</span></p>
+
+<p><span class="lspacing-1em">使用class="lspacing-1em"，字距為1字級</span></p>
+
+<p><br/></p>
+
+<p class="indent-2em">一字級以上字距請參考CSS內設定</p>
+
+<h3 id="toc-021">・行頭縮排</h3>
+
+<p class="indent-2em">預設為無縮排，可使用以下語法針對段落設定行頭縮排，或者使用U+3000全型空白於行頭亦可。</p>
+
+<p><br/></p>
+
+<p class="indent-0em">使用class="indent-0em"，<br/>行頭不縮排</p>
+
+<p class="indent-1em">使用class="indent-1em"，<br/>行頭縮排一字</p>
+
+<p class="indent-2em">使用class="indent-2em"，<br/>行頭縮排二字</p>
+
+<p class="indent-3em">使用class="indent-3em"，<br/>行頭縮排三字</p>
+
+<p class="indent-4em">使用class="indent-4em"，<br/>行頭縮排四字</p>
+
+<p class="indent-5em">使用class="indent-5em"，<br/>行頭縮排五字</p>
+
+<p class="indent-6em">使用class="indent-6em"，<br/>行頭縮排六字</p>
+
+<p class="indent-7em">使用class="indent-7em"，<br/>行頭縮排七字</p>
+
+<p class="indent-8em">使用class="indent-8em"，<br/>行頭縮排八字</p>
+
+<p class="indent-9em">使用class="indent-9em"，<br/>行頭縮排九字</p>
+
+<p class="indent-10em">使用class="indent-10em"，<br/>行頭縮排十字</p>
+
+<h3 id="toc-022">・行頭凸排</h3>
+
+<p class="indent-2em">應用於對話、劇本等，需要凸排的狀況，可使用以下語法調整，應用於橫排與直排</p>
+
+<p><br/></p>
+
+<p><span class="h-indent-0em">使用class="h-indent-0em"，<br/>行頭不凸排</span></p>
+
+<p><span class="h-indent-1em">使用class="h-indent-1em"，<br/>行頭凸排一字</span></p>
+
+<p><span class="h-indent-2em">使用class="h-indent-2em"，<br/>行頭凸排二字</span></p>
+
+<p><span class="h-indent-3em">使用class="h-indent-3em"，<br/>行頭凸排三字</span></p>
+
+<p><span class="h-indent-4em">使用class="h-indent-4em"，<br/>行頭凸排四字</span></p>
+
+<p><span class="h-indent-5em">使用class="h-indent-5em"，<br/>行頭凸排五字</span></p>
+
+<p><span class="h-indent-6em">使用class="h-indent-6em"，<br/>行頭凸排六字</span></p>
+
+<p><span class="h-indent-7em">使用class="h-indent-7em"，<br/>行頭凸排七字</span></p>
+
+<p><span class="h-indent-8em">使用class="h-indent-8em"，<br/>行頭凸排八字</span></p>
+
+<p><span class="h-indent-9em">使用class="h-indent-9em"，<br/>行頭凸排九字</span></p>
+
+<p><span class="h-indent-10em">使用class="h-indent-10em"，<br/>行頭凸排十字</span></p>
+
+<h3 id="toc-023">・段落縮排</h3>
+
+<p class="indent-2em">當段落於行頭處整段縮排時，可使用以下語法，適用於直排與橫排。</p>
+
+<p class="indent-2em">若是書中經常出現的樣式，如引言等，建議修改book-style.css中的blockquote樣式進行調整。</p>
+
+<p><br/></p>
+
+<p class="start-0em">使用class="start-0em"，<br/>段落不縮排</p>
+
+<p class="start-0em25">使用class="start-0em25"，<br/>段落縮排0.25字級</p>
+
+<p class="start-0em50">使用class="start-0em50"，<br/>段落縮排0.5字級</p>
+
+<p class="start-0em75">使用class="start-0em75"，<br/>段落縮排0.75字級</p>
+
+<p class="start-1em">使用class="start-1em"，<br/>段落縮排一字級</p>
+
+<p class="start-1em25">使用class="start-1em25"，<br/>段落縮排1.25字級</p>
+
+<p class="start-1em50">使用class="start-1em50"，<br/>段落縮排1.50字級</p>
+
+<p class="start-1em75">使用class="start-1em75"，<br/>段落縮排1.75字級</p>
+
+<p class="start-2em">使用class="start-2em"，<br/>段落縮排二字級</p>
+
+<p class="start-2em50">使用class="start-2em50"，<br/>段落縮排2.5字級</p>
+
+<p class="start-3em">使用class="start-3em"，<br/>段落縮排三字級</p>
+
+<p class="start-4em">使用class="start-4em"，<br/>段落縮排四字級</p>
+
+<p class="start-5em">使用class="start-5em"，<br/>段落縮排五字級</p>
+
+<p class="start-6em">使用class="start-6em"，<br/>段落縮排六字級</p>
+
+<p class="start-7em">使用class="start-7em"，<br/>段落縮排七字級</p>
+
+<p class="start-8em">使用class="start-8em"，<br/>段落縮排八字級</p>
+
+<p class="start-9em">使用class="start-9em"，<br/>段落縮排九字級</p>
+
+<p class="start-10em">使用class="start-10em"，<br/>段落縮排十字級</p>
+
+<h3 id="toc-024">・段落提排</h3>
+
+<p class="indent-2em">當段落於行尾處整段提排時，可使用以下語法，適用於直排與橫排。</p>
+
+<p class="indent-2em">若是書中經常出現的樣式，如引言等，建議修改book-style.css中的blockquote樣式進行調整。</p>
+
+<p class="indent-2em">為展示顯示效果，以下段落也套用了使用class="align-end"對齊行尾。</p>
+	
+<p><br/></p>
+
+<p class="align-end end-0em">使用class="end-0em"，<br/>段落不提排</p>
+
+<p class="align-end end-0em25">使用class="end-0em25"，<br/>段落提排0.25字級</p>
+
+<p class="align-end end-0em50">使用class="end-0em50"，<br/>段落提排0.5字級</p>
+
+<p class="align-end end-0em75">使用class="end-0em75"，<br/>段落提排0.75字級</p>
+
+<p class="align-end end-1em">使用class="end-1em"，<br/>段落提排一字級</p>
+
+<p class="align-end end-1em25">使用class="end-1em25"，<br/>段落提排1.25字級</p>
+
+<p class="align-end end-1em50">使用class="end-1em50"，<br/>段落提排1.50字級</p>
+
+<p class="align-end end-1em75">使用class="end-1em75"，<br/>段落提排1.75字級</p>
+
+<p class="align-end end-2em">使用class="end-2em"，<br/>段落提排二字級</p>
+
+<p class="align-end end-2em50">使用class="end-2em50"，<br/>段落提排2.5字級</p>
+
+<p class="align-end end-3em">使用class="end-3em"，<br/>段落提排三字級</p>
+
+<p class="align-end end-4em">使用class="end-4em"，<br/>段落提排四字級</p>
+
+<p class="align-end end-5em">使用class="end-5em"，<br/>段落提排五字級</p>
+
+<p class="align-end end-6em">使用class="end-6em"，<br/>段落提排六字級</p>
+
+<p class="align-end end-7em">使用class="end-7em"，<br/>段落提排七字級</p>
+
+<p class="align-end end-8em">使用class="end-8em"，<br/>段落提排八字級</p>
+
+<p class="align-end end-9em">使用class="end-9em"，<br/>段落提排九字級</p>
+
+<p class="align-end end-10em">使用class="end-10em"，<br/>段落提排十字級</p>
+
+</div>
+</body>
+</html>
