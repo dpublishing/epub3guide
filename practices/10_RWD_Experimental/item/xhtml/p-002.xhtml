@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>貧賤夫妻</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 class="font-140per align-center gfont lspacing-0em33">製作解說</h2>
+<hr/>
+<p class="m-top-1em50 indent-2em">本範本中所使用語法皆為實驗性功能，不一定通用於各電子書閱讀程式與系統。僅供設計參考使用</p>
+
+<h3 class="gfont">軟換頁</h3>
+
+<p class="indent-2em">印刷書原則上標題不能置於每頁的最末一行，排版上一般會以換頁開始。在EPUB格式電子書中若要確保換頁，最好切分為不同xhtml檔案，將標題置於第一行。但遇到短段落多標題的內容，就會增加xhtml檔案數量，這時可以使用「軟換頁」的功能。</p>
+
+<p class="indent-2em">在<code>style-standard.css</code>預設了三組class：</p>
+
+<ul>
+<li><code>pagebreak</code>套用<code>page-break-after: always;</code>語法，可套用在最後一段落的標籤，於此元素後一定要換頁</li>
+<li><code>pagebreak-before</code>套用<code>page-break-before: always;</code>語法，可套用在標題，於此元素前一定要換頁</li>
+<li><code>pagebreakboth</code>同時套用<code>page-break-after: always;</code>與<code>page-break-before: always;</code>語法，可令元素前後都換頁，單獨出現在頁面上。</li>
+</ul>
+
+<p class="indent-2em">但此系列css僅能應用在部分閱讀程式，如Apple Books、Amazon kindle上，非通用語法。</p>
+
+<h3 class="gfont">反應式設計（RWD, Responsible Design）</h3>
+
+<p class="indent-2em">反應式設計是現在常見的網頁設計功能，當內容在一定尺寸以下/上的螢幕顯示時，套用不同的css語法。主要使用的是css media query語法，本範本在<code>book-style.css</code>中使用了<code>@media screen and (max-width: 414px)</code>，其意思是當螢幕最大寬度在414像素以下時，套用之後的css。</p>
+
+<p class="indent-2em">（這裡的像素非物理像素，而是供瀏覽器顯示的viewport寬度，例如iPhone 11 Pro Max的物理像素是1242px x 2688px，但給瀏覽器的viewport寬度為414px x 896px。）</p>
+
+<p class="indent-2em">也就是說，前面所撰寫的css供電腦、平板等螢幕顯示，而<code>@media</code>語法內的css則是供手機顯示使用。</p>
+
+<p class="indent-2em">本範本針對標題，一般為置中明體，手機為置左黑體加上陰影。內文一般為縮排二字，手機上則是不縮排卻以段落間隔來區分。文末圖片原為文繞圖顯示，手機則為置中佔一半空間。</p>
+
+<p class="indent-2em">同樣的，各閱讀程式對於反應式設計的支援程度不一，並非通用</p>
+
+
+
+</div>
+</body>
+</html>

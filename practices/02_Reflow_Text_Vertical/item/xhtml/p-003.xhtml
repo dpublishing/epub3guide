@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 class="font-140per align-center gfont lspacing-0em33">製作解說</h2>
+
+<hr/>
+<h3 class="m-top-1em50 gfont">直排</h3>
+
+<p class="indent-2em">直排的基本設定於HTML元素中指定class為<code>vrtl</code>，若整本書主要為直排頁面，令需要在<code>item/standard.opf</code>中的<code>&lt;spine&gt;</code>加入<code>page-progression-direction=&quot;rtl&quot;</code>以設定翻頁方向為由右而左，以符合直排書的行頁方向。</p>
+
+<h3 class="m-top-1em50 gfont">引言</h3>
+
+<p class="indent-2em">一般書內引言等段落樣式可使用html <code>blockquote</code>標籤，本範本中分別預先設計了邊界，直排為上方兩字，左右各一行（含行距為1.8字級）。可自行修改 <code>book-style.css</code>中的css。</p>
+
+<h3 class="m-top-1em50 gfont">標點符號</h3>
+
+<p class="indent-2em">直排標點符號使用與橫排相同的標點即可，如：，、。：；「」『』（）【】〈〉《》等……。現在閱讀程式內所使用字體會自動在直排時轉向，故不推薦作者與出版社在內容中直接使用順時針旋轉90度的標點，如：﹁﹂︵︶等……</p>
+
+<p class="indent-2em">另推薦間隔號使用・（U+30FB KATAKANA MIDDLE DOT）、省略號使用連續兩個…（U+2026 HORIZONTAL ELLIPSIS）、連接號使用〜（U+301C WAVE DASH 日文輸入法預設）或～（U+FF5E FULLWIDTH TILDE 中文輸入法預設）可在直排時有最佳的表現性。連接號可使用兩個——（U+2014 EM DASH），但會因為字型設計而有斷開的狀況，這時可使用兩個──（U+2500 BOX DRAWINGS LIGHT HORIZONTAL）替代。以上符號都應該會自動對應直排轉向，若無，請和該平台反應，修正字型設計對應，無需修正內容對應。</p>
+
+<h3 class="m-top-1em50 gfont">縱中橫排</h3>
+
+<p class="indent-2em">直排文字遇到英文與數字時，原則上會以旋轉90度的方式顯示。一般就中文書的處理，遇到英文縮寫，如WTO，會正立顯示。作者與出版社可直接使用全形英文與數字來確保在直排文字中正立（並佔一漢字空間）。若需要將多個數字與英文結合一併轉正，如：90、A+，則可在前後以html <code>span</code>標籤，套用css class <code>tcy</code>，就可一併轉正。技術上可支援到4位數字以上，但考量到易讀性，建議不要超過3位數。</p>
+
+<h3 class="m-top-1em50 gfont">文字轉向</h3>
+
+<p class="indent-2em">若遇到符號及文字在直排中被強制轉了90度時，卻希望以正立的方式呈現時，可在前後以html <code>span</code>標籤，套用css class <code>upright</code> (或<code>upright-1</code> 供數字用），即可確保文字正立顯示。反之希望文字強制轉向90度時，可套用css class <code>sideways</code>來強制轉向。</p>
+
+<h3 class="m-top-1em50 gfont">色彩</h3>
+
+<p class="indent-2em">本範本針對「內文」與「背景」各設定了8個灰階的色彩與5種基本色彩，css class命名內文為<code>color-色彩</code>，背景為<code>bg-色彩</code>。灰階由深到淺為<code>black</code>、<code>dimgray</code>、<code>gray</code>、<code>darkgray</code>、<code>silver</code>、<code>gainsboro</code>、<code>white</code>與透明<code>transparent</code>。色彩為紅<code>red</code>、藍<code>blue</code>、青<code>cyan</code>、洋紅<code>magenta</code>及橙紅<code>orangered</code>五色。</p>
+
+<p class="indent-2em">若要使用其他色彩，可自行修改 <code>book-style.css</code>中的css。請注意電子書可能在電子紙等灰階設備上被閱讀，謹慎使用較淡的文字色彩。</p>
+
+<h3 class="m-top-1em50 gfont">行頭凸排</h3>
+
+<p class="indent-2em">如在小說、劇本中常出現的對話會使用「母親說：」這樣的語句，排版上一般會以行頭凸排進行處理。本範本在<code>style-standard.css</code>裡定義了如<code>h-indent-2em</code>的class，以字為單位進行凸排。當切換排版方向時，照樣保留凸排效果。</p>
+
+<h3 class="m-top-1em50 gfont">段落縮排與提排</h3>
+
+<p class="indent-2em">若段落在排版上想要進行調整，例如縮排（行開頭處留空）、提排（行結束處留空），也都可以利用本範本在<code>style-standard.css</code>中定義的語法，縮排為<code>start-2em</code>，提排為<code>end-2em</code>，以字為單位。當切換排版方向時，照樣保留縮排與凸排效果。</p>
+
+
+</div>
+</body>
+</html>

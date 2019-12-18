@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="unique-id"
+ prefix="rendition: http://www.idpf.org/vocab/rendition/#"
+>
+
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<!-- 書名 -->
+<dc:title id="title">仲夏夜之夢簡介</dc:title>
+
+<!-- 作者名 -->
+<dc:creator id="creator01">莎士比亞</dc:creator>
+<meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
+<meta refines="#creator01" property="display-seq">1</meta>
+
+<!-- 出版社名 -->
+<dc:publisher id="publisher">台灣數位出版聯盟</dc:publisher>
+
+
+<!-- 語言 -->
+<dc:language>zh-TW</dc:language>
+
+<!-- 檔案id -->
+<dc:identifier id="unique-id">urn:uuid:860ddf31-55a4-449a-8cc9-3c1837657a18</dc:identifier>
+
+<!-- 更新時間 -->
+<meta property="dcterms:modified">2019-01-01T00:00:00Z</meta>
+
+<!-- Fixed-Layout Documents -->
+<meta property="rendition:layout">pre-paginated</meta>
+<meta property="rendition:spread">landscape</meta>
+
+
+
+</metadata>
+
+<manifest>
+
+<!-- navigation -->
+<item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
+
+<!-- style -->
+<item media-type="text/css" id="fixed-layout" href="style/fixed-layout.css"/>
+
+<!-- image -->
+<item media-type="image/jpeg" id="cover"      href="image/cover.jpg" properties="cover-image"/>
+<item media-type="image/jpeg" id="i-preface"  href="image/i-preface.jpg"/>
+<item media-type="image/jpeg" id="i-colophon" href="image/i-colophon.jpg"/>
+<item media-type="image/jpeg" id="i-white"    href="image/i-white.jpg"/>
+<item media-type="image/jpeg" id="i-001"    href="image/001.jpg"/>
+<item media-type="image/jpeg" id="i-002"    href="image/002.jpg"/>
+
+<!-- media -->
+
+<item media-type="audio/mpeg3" id="mid-audio"    href="media/midsummer.mp3"/>
+<item media-type="video/mpeg4" id="mid-video"    href="media/midsummer.mp4"/>
+
+
+<!-- xhtml -->
+<item media-type="application/xhtml+xml" id="p-cover"    href="xhtml/p-cover.xhtml"    properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-white"    href="xhtml/p-white.xhtml"    properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-preface"  href="xhtml/p-preface.xhtml"  properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-001"      href="xhtml/p-001.xhtml"      />
+<item media-type="application/xhtml+xml" id="p-colophon" href="xhtml/p-colophon.xhtml" properties="svg"/>
+</manifest>
+
+<spine>
+<itemref linear="yes" idref="p-cover"    properties="rendition:page-spread-center"/>
+<itemref linear="yes" idref="p-white"    properties="page-spread-left"/>
+<itemref linear="yes" idref="p-preface"  properties="page-spread-right"/>
+<itemref linear="yes" idref="p-001"      properties="page-spread-left"/>
+<itemref linear="yes" idref="p-colophon" properties="page-spread-right"/>
+</spine>
+
+</package>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>挑戰者金唱片</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 class="font-140per align-center gfont lspacing-0em33">製作解說</h2>
+<hr/>
+
+<h3 class="m-top-1em50 gfont">選擇開放授權字型</h3>
+
+<p class="indent-2em">目前的作業系統都支援Unicode編碼，可供各種語言顯示，但因為個別系統可能缺少字型而無法顯示，針對此狀況，本範本建議利用嵌入字型的方式處理。本範本另提供注音符號顯示範本，使用了中文數位化技術推廣基金會所制定的<a href="https://cmex-30.github.io/Bopomofo_on_Web/testpage/index.html">注音符號字型顯示標準範例</a>，也需要透過嵌入字型來達到完整顯示效果。</p>
+
+<p class="indent-2em">選用嵌入字型時，請注意字型所包含的語言文字是否符合需求，此外是否以適當的授權方式提供（例如<a href="https://www.google.com/get/noto/">Google Noto計畫</a>就有提供分語種的字型，並且透過SIL Open Font License 1.1授權使用）。</p>
+
+<p class="indent-2em">不建議作者或出版社將整套中文字體嵌入書中，容易造成閱讀程式當機或者拖慢處理速度；此外未取得字型公司授權嵌入字型可能違反著作權法。</p>
+
+<h3 class="m-top-1em50 gfont">嵌入字體</h3>
+
+<p class="indent-2em">嵌入字體時，需要按照以下順序進行</p>
+
+<ol>
+<li><p>將字型檔案放入font資料夾</p></li>
+<li><p>OPF宣告</p>
+字型檔案需要於OPF檔案中的<code>&lt;manifest&gt;</code>進行宣告，如<code>&lt;item media-type=&quot;application/vnd.ms-opentype&quot; href=&quot;font/notosthai.otf&quot; id=&quot;_source.otf&quot; /&gt;</code></li>
+<li><p>CSS宣告<br />並且需要在css中宣告名稱，可使用範本中<code>font.css</code>的範例如：<br />
+<code>@font-face {"font-family: sourcethai;
+src: url('../font/notosthai.otf') format('OpenType');} </code></p>
+之後宣告的字體名稱即可用於css中。</li>
+</ol>
+
+<h3 class="m-top-1em50 gfont">指定語文使用字體</h3>
+
+<p class="indent-2em">本範本中泰文顯示的段落，在html裡使用了<code>lang</code>標籤標注為泰文，如<code>lang=&quot;th&quot;</code>。</p>
+
+<p class="indent-2em">css裡可使用<code>:lang(語文代稱)</code>語法來指定字體，如<code>:lang(th) {font-family: sourcethai;}</code>。</p>
+
+<h3 class="m-top-1em50 gfont">注音符號資料結構</h3>
+
+<p class="indent-2em">注音符號在資料結構上使用了html的<code>&lt;ruby&gt;</code>標籤語法，每個漢字與其注音都須以以下方式標注<code>&lt;ruby&gt;好&lt;rt&gt;ㄏㄠˇ&lt;/rt&gt;&lt;/ruby&gt;</code>，預設橫排時注音標於上方、直排時標於右側。</p>
+
+<h3 class="m-top-1em50 gfont">注音排版注意事項</h3>
+
+<p class="indent-2em">注音符號在顯示上，除了<code>&lt;rt&gt;</code>需使用嵌入字型顯示外，注音尺寸、排列等請參考<code>book-style.css</code>中的範例設計。橫排時注音符號不預設自動啟用，需套用css語法<code>font-feature-settings: 'salt' 1;</code>開啟<code>salt</code>字體功能方可將調號移到右上的位置。</p>
+
+</div>
+</body>
+</html>

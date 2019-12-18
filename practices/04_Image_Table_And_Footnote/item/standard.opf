@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="unique-id"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ rendition: http://www.idpf.org/vocab/rendition/#"
+>
+
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<!-- 作品名 -->
+<dc:title id="title">全球報業營運趨勢與產業現況</dc:title>
+
+<!-- 作者名 -->
+<dc:creator id="creator01">戴伊筠</dc:creator>
+<meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
+<meta refines="#creator01" property="display-seq">1</meta>
+
+<dc:creator id="creator02">羅世宏</dc:creator>
+<meta refines="#creator02" property="role" scheme="marc:relators">edt</meta>
+<meta refines="#creator02" property="display-seq">2</meta>
+
+<dc:creator id="creator03">胡元輝</dc:creator>
+<meta refines="#creator03" property="role" scheme="marc:relators">edt</meta>
+<meta refines="#creator03" property="display-seq">3</meta>
+
+<!-- 出版社名 -->
+<dc:publisher id="publisher">台灣數位出版聯盟</dc:publisher>
+
+<!-- 語言 -->
+<dc:language>zh-TW</dc:language>
+
+<!-- 檔案id -->
+<dc:identifier id="unique-id">urn:uuid:d7a8d311-7cd0-40df-9443-65847561dec4</dc:identifier>
+
+<!-- 更新時間 -->
+<meta property="dcterms:modified">2019-11-01T00:00:00Z</meta>
+
+<!-- iBook指定字體 -->
+<meta property="ibooks:specified-fonts">true</meta>
+
+</metadata>
+
+<manifest>
+
+<!-- navigation -->
+<item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
+
+<!-- style -->
+<item media-type="text/css" id="book-style"     href="style/book-style.css"/>
+<item media-type="text/css" id="style-reset"    href="style/style-reset.css"/>
+<item media-type="text/css" id="style-standard" href="style/style-standard.css"/>
+<item media-type="text/css" id="style-advance"  href="style/style-advance.css"/>
+<item media-type="text/css" id="style-check"    href="style/style-check.css"/>
+
+<!-- image -->
+<item media-type="image/jpeg" id="cover"       href="image/cover.jpg" properties="cover-image"/>
+<item media-type="image/png" id="tdpf"         href="image/tdpf.png" />
+<item media-type="image/png" id="moc"          href="image/moc.png" />
+<item media-type="image/png" id="ch01c01"      href="image/ch01c01.png" />
+<item media-type="image/png" id="ch01c02"      href="image/ch01c02.png" />
+<item media-type="image/png" id="ch01c03"      href="image/ch01c03.png" />
+<item media-type="image/png" id="ch01c04"      href="image/ch01c04.png" />
+<item media-type="image/png" id="ch01p01"      href="image/ch01p01.png" />
+<item media-type="image/png" id="ch01p02"      href="image/ch01p02.png" />
+<item media-type="image/png" id="ch01p03"      href="image/ch01p03.png" />
+<item media-type="image/png" id="ch01p04"      href="image/ch01p04.png" />
+<item media-type="image/png" id="ch01p05"      href="image/ch01p05.png" />
+<item media-type="image/png" id="ch01p06"      href="image/ch01p06.png" />
+<item media-type="image/png" id="ch01p07"      href="image/ch01p07.png" />
+<item media-type="image/png" id="ch01p08"      href="image/ch01p08.png" />
+<item media-type="image/png" id="ch01p09"      href="image/ch01p09.png" />
+<item media-type="image/png" id="ch01p10"      href="image/ch01p10.png" />
+<item media-type="image/png" id="ch01p11"      href="image/ch01p11.png" />
+<item media-type="image/png" id="ch01p12"      href="image/ch01p12.png" />
+<item media-type="image/png" id="ch01p13"      href="image/ch01p13.png" />
+<item media-type="image/png" id="ch01p14"      href="image/ch01p14.png" />
+<item media-type="image/png" id="ch01p15"      href="image/ch01p15.png" />
+<item media-type="image/png" id="ch01p16"      href="image/ch01p16.png" />
+<item media-type="image/png" id="ch01p17"      href="image/ch01p17.png" />
+
+<!-- xhtml -->
+<item media-type="application/xhtml+xml" id="p-cover"       href="xhtml/p-cover.xhtml" properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-titlepage"   href="xhtml/p-titlepage.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-toc"         href="xhtml/p-toc.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-001"         href="xhtml/p-001.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-002"         href="xhtml/p-002.xhtml"/>
+
+<item media-type="application/xhtml+xml" id="p-colophon"    href="xhtml/p-colophon.xhtml"/>
+
+<!-- font -->
+
+</manifest>
+
+<spine page-progression-direction="ltr">
+<itemref linear="yes" idref="p-cover"       properties="rendition:layout-pre-paginated 
+													    rendition:spread-none 
+													    rendition:page-spread-center"/>
+<itemref linear="yes" idref="p-fmatter-001" properties="page-spread-left"/>
+<itemref linear="yes" idref="p-titlepage"   properties="page-spread-left"/>
+<itemref linear="yes" idref="p-toc"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-001"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-002"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-colophon"    properties="page-spread-left"/>
+
+</spine>
+
+</package>

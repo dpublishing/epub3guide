@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>詩經節錄</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 class="font-140per align-center gfont lspacing-0em33">製作解說</h2>
+<hr/>
+
+<h3 class="m-top-1em50 gfont">文字、固定版面混合</h3>
+
+<p class="indent-2em">一般印刷文字書經常會與整頁圖片或者表格混排，在電子書中若要保留如印刷書的閱讀體驗，可以透過以下兩種方式處理：</p>
+
+<p class="indent-2em">一是章節內的整頁圖片，為了不一遇到圖片就切分html，會使用<code>style-standard.css</code>裡的class <code>fit</code>來讓圖片佔最大的空間，如整頁一般顯示。</p>
+
+<p class="indent-2em">若圖片在章節之間，如連續的彩頁、插畫、漫畫等，則建議使用「文字與固定版面混合」的方式處理，也就是在文字書（reflow）中以固定版面（fixed layout）圖片頁的方式插入圖片，可以有較好的效果。</p>
+
+<h3 class="m-top-1em50 gfont">整頁圖片語法</h3>
+
+<p class="indent-2em">以固定版面圖片頁插入圖片，一張圖片就需要一個html檔案作為框架。注意點如下：</p>
+
+<ol>
+<li><code>&lt;html&gt;</code>的class建議為橫排<code>hltr</code>，範本中另使用了固定頁面的<code>p-pic</code>來確保圖片滿版顯示。</li>
+<li><code>&lt;head&gt;</code>中需要宣告viewport如：<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=1536, height=2048&quot;/&gt;</code>，長寬填入實際圖片檔案像素。</li>
+<li><code>&lt;body&gt;</code>套用class <code>p-pic</code><br/>
+<code>p-pic</code>定義在<code>book-style.css</code>中，設定邊界<code>padding</code>與<code>margin</code>為0，長寬<code>width</code>與<code>height</code>為100%。</li>
+<li>內容如固定版面圖片頁，使用SVG wrapping方式縮放圖片，如：<code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot;
+     xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+     width=&quot;100%&quot; height=&quot;100%&quot; viewBox=&quot;0 0 1536 2048&quot;&gt;
+    &lt;image width=&quot;1536&quot; height=&quot;2048&quot; xlink:href=&quot;../image/001.jpg&quot;/&gt;
+&lt;/svg&gt;</code><br />
+需自行修改長寬值與圖片檔名</li>
+</ol>
+
+<h3 class="m-top-1em50 gfont">OPF中的固定頁面指定</h3>
+
+<p class="indent-2em">OPF檔案中需要針對固定頁面輸入額外資訊，</p>
+
+<ol>
+<li><code>&lt;manifest&gt;</code>中固定版面頁面需要加入<code>properties=&quot;svg&quot;</code></li>
+<li><code>&lt;spine&gt;</code>中需要加入<code>properties=&quot;rendition:layout-pre-paginated rendition:spread-auto</code></li>
+<li>可額外於<code>&lt;spine&gt;</code>中加入<code>page-spread-right</code>或<code>page-spread-left</code>來指定左右頁。</li>
+</ol>
+
+<h3 class="m-top-1em50 gfont">顯示上的注意點</h3>
+
+<p class="indent-2em">並非所有閱讀程式都會對這種做法做特別調整，例如有些閱讀程式會將固定頁面放到滿版，有些會以文字書的邊界進行顯示。但確保不會令切割圖片為兩頁的狀況發生。</p>
+
+<p class="indent-2em">指定左右頁的語法僅會在部分支援的閱讀程式上生效，不保證通用。</p>
+
+
+
+
+</div>
+</body>
+</html>

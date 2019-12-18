@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 class="font-140per align-center gfont lspacing-0em33">製作解說</h2>
+<hr/>
+<h3 class="m-top-1em50 gfont">直橫排</h3>
+
+<p class="indent-2em">直橫排的基本設定於HTML元素中指定<code>writing-mode</code>，實務上由於HTML預設為橫排，所以僅需在直排時指定。但為求對應進階功能，如：直橫轉換。所以預設橫排也要指定。本範本直排所使用的class為<code>vrtl</code>，橫排為<code>hltr</code>，在<code>style-standard.css</code>中。</p>
+
+<h3 class="gfont">標題</h3>
+
+<p class="indent-2em">標題可使用html <code>h1～h6</code>標籤，本範本中分別按照標題層級設計了字級與前後邊界，可自行套用其他預設class覆蓋，在<code>book-style.css</code>中。</p>
+
+<p class="indent-2em">字級可使用<code>style-standard.css</code>中的預設class調整，<code>font-050per</code>為使用百分比單位的方式，此為內文的0.5字大小；或以內文字為基準的單位，<code>font-0em50</code>也為內文的0.5字大小。</p>
+
+<h3 class="gfont">段落</h3>
+
+<p class="indent-2em">段落使用html <code>p</code>標籤，本範本中預設段落不加間距，且在<code>book-style.css</code>中做了基礎設計，預設行距為1.7字、頭尾對齊、使用明體字。若需調整可自行套用其他預設class覆蓋。</p>
+
+<p class="indent-2em">段落未設定段首縮排。可套用<code>style-standard.css</code>中的預設class<code>indent-2em</code>，單位為內文字寬。一般中文書段首縮排二字。另外也可使用U+3000全形空白，在排版上會更為精確，唯不能後續透過CSS進行調整。</p>
+
+<h3 class="gfont">對齊</h3>
+
+<p class="indent-2em">文字對齊可使用在<code>style-standard.css</code>中的預設class，如對齊行頭為<code>align-left</code>或<code>align-start</code>，置中為<code>align-center</code>，對齊行尾為<code>align-right</code>或<code>align-end</code>。若段落以外的其他元素需要頭尾對齊，可套用<code>align-justify</code>。</p>
+
+<h3 class="gfont">字體</h3>
+
+<p class="indent-2em">在<code>style-standard.css</code>中整份文件預設字體使用明體（<code>serif</code>），個別元素若想要更換字體，可以使用預設的class，<code>gfont</code>為黑體（<code>sans-serif</code>），<code>kfont</code>為楷體（<code>cursive</code>, 視閱讀程式是否支援）。若想要指定明體，則可使用<code>mfont</code>。</p>
+
+<h3 class="gfont">強調與連結</h3>
+
+<p class="indent-2em">在<code>style-standard.css</code>中，連結（<code>a</code>元素）設定色彩為藍色，並加線（橫排為底線，直排為左側線）。</p>
+
+<p class="indent-2em">文字樣式上，可以使用既有的html標籤，如<code>b</code>為粗體字、<code>i</code>為斜體字（不建議套用在漢字上）、<code>u</code>為底線（直排為左側線）。</p>
+
+<p class="indent-2em">但強調上，推薦使用<code>em</code>與<code>strong</code>兩種語意html標籤來標注。這兩種標籤<code>em</code>預設為斜體、<code>strong</code>預設為粗體。可在<code>book-style.css</code>中自行設計為此兩種標籤設計css樣式。內文即使用此二標籤，分別套用<code>border-bottom: 1px solid black;</code>與<code>text-decoration-style: wavy;</code>呈現私名號與書名號。</p>
+
+<h3 class="gfont">字距</h3>
+
+<p class="indent-2em">無論標題或者段落，預設都為不加字距的緊排，若在設計上希望增加字距，在<code>style-standard.css</code>中提供了<code>lspacing-0em10</code>的class用於調整，數值以文字尺寸進行增加，由0.1字寬起，到5字寬。</p>
+
+<h3 class="gfont">行距</h3>
+
+<p class="indent-2em">段落預設行距為1.7字，即兩行文字間的空間為0.7字。若需要特別調整，在<code>style-standard.css</code>中提供了<code>line-height-1em</code>的class用於調整，數值以文字尺寸進行增加，由1字寬起（即兩行間無空隙），到5字寬。中文段落行距建議在1.5與2之間。</p>
+
+<h3 class="gfont">元素間距</h3>
+
+<p class="indent-2em">元素間隔主要分為「外邊界（Margin）」與「內邊界（Padding）」，外邊界class名為<code>m-</code>，內邊界class名為<code>p-</code>，後接方向：<code>left</code>,<code>top</code>,<code>bottom</code>, <code>right</code>，單位可使用百分比<code>015per</code>或字級<code>1em25</code>。</p>
+
+
+</div>
+</body>
+</html>

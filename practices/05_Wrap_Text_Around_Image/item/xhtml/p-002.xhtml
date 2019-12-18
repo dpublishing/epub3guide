@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>阿麗思漫遊奇境記</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 class="font-140per align-center gfont lspacing-0em33">製作解說</h2>
+<hr/>
+<h3 class="m-top-1em50 gfont">圖片尺寸</h3>
+
+<p class="indent-2em">圖片尺寸可分為滿版圖片與文內圖片。</p>
+
+<p class="indent-2em">滿版圖片為印刷書章節內佔整頁的插畫與圖表等，可使用<code>style-standard.css</code>裡預設的class <code>fit</code>來顯示。會符合頁面寬／高，以圖片最大尺寸為極限。</p>
+
+<p class="indent-2em">文內圖片的尺寸則是分為「寬度」與「高度」，各以「百分比」和「文字數」作為單位指定。如<code>height-050per</code>與<code>width-10em</code>。</p>
+
+<p class="indent-2em">請注意在一些閱讀程式中對寬高的指定有所限制，如：</p>
+
+<ul>
+<li>橫排不能指定高度，直排不能指定寬度。</li>
+<li>只能使用文字數作為單位，不能使用百分比。</li>
+</ul>
+
+<p class="indent-2em">一般來說，使用「文字數」為單位時，不會再指定最大尺寸。而在使用百分比時，會另外以文字數限制最大尺寸，避免在電腦、平板等大尺寸螢幕上過大。</p>
+
+<p class="indent-2em">通常長寬只會指定一邊，另一邊按原比例縮放，即套用class <code>height-auto</code>或<code>width-auto</code></p>
+
+<h3 class="m-top-1em50 gfont">圖片最大尺寸</h3>
+
+<p class="indent-2em">圖片最大尺寸也分為「寬度」與「高度」，各以「百分比」和「文字數」作為單位指定。如<code>max-height-050per</code>與<code>max-width-10em</code>。</p>
+
+<p class="indent-2em">如前所述，一般在不指定圖片尺寸的狀況下，會使用「百分比」單位來限制圖片在編排中的比例；而在已指定百分比為單位的狀況下，會另外使用「文字數」來限制最大尺寸，避免過大。</p>
+
+<p class="indent-2em">請注意Amazon Kindle格式不接受<code>max-height</code>與<code>max-width</code>等css語法，若造成錯誤可考慮刪除。</p>
+
+<h3 class="m-top-1em50 gfont">圖片對齊</h3>
+
+<p class="indent-2em">圖片的對齊方式有兩種：</p>
+
+<p class="indent-2em">一是在<code>img</code>標籤前後加上<code>p</code>標籤，使用<code>align-center</code>等方式把圖片當作段落內容來進行對齊。</p>
+
+<p class="indent-2em">二是使用<code>style-standard.css</code>裡設定的class <code>display-block</code>指定<code>img</code>以方塊元素顯示，再配合供方塊元素對齊的class，如<code>block-align-center</code>等來對齊。建議使用可依直橫排切換的<code>start</code>、<code>center</code>、<code>end</code>。</p>
+
+<h3 class="m-top-1em50 gfont">文繞圖</h3>
+
+<p class="indent-2em">文繞圖是本範本的實驗性功能，可以套用<code>style-standard.css</code>裡設定的class <code>float-start</code>或<code>float-left</code>讓圖片置於左側/上方，或以<code>float-end</code>或<code>float-right</code>讓圖片置於右側/下方。</p>
+
+<p class="indent-2em">請注意文繞圖的圖片與圖片間需要有足夠量的內文，不然可能會造成圖片堆疊的狀況發生。可以於文繞圖後的元素標籤加上class <code>float-clear</code>來避免相互重疊。</p>
+
+<h3 class="m-top-1em50 gfont">圖片邊界</h3>
+
+<p class="indent-2em">使用文繞圖時，會建議與文字相接側加上邊界，例如橫排圖片靠左排列時，會建議於右側加上一字寬邊界，可使用<code>style-standard.css</code>裡設定的class，絕對方向如：<code>m-right-1em</code>或者相對方向如：<code>end-1em</code>，來增加邊界。</p>
+
+<h3 class="m-top-1em50 gfont">框線</h3>
+
+<p class="indent-2em">圖片或者區塊元素，如<code>div</code>或使用<code>display-block</code>定義的元素，都可以加上框線，在<code>style-standard.css</code>裡設定了<code>k-solid</code>（實心）、<code>k-dotted</code>（點線）、<code>k-double</code>（雙重線）、<code>k-dashed</code>（虛線）四種線。</p>
+
+<p class="indent-2em">另外可以使用如<code>k-solid-top</code>等語法僅指定其中一邊框線顯示，若要進一步調整，則需修改css。線段寬度則以像素為單位，預設class如<code>k-3px</code>，線段色彩則如<code>k-red</code>。</p>
+</div>
+</body>
+</html>

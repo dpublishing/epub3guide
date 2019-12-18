@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="unique-id"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ rendition: http://www.idpf.org/vocab/rendition/#"
+>
+
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<!-- 作品名 -->
+<dc:title id="title">航海家金唱片</dc:title>
+
+<!-- 作者名 -->
+<dc:creator id="creator01">NASA</dc:creator>
+<meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
+<meta refines="#creator01" property="display-seq">1</meta>
+
+<!-- 出版社名 -->
+<dc:publisher id="publisher">台灣數位出版聯盟</dc:publisher>
+
+<!-- 語言 -->
+<dc:language>zh-TW</dc:language>
+
+<!-- 檔案id -->
+<dc:identifier id="unique-id">urn:uuid:d7a8d311-7cd0-40df-9443-65847561dec3</dc:identifier>
+
+<!-- 更新時間 -->
+<meta property="dcterms:modified">2019-11-01T00:00:00Z</meta>
+
+<!-- iBook指定字體 -->
+<meta property="ibooks:specified-fonts">true</meta>
+
+</metadata>
+
+<manifest>
+
+<!-- navigation -->
+<item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
+
+<!-- style -->
+<item media-type="text/css" id="book-style"     href="style/book-style.css"/>
+<item media-type="text/css" id="style-reset"    href="style/style-reset.css"/>
+<item media-type="text/css" id="style-standard" href="style/style-standard.css"/>
+<item media-type="text/css" id="style-advance"  href="style/style-advance.css"/>
+<item media-type="text/css" id="style-check"    href="style/style-check.css"/>
+<item media-type="text/css" id="font"    		href="style/font.css"/>
+
+<!-- image -->
+<item media-type="image/jpeg" id="cover"      href="image/cover.jpg" properties="cover-image"/>
+<item media-type="image/png" id="tdpf"      href="image/tdpf.png" />
+<item media-type="image/png" id="moc"      href="image/moc.png" />
+
+
+<!-- xhtml -->
+<item media-type="application/xhtml+xml" id="p-cover"       href="xhtml/p-cover.xhtml" properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-titlepage"   href="xhtml/p-titlepage.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-toc"         href="xhtml/p-toc.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-001"         href="xhtml/p-001.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-002"         href="xhtml/p-002.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-003"         href="xhtml/p-003.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-004"         href="xhtml/p-004.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-colophon"    href="xhtml/p-colophon.xhtml"/>
+
+<!-- font -->
+<item media-type="application/vnd.ms-opentype" href="font/notosthai.otf" id="_source.otf" />
+<item media-type="application/font-sfnt" href="font/bopomofo.ttf" id="_bopomofo.ttf" />
+
+
+</manifest>
+
+<spine page-progression-direction="ltr">
+<itemref linear="yes" idref="p-cover"       properties="rendition:layout-pre-paginated 
+													    rendition:spread-none 
+													    rendition:page-spread-center"/>
+<itemref linear="yes" idref="p-fmatter-001" properties="page-spread-left"/>
+<itemref linear="yes" idref="p-titlepage"   properties="page-spread-left"/>
+<itemref linear="yes" idref="p-toc"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-001"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-002"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-003"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-004"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-colophon"    properties="page-spread-left"/>
+
+</spine>
+
+</package>

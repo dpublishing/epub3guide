@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+html,
+body {
+  margin:    0;
+  padding:   0;
+  font-size: 0;
+}
+svg {
+  margin:    0;
+  padding:   0;
+}
+
+/* 以html排版的客製化css */
+
+.main {
+	height: 2048px;
+	width: 1444px;
+	background-image: url(../image/001.jpg);
+}
+
+.poem {
+	writing-mode: vertical-rl;
+	margin: 0 auto;
+	padding-top: 300px;
+
+}
+
+p {
+	font-size: 48px;
+	text-align: justify;
+	line-height: 1.7;
+	margin: 0;
+	color: white;
+}
+
+.-epub-media-overlay-active {
+	background-color: #ffe23c;
+	color: black;  }

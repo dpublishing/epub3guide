@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>全球報業營運趨勢與產業現況</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 class="font-140per align-center gfont lspacing-0em33">製作解說</h2>
+<hr/>
+<h3 class="gfont">表格</h3>
+
+<p class="indent-2em">書中若有遇到表格，為求在各平台上都能完整顯示，本範本建議將表格製作為圖片插入，不推薦使用html <code>table</code> 方式製作。若要以<code>table</code>方式製作，作者或出版社需要自行進行測試，避免顯示結果不一致。</p>
+
+<p class="indent-2em">此外，圖片與表格標籤內都必須包含<code>alt=&quot;&quot;</code>以符合EPUB規範，若要額外提供無障礙功能，讓視障者等能夠配合輔助功能了解圖片的內容，可在其中寫入表格與圖片的替代說明文字，朗讀引擎會視為文字讀出。</p>
+
+<p class="indent-2em">另外表格若使用包含透明圖層的PNG檔案時，建議內容底色設定為白色而非透明，主要是現在作業系統與閱讀程式都有深色的「夜間模式」，黑字黑框配合深色背景難以閱讀。</p>
+
+<h3 class="gfont">圖片對齊</h3>
+
+<p class="indent-2em">圖片的對齊方式有兩種：</p>
+
+<p class="indent-2em">一是在<code>img</code>標籤前後加上<code>p</code>標籤，使用<code>align-center</code>等方式把圖片當作段落內容來進行對齊。</p>
+
+<p class="indent-2em">二是使用<code>style-standard.css</code>裡設定的class <code>display-block</code>指定<code>img</code>以方塊元素顯示，再配合供方塊元素對齊的class，如<code>block-align-center</code>等來對齊。建議使用可依直橫排切換的<code>start</code>、<code>center</code>、<code>end</code>。</p>
+
+<h3 class="gfont">目錄中的表格與圖片一覽</h3>
+
+<p class="indent-2em">在EPUB的目錄中，除了<code>epub:type=&quot;nav&quot;</code>標準目錄外，還有各種內容的目錄，如<code>epub:type=&quot;lot&quot;</code>為list of tables，表格一覽；<code>epub:type=&quot;loi&quot;</code>為list of illustrations，圖片一覽。建議在製作學術論文類型的內容時多加使用。</p>
+
+<p class="indent-2em">此外，本範本中供機器讀取的目錄檔案<code>navigation-documents.xhtml</code>與顯示給讀者的目錄檔案<code>p-toc.xhtml</code>不同，實際上可以將前者加上css設計直接用於顯示。</p>
+
+<h3 class="gfont">分隔線</h3>
+
+<p class="indent-2em">若要在內容加入水平線（直排為垂直線），可使用html <code>hr</code>標籤，使用方式如斷行標籤<code>&lt;br /&gt;</code>。本範本在<code>style-standard.css</code>中預設線段為1像素寬，佔1字空間，會依直橫切換變更。</p>
+
+<h3 class="gfont">註釋樣式</h3>
+
+<p class="indent-2em">針對註釋符號，範本在<code>style-standard.css</code>中預設了class名<code>key</code>或者<code>ref</code>為預設樣式。字體尺寸比內文小，並且以上標字（直排時偏右側）位置顯示。</p>
+
+<p class="indent-2em">若需要直接指定上標與下標字，有兩種方法。一是直接使用html標籤<code>sup</code>為上標字（superscript）或<code>sub</code>為下標字（subsecript）。或者使用範本在<code>style-standard.css</code>中預設的class名<code>super</code>與<code>sub</code>來標注html內容亦可。</p>
+
+<p class="indent-2em">若想要調整橫排文字中特定文字與基準線對齊的方式，可使用範本在<code>style-standard.css</code>中預設的class如<code>valign-baseline</code>等調整，直排僅有部分適用。</p>
+
+<h3 class="gfont">註釋結構</h3>
+
+<p class="indent-2em">EPUB在排版上只能做到兩種註釋方式，一是章節註，該章節的註釋統一集合顯示於最後；一是書末註，在最後以一章節（xhtml檔案）整理註釋。無法像印刷書一般隔頁顯示註釋。</p>
+
+<p class="indent-2em">註釋的標記方式為於內文增加合印點，語法如<code>&lt;a epub:type=&quot;noteref&quot; href=&quot;#a1&quot; class=&quot;ref&quot; id=&quot;refa1&quot;&gt;1&lt;/a&gt;</code>，表示此連結會連到後面id為<code>a1</code>的註釋處，若採書末註的方式，則需加入xhtml檔名路徑。</p>
+
+<p class="indent-2em">而註釋內容語法如<code>&lt;p epub:type=&quot;footnote&quot; id=&quot;a1&quot; class=&quot;footnote&quot;&gt;註釋內容&lt;a href=&quot;#refa1&quot;&gt;↑&lt;/a&gt;&lt;/p&gt;</code> 最後連回合印的id <code>refa1</code>，避免讀者回不到看註釋前的位置。</p>
+
+<p class="indent-2em">許多閱讀程式，如Apple Books、Google Play Books都對註釋做了特別的處理，如跳出式顯示，其條件在於使用了<code>epub:type=&quot;noteref&quot;</code>與<code>epub:type=&quot;footnote&quot;</code>對應。另外Apple Books建議使用html <code>aside</code>標籤於註釋內容來隱藏不顯示，但並非所有閱讀程式都支援跳出顯示，所以建議使用<code>&lt;p&gt;</code>等預設會顯示的標籤即可。此外註釋內容設計比照內文。</p>
+</div>
+</body>
+</html>

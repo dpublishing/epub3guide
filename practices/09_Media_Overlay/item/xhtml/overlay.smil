@@ -1,0 +1,85 @@
+<smil 
+     xmlns="http://www.w3.org/ns/SMIL"
+     xmlns:epub="http://www.idpf.org/2007/ops"
+     version="3.0">
+    <body>
+		<seq id="id0" epub:textref="p-001.xhtml#poem" epub:type="bodymatter chapter">
+			<par id="p01">
+				<text src="p-001.xhtml#s01"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:00.000" clipEnd="0:00:02.722"/>
+			</par>	
+			<par id="p02">
+				<text src="p-001.xhtml#s02"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:02.722" clipEnd="0:00:05.834"/>
+			</par>					
+			<par id="p03">
+				<text src="p-001.xhtml#s03"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:05.834" clipEnd="0:00:08.849"/>
+			</par>					
+			<par id="p04">
+				<text src="p-001.xhtml#s04"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:08.849" clipEnd="0:00:11.993"/>
+			</par>					
+			<par id="p05">
+				<text src="p-001.xhtml#s05"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:11.993" clipEnd="0:00:15.527"/>
+			</par>					
+			<par id="p06">
+				<text src="p-001.xhtml#s06"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:15.527" clipEnd="0:00:18.963"/>
+			</par>					
+			<par id="p07">
+				<text src="p-001.xhtml#s07"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:18.963" clipEnd="0:00:21.913"/>
+			</par>					
+			<par id="p08">
+				<text src="p-001.xhtml#s08"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:21.913" clipEnd="0:00:25.089"/>
+			</par>					
+			<par id="p09">
+				<text src="p-001.xhtml#s09"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:25.089" clipEnd="0:00:28.299"/>
+			</par>					
+			<par id="p10">
+				<text src="p-001.xhtml#s10"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:28.299" clipEnd="0:00:30.568"/>
+			</par>					
+			<par id="p11">
+				<text src="p-001.xhtml#s11"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:30.7568" clipEnd="0:00:32.124"/>
+			</par>					
+			<par id="p12">
+				<text src="p-001.xhtml#s12"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:32.124" clipEnd="0:00:33.939"/>
+			</par>					
+			<par id="p13">
+				<text src="p-001.xhtml#s13"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:33.939" clipEnd="0:00:36.143"/>
+			</par>	
+			<par id="p14">
+				<text src="p-001.xhtml#s14"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:36.143" clipEnd="0:00:40.033"/>
+			</par>	
+			<par id="p15">
+				<text src="p-001.xhtml#s15"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:40.033" clipEnd="0:00:43.015"/>
+			</par>	
+			<par id="p16">
+				<text src="p-001.xhtml#s16"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:43.015" clipEnd="0:00:45.803"/>
+			</par>	
+			<par id="p17">
+				<text src="p-001.xhtml#s17"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:45.803" clipEnd="0:00:48.753"/>
+			</par>	
+			<par id="p18">
+				<text src="p-001.xhtml#s18"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:48.753" clipEnd="0:00:51.249"/>
+			</par>	
+			<par id="p19">
+				<text src="p-001.xhtml#s19"/>
+				<audio src="../media/water.m4a" clipBegin="0:00:51.249" clipEnd="0:00:54.718"/>
+			</par>	
+		</seq>
+    </body>
+</smil>

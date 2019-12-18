@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+html,
+body {
+  margin:    0;
+  padding:   0;
+  font-size: 0;
+}
+svg {
+  margin:    0;
+  padding:   0;
+}
+
+/* 以html排版的客製化css */
+
+
+
+.header {
+	opacity: 0.5;
+}
+
+.footer {
+	opacity: 0.5;
+	position: absolute;
+	top: 1848px;
+	left: 0;
+}
+
+.title {
+	height: 200px;
+}
+
+.des {
+	width: 1200px; 
+    -webkit-column-count: 2;
+	-webkit-column-gap: 80px;
+	margin-left: auto; 
+	margin-right: auto; 
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	padding: 20px;
+
+	}
+
+h1 {
+	font-size: 64px;
+	text-align: center;
+}
+
+.video {
+	width: 712px;
+	margin: 0;
+	padding: 30px 0 0 0;
+	float: left;
+	display: block;
+
+}
+
+.audio {
+	width: 712px;
+	margin: 0;
+	padding: 360px 0 0 0;
+	text-align: center;
+	display: block;
+    float: right;
+}
+
+
+video {
+	width: 480px;
+	margin-left: auto;
+	margin-right: 80px;
+	height: auto;
+	display: block;
+}
+
+audio {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.caption {
+	font-size: 24px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+
+p {
+	font-size: 32px;
+	text-align: justify;
+	line-height: 1.7;
+	margin: 0;
+}
