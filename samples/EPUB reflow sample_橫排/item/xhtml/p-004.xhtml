@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2>預設CSS樣式表說明</h2>
+
+<p class="indent-2em">本範本的style資料夾中提供六組預設樣式表範本，以下為各CSS檔案的說明。</p>
+
+
+<h3 class="gfont">・book-style.css</h3>
+
+<ul>
+<li>為在內容文件（XHTML）中主要連結的樣式表</li>
+<li>以此樣式表匯入（@import）其他樣式表內容</li>
+<li>提供書籍客製化設計調整，若要對排版設計進行調整，請修改本CSS檔案中的內容</li>
+</ul>
+
+<h3 class="gfont">・style-reset.css</h3>
+
+<ul>
+<li>本樣式表的主要目的為將UA（瀏覽器引擎，如Webkit等）的預設樣式表重置，以避免在不同UA之間造成不一致的顯示結果。</li>
+</ul>
+
+<h3 class="gfont">・style-standard.css</h3>
+
+<ul>
+<li>本樣式表為主要樣式設定，包含文字方向、位置對齊、縮排與字體樣式等等，可參考此處預設值對內容加入層級（Class）進行排版調整，若有需要客製化修改之處，請不要直接修改本樣式表，請到book-style.css調整</li>
+</ul>
+
+<h3 class="gfont">・style-advance.css</h3>
+
+<ul>
+<li>本樣式表主要提供兩項功能：
+<ol>
+<li>以邏輯方向（start, end, before, after）調整尺寸</li>
+<li>對應子元素排版方向改變時（如直排中的橫排Box）的樣式調整</li>
+</ol></li>
+</ul>
+
+<h3 class="gfont">・style-check.css</h3>
+
+<ul>
+<li>本樣式表為將以範本製作的電子書，在某些版本的Windows上測試時，以求直排字型能正常顯示所設</li>
+<li>本樣式表預設不在book-style.css中匯入</li>
+</ul>
+
+<h3 class="gfont">・font.css</h3>
+
+<ul>
+<li>本樣式表主要提供嵌入字體時使用，作為範例檔案</li>
+<li>本樣式表預設不在book-style.css中匯入，有需求時請於book-style.css匯入</li>
+</ul>
+
+</div>
+</body>
+</html>

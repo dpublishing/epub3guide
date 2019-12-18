@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">基本樣式表</h3>
+
+<h4 id="toc_index_2"><u>CSS值的限制與實作基準</u></h4>
+
+<p class="indent-2em">依照現時點各瀏覽器引擎的CSS支援狀況，本文件提供製作時可通用的最底限CSS屬性。當遇到排版相關基礎屬性在不同RS上顯示不同時，主要以Readium為基準。當使用其他CSS屬性時，出版社理解支援的不一致，需自付責任。</p>
+
+<h4 id="toc_index_3"><u>使用預設樣式表集</u></h4>
+
+<p class="indent-2em">本文件提供了基本樣式表集，主要希望在製作時能直接使用之中的各項Class。但也可以調整各CSS檔案，新增Class或者修改既有的Class名稱，或者在既有的Class中追加新的屬性。所以RS不可以直接使用樣式表集中的Class，而是透過這份樣式表了解所該支援的排版表現。</p>
+
+<h4 id="toc_index_4"><u>不使用替代樣式表</u></h4>
+
+<p class="indent-2em">RS可以自行決定是否讓使用者自行切換直排或者橫排。</p>
+
+<p class="indent-2em">但RS實作時，建議考量到以下兩點：</p>
+
+<ul>
+<li>預設使用作品檔案中，預先指定的排列方向顯示；</li>
+<li>當切換到非作品檔案預先指定的排列方向顯示時，希望能在功能介紹或者常見問題中寫出可能會與作者以及製作者預設的表現形式有所不同。</li>
+</ul>
+
+<p class="indent-2em">現狀大多數RS不讓使用者自行切換排版方向，主要是實作切換替代樣式表的環境不多，也缺少檢查用的工具與指標。同時不依存排版方向設計的邏輯方向指定CSS（如margin-start）還尚未完善。使得要切換排版方向非常困難，依照狀況不同會花上相當的時間調整。</p>
+
+<h4 id="toc_index_5"><u>盡量不使用-epub-Prefix的CSS屬性</u></h4>
+
+<p class="indent-2em">雖然在EPUB 3.0規範中為了解決相容性問題，而有制定許多以<code>-epub-</code>Prefix來額外處理的CSS屬性，但由於在EPUB 3.2版規範中捨棄了這些屬性，所以本文件不推薦使用<code>-epub-</code>Prefix的CSS數值。</p>
+
+<p class="indent-2em">而因為多數行動裝置作業系統使用Webkit作為核心，所以在不具Prefix的CSS屬性無法使用時，可以追加<code>-webkit-</code>以求相容。為求後續逐步調整變化，建議並列而非取代。</p>
+
+<h4 id="toc_index_6"><u>使用@import規則</u></h4>
+
+<p class="indent-2em">為求讓各XHTML內連結CSS檔案的記載方式簡單一致，並且讓CSS能夠被客制化調整。本文件範本在XHTML內使用link元素讀取主要CSS，並且使用@import規則，在主要CSS檔案內部讀入所需的各CSS檔案。也就是RS需要實作讓XHTML讀入複數CSS的功能。</p>
+
+<p class="indent-2em">但不推薦在以@import讀入的CSS檔案中，再使用@import功能。</p>
+
+<h4 id="toc_index_7"><u>需支援嵌入字體</u></h4>
+
+<p class="indent-2em">RS需支援嵌入字體。本文件建議將嵌入字體應用於中文、日文以外的語言，如韓文、泰文、越南文等常與中文混合排列的語言；若要使用中文、日文為嵌入字體，則需預先按照使用的文字製作成字體子集（subset）。</p>
+
+<h4 id="toc_index_8"><u>指定html元素</u></h4>
+
+<p class="indent-2em">html元素內原則上除了排版方向（writing-mode）與全體字體指定（font-family）外，不指定其他值。以上兩者都應該繼承至body元素中。</p>
+
+<h4 id="toc_index_9"><u>覆蓋RS的預設樣式表</u></h4>
+
+<p class="indent-2em">書籍檔案中的CSS應該覆蓋RS中原有的預設樣式表。若RS內已經有預設樣式表，推薦對出版社公開其規格。</p>
+	    </div>
+    </body>
+</html>

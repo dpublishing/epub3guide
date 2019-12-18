@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>OPF檔案</u></h4>
+
+<p class="indent-2em">[檔名：standard.opf]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>與文字重排型的差異為以下各點：
+<ul>
+<li>於<code>&lt;package&gt;</code>元素中追加prefix</li>
+<li>於<code>&lt;!--Fixed-Layout Document指定--&gt;</code>部份追加兩個<code>&lt;meta&gt;</code>元素</li>
+<li>樣式表僅使用fixed-layout.cc</li>
+<li>封面頁的<code>&lt;spine&gt;</code>元素中的<code>&lt;itemref&gt;</code>追加<code>properties="rendition:page-spread-center</code></li>
+<li>封面頁以外的各頁面，<code>&lt;spine&gt;</code>元素中的<code>&lt;itemref&gt;</code>左右頁必須成對</li>
+<li>其他與文字重排相同</li>
+</ul></li>
+<li><code>&lt;spine&gt;</code>元素中的<code>&lt;itemref&gt;</code>，若idref重複的話會出現問題，如無法顯示，頁面迴圈，當想讓相同圖片出現兩次以上時，推薦使用不同的xhtml（如第二次顯示空白頁時，使用white2.xhtml等）</li>
+</ul>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="<span class="color-blue">unique-id</span>"
+ prefix="rendition: http://www.idpf.org/vocab/rendition/#
+&gt;
+
+    &lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+
+        &lt;!-- 書名 --&gt;
+        &lt;dc:title id="title"&gt;<span class="color-blue">書名１</span>&lt;/dc:title&gt;
+
+        &lt;!-- 作者名 --&gt;
+        &lt;dc:creator id="creator01"&gt;<span class="color-blue">作者名１</span>&lt;/dc:creator&gt;
+        &lt;meta refines="#creator01" property="role" scheme="marc:relators"&gt;<span class="color-blue">aut</span>&lt;/meta&gt;
+        &lt;meta refines="#creator01" property="display-seq"&gt;<span class="color-blue">1</span>&lt;/meta&gt;
+        &lt;dc:creator id="creator02"&gt;<span class="color-blue">作者名２</span>&lt;/dc:creator&gt;
+        &lt;meta refines="#creator02" property="role" scheme="marc:relators"&gt;<span class="color-blue">aut</span>&lt;/meta&gt;
+        &lt;meta refines="#creator02" property="display-seq"&gt;<span class="color-blue">2</span>&lt;/meta&gt;
+
+        &lt;!-- 出版社名 --&gt;
+        &lt;dc:publisher id="publisher"&gt;<span class="color-blue">出版社名</span>&lt;/dc:publisher&gt;
+
+        &lt;!-- 語言 --&gt;
+        &lt;dc:language&gt;zh-TW&lt;/dc:language&gt;
+
+        &lt;!-- 書籍id --&gt;
+        &lt;dc:identifier id="<span class="color-blue">unique-id</span>"&gt;<span class="color-blue">urn:uuid:860ddf31-55a4-449a-8cc9-3c1837657a15</span>&lt;/dc:identifier&gt;
+
+        &lt;!-- 更新日期 --&gt;
+        &lt;meta property="dcterms:modified"&gt;<span class="color-blue">2014-01-01T00:00:00Z</span>&lt;/meta&gt;
+
+        &lt;!-- Fixed-Layout Documents指定 --&gt;
+        <span class="color-red">&lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;
+        &lt;meta property="rendition:spread"&gt;landscape&lt;/meta&gt;</span>
+
+    &lt;/metadata&gt;
+
+    &lt;manifest&gt;
+
+        &lt;!-- navigation --&gt;
+        &lt;item media-type="application/xhtml+xml" id="<span class="color-blue">toc</span>" href="<span class="color-blue">navigation-documents.xhtml</span>" <span class="color-red">properties="nav"</span>/&gt;
+
+        &lt;!-- style --&gt;
+        &lt;item media-type="text/css" id="<span class="color-red">fixed-layout</span>" href="<span class="color-red">style/fixed-layout.css</span>"/&gt;
+
+        &lt;!-- image --&gt;
+        &lt;item media-type="image/<span class="color-blue">jpeg</span>" id="cover"      href="image/cover.<span class="color-blue">jpg</span>" <span class="color-red">properties="cover-image"</span>/&gt;
+        <span class="color-black">&lt;item media-type="image/jpeg" id="i-white"    href="image/i-white.jpg"/&gt;
+        &lt;item media-type="image/jpeg" id="i-001"      href="image/i-001.jpg"/&gt;
+        &lt;item media-type="image/jpeg" id="i-002"      href="image/i-002.jpg"/&gt;
+        &lt;item media-type="image/jpeg" id="i-003"      href="image/i-003.jpg"/&gt;
+        &lt;item media-type="image/jpeg" id="i-004"      href="image/i-004.jpg"/&gt;
+        &lt;item media-type="image/jpeg" id="i-005"      href="image/i-005.jpg"/&gt;
+        &lt;item media-type="image/jpeg" id="i-colophon" href="image/i-colophon.jpg"/&gt;</span>
+
+        &lt;!-- xhtml --&gt;
+        <span class="color-black">&lt;item media-type="application/xhtml+xml" id="p-cover"    href="xhtml/p-cover.xhtml"    properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-white"    href="xhtml/p-white.xhtml"    properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-001"      href="xhtml/p-001.xhtml"      properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-002"      href="xhtml/p-002.xhtml"      properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-003"      href="xhtml/p-003.xhtml"      properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-004"      href="xhtml/p-004.xhtml"      properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-005"      href="xhtml/p-005.xhtml"      properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-colophon" href="xhtml/p-colophon.xhtml" properties="svg"/&gt;
+        &lt;item media-type="application/xhtml+xml" id="p-white2"   href="xhtml/p-white2.xhtml"   properties="svg"/&gt;</span>
+
+    &lt;/manifest&gt;
+
+    &lt;spine page-progression-direction="<span class="color-blue">rtl</span>"&gt;
+
+        <span class="color-black">&lt;itemref linear="yes" idref="p-cover"    <span class="color-red">properties="rendition:page-spread-center"</span>/&gt;
+        &lt;itemref linear="yes" idref="p-white"    properties="page-spread-right"/&gt;
+        &lt;itemref linear="yes" idref="p-001"      properties="page-spread-left"/&gt;
+        &lt;itemref linear="yes" idref="p-002"      properties="page-spread-right"/&gt;
+        &lt;itemref linear="yes" idref="p-003"      properties="page-spread-left"/&gt;
+        &lt;itemref linear="yes" idref="p-004"      properties="page-spread-right"/&gt;
+        &lt;itemref linear="yes" idref="p-005"      properties="page-spread-left"/&gt;
+        &lt;itemref linear="yes" idref="p-colophon" properties="page-spread-right"/&gt;
+        &lt;itemref linear="yes" idref="p-white2"   properties="page-spread-left"/&gt;</span>
+
+    &lt;/spine&gt;
+
+&lt;/package&gt;</span>
+</code></pre>
+</div>
+    </body>
+</html>

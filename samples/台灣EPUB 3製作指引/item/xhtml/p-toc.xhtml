@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-toc">
+<div class="main">
+
+<h1>目錄</h1>
+<p><br/></p>
+<p><br/></p>
+
+<div class="m-left-1em">
+<p><a href="p-cover.xhtml">封面</a></p>
+<p><a href="p-toc.xhtml">目錄</a></p>
+<p><a href="p-001.xhtml#toc_index_1"><span>關於本文件</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-001.xhtml#toc_index_2"><span>目的</span></a></p>
+		<p><a href="p-001.xhtml#toc_index_3"><span>概要</span></a></p>
+		<p><a href="p-001.xhtml#toc_index_4"><span>需求層級</span></a></p>
+		<p><a href="p-001.xhtml#toc_index_5"><span>範本檔案</span></a></p>
+	</div>
+<p><a href="p-002.xhtml#toc_index_1"><span>對閱讀程式的需求</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-002.xhtml#toc_index_2"><span>文件檔案的基礎</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-002.xhtml#toc_index_3"><span>文字編碼</span></a></p>
+		<p><a href="p-002.xhtml#toc_index_4"><span>換行符號</span></a></p>
+		<p><a href="p-002.xhtml#toc_index_5"><span>原始碼中的空白、換行與註解處理</span></a></p>
+	</div>
+<p><a href="p-003.xhtml#toc_index_1"><span>包裝文件（Package Document/OPF檔案）</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-003.xhtml#toc_index_2"><span>遵守翻頁方向</span></a></p>
+		<p><a href="p-003.xhtml#toc_index_3"><span>遵守Spine元素指定規則</span></a></p>
+		<p><a href="p-003.xhtml#toc_index_4"><span>不使用已廢止的元素</span></a></p>
+		<p><a href="p-003.xhtml#toc_index_5"><span>處理Metadata等</span></a></p>
+	</div>
+<p><a href="p-004.xhtml#toc_index_1"><span>導覽文件（EPUB Navigation Document）</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-004.xhtml#toc_index_2"><span>處理導覽文件</span></a></p>
+		<p><a href="p-004.xhtml#toc_index_3"><span>顯示導覽文件</span></a></p>
+	</div>
+<p><a href="p-005.xhtml#toc_index_1"><span>基本樣式表</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-005.xhtml#toc_index_2"><span>CSS值的限制與實作基準</span></a></p>
+		<p><a href="p-005.xhtml#toc_index_3"><span>使用預設樣式表集</span></a></p>
+		<p><a href="p-005.xhtml#toc_index_4"><span>不使用替代樣式表</span></a></p>
+		<p><a href="p-005.xhtml#toc_index_5"><span>盡量不使用-epub-Prefix的CSS屬性</span></a></p>
+		<p><a href="p-005.xhtml#toc_index_6"><span>使用@import規則</span></a></p>
+		<p><a href="p-005.xhtml#toc_index_7"><span>需支援嵌入字體</span></a></p>
+		<p><a href="p-005.xhtml#toc_index_8"><span>指定html元素</span></a></p>
+		<p><a href="p-005.xhtml#toc_index_9"><span>覆蓋RS的預設樣式表</span></a></p>
+	</div>
+<p><a href="p-006.xhtml#toc_index_1"><span>文字與字體</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-006.xhtml#toc_index_2"><span>需包含的文字數量</span></a></p>
+		<p><a href="p-006.xhtml#toc_index_3"><span>字體</span></a></p>
+		<p><a href="p-006.xhtml#toc_index_4"><span>直排時的文字方向</span></a></p>
+		<p><a href="p-006.xhtml#toc_index_5"><span>直排時的對齊</span></a></p>
+	</div>
+<p><a href="p-007.xhtml#toc_index_1"><span>圖片</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-007.xhtml#toc_index_2"><span>圖片的種類</span></a></p>
+		<p><a href="p-007.xhtml#toc_index_3"><span>造字圖片</span></a></p>
+		<p><a href="p-007.xhtml#toc_index_4"><span>指定圖片與Block元素的尺寸以及最大尺寸</span></a></p>
+		<p><a href="p-007.xhtml#toc_index_5"><span>與頁面進行方向寬度相等或者小於寬度</span></a></p>
+		<p><a href="p-007.xhtml#toc_index_6"><span>大於頁面進行方向時</span></a></p>
+		<p><a href="p-007.xhtml#toc_index_7"><span>縮小圖片，讓使用者操作放大</span></a></p>
+	</div>
+<p><a href="p-008.xhtml#toc_index_1"><span>封面圖片</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-008.xhtml#toc_index_2"><span>替代圖片</span></a></p>
+		<p><a href="p-008.xhtml#toc_index_3"><span>檔案名稱</span></a></p>
+	</div>
+<p><a href="p-009.xhtml#toc_index_1"><span>頁面邊界</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-009.xhtml#toc_index_2"><span>Body元素的留白</span></a></p>
+		<p><a href="p-009.xhtml#toc_index_3"><span>內文顯示區域內的邊界</span></a></p>
+	</div>
+<p><a href="p-010.xhtml#toc_index_1"><span>其他HTML元素</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-010.xhtml#toc_index_2"><span>空白行所使用的&lt;br/&gt;</span></a></p>
+		<p><a href="p-010.xhtml#toc_index_3"><span>注音符號使用的&lt;ruby&gt;</span></a></p>
+		<p><a href="p-010.xhtml#toc_index_4"><span>頁面內連結（錨點連結）</span></a></p>
+		<p><a href="p-010.xhtml#toc_index_5"><span>註釋連結</span></a></p>
+		<p><a href="p-010.xhtml#toc_index_6"><span>nav與列表元素</span></a></p>
+	</div>
+<p><a href="p-011.xhtml#toc_index_1"><span>表格</span></a></p>
+<p><a href="p-011.xhtml#toc_index_2"><span>數學等計算公式</span></a></p>
+<p><a href="p-012.xhtml#toc_index_1"><span>其他CSS的解釋方法</span></a></p>
+	<div class="m-left-1em">
+		<p><a href="p-012.xhtml#toc_index_2"><span>書名號與私名號</span></a></p>
+		<p><a href="p-012.xhtml#toc_index_3"><span>縱中橫排</span></a></p>
+		<p><a href="p-012.xhtml#toc_index_4"><span>不顯示</span></a></p>
+	</div>
+<p><a href="p-013.xhtml#toc_index_1"><span>標點符號</span></a></p>
+<p><a href="p-014.xhtml#toc_index_1"><span>固定版面EPUB</span></a></p>
+<p><a href="p-015.xhtml#toc_index_1"><span>其他</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-015.xhtml#toc_index_2"><span>Script</span></a></p>
+</div>
+<p><a href="p-016.xhtml#toc_index_1"><span>RS需支援的HTML元素以及CSS屬性</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-016.xhtml#toc_index_2"><span>【HTML】</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-016.xhtml#toc_index_3"><span>根元素</span></a></p>
+<p><a href="p-016.xhtml#toc_index_4"><span>文件的metadata</span></a></p>
+<p><a href="p-016.xhtml#toc_index_5"><span>區塊元素</span></a></p>
+<p><a href="p-016.xhtml#toc_index_6"><span>內容群組化</span></a></p>
+<p><a href="p-016.xhtml#toc_index_7"><span>為文字加入意義</span></a></p>
+<p><a href="p-016.xhtml#toc_index_8"><span>插入元素</span></a></p>
+</div>
+<p><a href="p-016.xhtml#toc_index_9"><span>【CSS】</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-016.xhtml#toc_index_10"><span>値</span></a></p>
+<p><a href="p-016.xhtml#toc_index_11"><span>選擇器</span></a></p>
+<p><a href="p-016.xhtml#toc_index_12"><span>屬性選擇器</span></a></p>
+<p><a href="p-016.xhtml#toc_index_13"><span>關聯組合</span></a></p>
+<p><a href="p-016.xhtml#toc_index_14"><span>虛擬元素</span></a></p>
+<p><a href="p-016.xhtml#toc_index_15"><span>色彩、背景</span></a></p>
+<p><a href="p-016.xhtml#toc_index_16"><span>Margin</span></a></p>
+<p><a href="p-016.xhtml#toc_index_17"><span>Padding</span></a></p>
+<p><a href="p-016.xhtml#toc_index_18"><span>Border</span></a></p>
+<p><a href="p-016.xhtml#toc_index_19"><span>Font</span></a></p>
+<p><a href="p-016.xhtml#toc_index_20"><span>Text</span></a></p>
+<p><a href="p-016.xhtml#toc_index_21"><span>寬與高</span></a></p>
+<p><a href="p-016.xhtml#toc_index_22"><span>顯示</span></a></p>
+<p><a href="p-016.xhtml#toc_index_23"><span>Paged Media</span></a></p>
+<p><a href="p-016.xhtml#toc_index_24"><span>CSS Text Level 3</span></a></p>
+<p><a href="p-016.xhtml#toc_index_25"><span>CSS Writing Modes Module Level 3</span></a></p>
+<p><a href="p-016.xhtml#toc_index_26"><span>CSS Fonts Level 3</span></a></p>
+<p><a href="p-016.xhtml#toc_index_27"><span>CSS Text Decoration Level 3</span></a></p>
+</div>
+</div>
+<p><a href="p-017.xhtml#toc_index_1"><span>RS不需支援的HTML元素與CSS屬性</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-017.xhtml#toc_index_2"><span>【HTML】</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-017.xhtml#toc_index_3"><span>文件的Metadata</span></a></p>
+<p><a href="p-017.xhtml#toc_index_4"><span>Scripting</span></a></p>
+<p><a href="p-017.xhtml#toc_index_5"><span>區塊元素</span></a></p>
+<p><a href="p-017.xhtml#toc_index_6"><span>內容群組化</span></a></p>
+<p><a href="p-017.xhtml#toc_index_7"><span>為文字加入意義</span></a></p>
+<p><a href="p-017.xhtml#toc_index_8"><span>修正</span></a></p>
+<p><a href="p-017.xhtml#toc_index_9"><span>插入內容</span></a></p>
+<p><a href="p-017.xhtml#toc_index_10"><span>表格檔案</span></a></p>
+<p><a href="p-017.xhtml#toc_index_11"><span>表單</span></a></p>
+<p><a href="p-017.xhtml#toc_index_12"><span>互動元素</span></a></p>
+</div>
+<p><a href="p-017.xhtml#toc_index_13"><span>【CSS】</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-017.xhtml#toc_index_14"><span>値</span></a></p>
+<p><a href="p-017.xhtml#toc_index_15"><span>選擇器</span></a></p>
+<p><a href="p-017.xhtml#toc_index_16"><span>@規則</span></a></p>
+<p><a href="p-017.xhtml#toc_index_17"><span>色彩、背景</span></a></p>
+<p><a href="p-017.xhtml#toc_index_18"><span>字體</span></a></p>
+<p><a href="p-017.xhtml#toc_index_19"><span>文字</span></a></p>
+<p><a href="p-017.xhtml#toc_index_20"><span>寬高</span></a></p>
+<p><a href="p-017.xhtml#toc_index_21"><span>顯示</span></a></p>
+<p><a href="p-017.xhtml#toc_index_22"><span>Paged Media</span></a></p>
+<p><a href="p-017.xhtml#toc_index_23"><span>列表</span></a></p>
+<p><a href="p-017.xhtml#toc_index_24"><span>文繞圖</span></a></p>
+<p><a href="p-017.xhtml#toc_index_25"><span>位置</span></a></p>
+<p><a href="p-017.xhtml#toc_index_26"><span>表格</span></a></p>
+<p><a href="p-017.xhtml#toc_index_27"><span>挿入</span></a></p>
+<p><a href="p-017.xhtml#toc_index_28"><span>Outline</span></a></p>
+<p><a href="p-017.xhtml#toc_index_29"><span>CSS 3.0 Speech</span></a></p>
+<p><a href="p-017.xhtml#toc_index_30"><span>CSS Text Level 3</span></a></p>
+<p><a href="p-017.xhtml#toc_index_31"><span>CSS Writing Modes Module Level 3</span></a></p>
+<p><a href="p-017.xhtml#toc_index_32"><span>CSS3 Multi Column</span></a></p>
+<p><a href="p-017.xhtml#toc_index_33"><span>CSS 2.0</span></a></p>
+<p><a href="p-017.xhtml#toc_index_34"><span>EPUB 3</span></a></p>
+</div>
+
+</div>
+
+</div>
+
+<p><a href="p-018.xhtml#toc_index_1"><span>出版社須提供的資料</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-018.xhtml#toc_index_2"><span>圖片與內容文件與推薦、限制尺寸及容量不同的對應方式</span></a></p>
+<p><a href="p-018.xhtml#toc_index_3"><span>出版社特有頁面的範本與樣式表</span></a></p>
+<p><a href="p-018.xhtml#toc_index_4"><span>體裁的簡化規則</span></a></p>
+<p><a href="p-018.xhtml#toc_index_5"><span>常會出問題的要素</span></a></p>
+</div>
+
+<p><a href="p-019.xhtml#toc_index_1"><span>基本製作方式</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-019.xhtml#toc_index_2"><span>使用最新版的EPUBCHECK，檔案不能有任何錯誤（Error）</span></a></p>
+<p><a href="p-019.xhtml#toc_index_3"><span>基本的資料夾構成與檔案名</span></a></p>
+<p><a href="p-019.xhtml#toc_index_4"><span>檔案規格</span></a></p>
+<p><a href="p-019.xhtml#toc_index_5"><span>簡單的編碼規則</span></a></p>
+</div>
+
+<p><a href="p-020.xhtml#toc_index_1"><span>範本：流式版型</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-020.xhtml#toc_index_2"><span>必要的設定檔案</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-020.xhtml#toc_index_3"><span>mimetype</span></a></p>
+<p><a href="p-020.xhtml#toc_index_4"><span>META-INF中的container.xml</span></a></p>
+<p><a href="p-020.xhtml#toc_index_5"><span>導覽文件</span></a></p>
+<p><a href="p-020.xhtml#toc_index_6"><span>OPF檔案</span></a></p>
+</div>
+
+<p><a href="p-021.xhtml#toc_index_1"><span>XHTML文件檔案</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-021.xhtml#toc_index_2"><span>關於範本內的顏色標注</span></a></p>
+<p><a href="p-021.xhtml#toc_index_3"><span>關於排版方向</span></a></p>
+<p><a href="p-021.xhtml#toc_index_4"><span>封面頁</span></a></p>
+<p><a href="p-021.xhtml#toc_index_5"><span>正文前（本例為插畫）</span></a></p>
+<p><a href="p-022.xhtml#toc_index_1"><span>書名頁</span></a></p>
+<p><a href="p-023.xhtml#toc_index_1"><span>電子版用的說明頁面</span></a></p>
+<p><a href="p-024.xhtml#toc_index_1"><span>目錄頁</span></a></p>
+<p><a href="p-025.xhtml#toc_index_1"><span>章名頁</span></a></p>
+<p><a href="p-026.xhtml#toc_index_1"><span>內文頁面（直排）</span></a></p>
+<p><a href="p-027.xhtml#toc_index_1"><span>內文頁面（橫排）</span></a></p>
+<p><a href="p-028.xhtml#toc_index_1"><span>內文頁面（只有圖片）</span></a></p>
+<p><a href="p-029.xhtml#toc_index_1"><span>指定頁面整體的對齊位置</span></a></p>
+<p><a href="p-030.xhtml#toc_index_1"><span>版權頁</span></a></p>
+<p><a href="p-031.xhtml#toc_index_1"><span>廣告頁</span></a></p>
+</div>
+
+<p><a href="p-032.xhtml#toc_index_1"><span>【參考資訊】本文件不推薦的項目</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-032.xhtml#toc_index_2"><span>直排文字居中頁面</span></a></p>
+</div>
+
+</div>
+
+<p><a href="p-033.xhtml#toc_index_1"><span>範本：固定版面型</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-033.xhtml#toc_index_2"><span>必要的設定檔案</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-033.xhtml#toc_index_3"><span>mimetype</span></a></p>
+<p><a href="p-033.xhtml#toc_index_4"><span>META-INF中的container.xml</span></a></p>
+<p><a href="p-034.xhtml#toc_index_1"><span>導覽文件</span></a></p>
+<p><a href="p-035.xhtml#toc_index_1"><span>OPF檔案</span></a></p>
+</div>
+
+<p><a href="p-036.xhtml#toc_index_1"><span>XHTML文件檔案</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-036.xhtml#toc_index_2"><span>關於範本內的顏色標注</span></a></p>
+<p><a href="p-036.xhtml#toc_index_3"><span>封面頁</span></a></p>
+<p><a href="p-037.xhtml#toc_index_1"><span>內文頁</span></a></p>
+<p><a href="p-037.xhtml#toc_index_2"><span>內文ImageMap（Clickable Map）頁面</span></a></p>
+</div>
+
+</div>
+
+<p><a href="p-038.xhtml#toc_index_1"><span>樣式一覽</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-039.xhtml#toc_index_1"><span>CSS檔案的使用規則</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-039.xhtml#toc_index_2"><span>支援@import讀入CSS</span></a></p>
+<p><a href="p-039.xhtml#toc_index_3"><span>原則上不調整預設CSS</span></a></p>
+<p><a href="p-039.xhtml#toc_index_4"><span>修改、新增請自行負責</span></a></p>
+<p><a href="p-039.xhtml#toc_index_5"><span>避免id重複</span></a></p>
+<p><a href="p-039.xhtml#toc_index_6"><span>製作或追加固定Class</span></a></p>
+<p><a href="p-039.xhtml#toc_index_7"><span>固定Class的種類</span></a></p>
+<div class="m-left-1em">
+<p><a href="p-039.xhtml#toc_index_8"><span>Ａ・不分直橫排，內容不需要修改的項目</span></a></p>
+<p><a href="p-039.xhtml#toc_index_9"><span>Ｂ・隨直橫排而需要調整語法的項目</span></a></p>
+<p><a href="p-039.xhtml#toc_index_10"><span>參考資料（本文件不推薦使用）</span></a></p>
+<p><a href="p-039.xhtml#toc_index_11"><span>Ｃ・直排與橫排混排時的對應方法</span></a></p>
+</div>
+
+</div>
+
+<p><a href="p-039.xhtml#toc_index_12"><span>客製化</span></a></p>
+<p><a href="p-039.xhtml#toc_index_13"><span>製作自有的CSS</span></a></p>
+</div>
+
+</div>
+
+
+</div>
+</body>
+</html>

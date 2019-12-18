@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">其他CSS的解釋方法</h3>
+
+<h4 id="toc_index_2"><u>書名號與私名號</u></h4>
+
+<p class="indent-2em">當要在內容加上私名號時，請使用CSS的text-decoration語法，橫排時值為underline，直排時值為overline，而標注書名號時，則應該加上<code>text-decoration: wavy</code>（目前需-webkit- prefix）。</p>
+
+<p class="indent-2em">目前瀏覽器處理連續出現的私名號與書名號時，線段不會分開。建議RS自行開發切割線段的功能。</p>
+
+<h4 id="toc_index_3"><u>縱中橫排</u></h4>
+
+<p class="indent-2em">使用CSS屬性<code>text-combine: horizontal;</code>與<code>text-combine-horizontal: all;</code>可以將直排文字中的半型英文與數字與符號轉橫。</p>
+
+<p class="indent-2em">縱中橫排的文字列必需壓縮視為一個文字，必要時可以突出一文字的寬度，延伸到行距間。</p>
+
+<h4 id="toc_index_4"><u>不顯示</u></h4>
+
+<p class="indent-2em">必需正確處理<code>display: none</code>。</p>
+
+<p class="indent-2em">不想顯示給讀者看的內容最好不要包含在書籍檔案中，或者使用HTML註解方式予以隱藏。也推薦支援<code>visibility: hidden</code>，但本文件預設不使用JavaScript功能來切換CSS改變顯示狀態，所以應該不會使用到visibility，所以在範本中不使用該屬性。</p>
+	    </div>
+    </body>
+</html>

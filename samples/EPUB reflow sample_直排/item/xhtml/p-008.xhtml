@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="vrtl"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2>註釋處理</h2>
+
+<p class="indent-2em">處理註釋時，依照目前電子書的特性，建議內容提供者將註釋以章末註的方式處理。</p>
+
+<p class="indent-2em">內頁註釋標記語法為：</p>
+
+<pre class="start-2em"><code>&lt;a epub:type="noteref" class="noteref"  id="位置編號" href="#註解編號" rel="footnote" &gt;1&lt;/a&gt;</code></pre>
+
+<p class="indent-2em">章末註釋的內容標記法為：</p>
+
+<pre class="start-2em"><code>&lt;div epub:type="footnote" class="footnote" id="註解編號"&gt;
+&lt;p&gt;注釋內容中的一個段落。&lt;/p&gt;
+&lt;a href="#位置編號">返回符號&lt;/a&gt;
+&lt;div&gt;
+</code></pre>
+
+<p class="indent-2em">閱讀程式可以利用以上標準語法做出不同的顯示方式，如跳出式註解。</p></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>導覽文件</u></h4>
+
+<p class="indent-2em">[檔名：navigation-documents.xhtml]</p>
+
+<p class="indent-2em">備註：基本與文字重排型相同</p>
+
+<p class="indent-2em">檔名為連續編號時，可以適當調整（以下案例中目錄為p-001.xhtml)</p>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">目錄</span>&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;nav <span class="color-red">epub:type="toc" id="toc"</span>&gt;
+            &lt;h1&gt;<span class="color-blue">目錄</span>&lt;/h1&gt;
+            &lt;ol&gt;
+                <span class="color-black">&lt;li&gt;&lt;a href="xhtml/p-cover.xhtml"&gt;封面&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="xhtml/p-001.xhtml"&gt;目錄&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="xhtml/p-colophon.xhtml"&gt;版權頁&lt;/a&gt;&lt;/li&gt;</span>
+            &lt;/ol&gt;
+        &lt;/nav&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

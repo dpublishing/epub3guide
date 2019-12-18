@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>內文頁面（直排）</u></h4>
+
+<p class="indent-2em">[檔名：p-***.xhtml]  (本例為<code>p-002.xhtml</code>)</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>內容與排版方向，依照作品而有所不同</li>
+<li>標題元素等使用的class不是固定，可自行變更（可如<code>&lt;h1 class="gfont font-1em30"&gt;</code>這樣，直接在Class裡指定尺寸與字體等）</li>
+</ul>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-red">vrtl</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body class="<span class="color-red">p-text</span>"&gt;
+        &lt;div class="main"&gt;
+            <span class="color-black">&lt;h1 id="toc-002"&gt;第一節□天地玄黃宇宙洪荒&lt;/h1&gt;
+            &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+            &lt;p&gt;<span class="color-cyan">□□</span>本文為範例。&lt;/p&gt;
+            &lt;p&gt;<span class="color-cyan">□□</span>「本文為範例」&lt;/p&gt;
+            &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+            &lt;h2 id="toc-003"&gt;<span class="color-cyan">□□□□</span>第一項&lt;/h2&gt;
+            &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+            &lt;p&gt;<span class="color-cyan">□□</span>本文為範例。&lt;/p&gt;
+            &lt;p&gt;<span class="color-cyan">□□</span>本文為範例。&lt;/p&gt;
+            &lt;p&gt;&lt;img class="fit" src="../image/img-001.jpg" alt=""/&gt;&lt;/p&gt;
+            &lt;p&gt;<span class="color-cyan">□□</span>本文為範例。&lt;/p&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">RS不需支援的HTML元素與CSS屬性</h3>
+
+<h4 id="toc_index_2">【HTML】</h4>
+
+<h5 id="toc_index_3">文件的Metadata</h5>
+
+<pre><code>base
+</code></pre>
+
+<h5 id="toc_index_4">Scripting</h5>
+
+<pre><code>script / noscript
+</code></pre>
+
+<h5 id="toc_index_5">區塊元素</h5>
+
+<pre><code>section / article / aside / header / footer / address
+</code></pre>
+
+<h5 id="toc_index_6">內容群組化</h5>
+
+<pre><code>blockquote / ul / dl / dt / dd / figure / figcaption
+</code></pre>
+
+<h5 id="toc_index_7">為文字加入意義</h5>
+
+<pre><code>em / strong / pre / subとsup / i / b / u / s / small / cite / q / dfn / abbr / time / code / var / samp / kbd / mark / bdi / bdo / wbr / rb / rtc / rp
+</code></pre>
+
+<h5 id="toc_index_8">修正</h5>
+
+<pre><code>ins / del
+</code></pre>
+
+<h5 id="toc_index_9">插入內容</h5>
+
+<pre><code>map / area / iframe / embed / object / param / video / audio / source / track  / canvas / MathML / SVG（固定版面以外）
+</code></pre>
+
+<h5 id="toc_index_10">表格檔案</h5>
+
+<pre><code>table / caption / colgroup / col / tbody / thead / tfoot / tr / td / th
+</code></pre>
+
+<h5 id="toc_index_11">表單</h5>
+
+<pre><code>form / fieldset / legend / label / input / button / select / datalist / optgroup / option / textarea / keygen / output / progress / meter
+</code></pre>
+
+<h5 id="toc_index_12">互動元素</h5>
+
+<pre><code>details / summary / command / menu
+</code></pre>
+
+<h4 id="toc_index_13">【CSS】</h4>
+
+<h5 id="toc_index_14">値</h5>
+
+<pre><code>ex / in / cm / mm / pt / pc
+</code></pre>
+
+<h5 id="toc_index_15">選擇器</h5>
+
+<pre><code>E:focus / E:lang(c) / E:first-child / E:first-line / E::first-line / E:first-letter / E::first-letter / E:before / E::before / E:after / E::after / E[foo^="bar"] / E[foo$="bar"] / E[foo*="bar"] / E:root / E:nth-child(n) / E:nth-last-child(n) / E:nth-of-type(n) / E:nth-last-of-type(n) / E:last-child / E:first-of-type / E:last-of-type / E:only-child / E:only-of-type / E:empty / E:target / E:enabled / E:disabled / E:checked / E:not(s) / E ~ F
+</code></pre>
+
+<h5 id="toc_index_16">@規則</h5>
+
+<pre><code>@page / @page:left / @page:right / @page:first
+</code></pre>
+
+<h5 id="toc_index_17">色彩、背景</h5>
+
+<pre><code>background-attachment / background-image / background-position / background-repeat
+</code></pre>
+
+<h5 id="toc_index_18">字體</h5>
+
+<pre><code>font-size-adjust / font-stretch / font-variant
+</code></pre>
+
+<h5 id="toc_index_19">文字</h5>
+
+<pre><code>text-shadow / text-transform / white-space / word-spacing
+</code></pre>
+
+<h5 id="toc_index_20">寬高</h5>
+
+<pre><code>min-width / min-height
+</code></pre>
+
+<h5 id="toc_index_21">顯示</h5>
+
+<pre><code>direction / visibility / clip / overflow / unicode-bidi / z-index / display: list-item; / display: table; / display: inline-table / display: table-row-group / display: table-header-group / display: table-footer-group / display: table-row / display: table-column-group / display: table-column / display: table-cell / display: table-caption
+</code></pre>
+
+<h5 id="toc_index_22">Paged Media</h5>
+
+<pre><code>page / size / marks / orphans / widows
+</code></pre>
+
+<h5 id="toc_index_23">列表</h5>
+
+<pre><code>list-style / list-style-type / list-style-position / list-style-image / marker-offset
+</code></pre>
+
+<h5 id="toc_index_24">文繞圖</h5>
+
+<pre><code>float / clear
+</code></pre>
+
+<h5 id="toc_index_25">位置</h5>
+
+<pre><code>position / top / right / bottom / left
+</code></pre>
+
+<h5 id="toc_index_26">表格</h5>
+
+<pre><code>border-collapse / border-spacing / caption-side / empty-cells / table-layout
+</code></pre>
+
+<h5 id="toc_index_27">挿入</h5>
+
+<pre><code>content / quotes / counter-reset / counter-increment
+</code></pre>
+
+<h5 id="toc_index_28">Outline</h5>
+
+<pre><code>outline / outline-color / outline-style / outline-width
+</code></pre>
+
+<h5 id="toc_index_29">CSS 3.0 Speech</h5>
+
+<pre><code>-epub-cue / -epub-pause / -epub-rest / -epub-speak / -epub-speak-as / -epub-voice-family
+</code></pre>
+
+<h5 id="toc_index_30">CSS Text Level 3</h5>
+
+<pre><code>-epub-hyphens / text-transform: -epub-fullwidth / text-transform: -epub-fullsize-kana
+</code></pre>
+
+<h5 id="toc_index_31">CSS Writing Modes Module Level 3</h5>
+
+<pre><code>caption-side: before / caption-side: after
+</code></pre>
+
+<h5 id="toc_index_32">CSS3 Multi Column</h5>
+
+<pre><code>column-width / column-count / columns / column-gap / column-rule-color
+</code></pre>
+
+<h5 id="toc_index_33">CSS 2.0</h5>
+
+<pre><code>list-style-type: cjk-ideographic / list-style-type: hebrew / list-style-type: hiragana / list-style-type: hiragana-iroha / list-style-type: katakana / list-style-type: katakana-iroha
+</code></pre>
+
+<h5 id="toc_index_34">EPUB 3</h5>
+
+<pre><code>ex / in / cm / mm / pt / pc
+
+-epub-ruby-position / display: oeb-page-head / display: oeb-page-foot
+</code></pre>
+	    </div>
+    </body>
+</html>

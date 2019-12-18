@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>指定頁面整體的對齊位置</u></h4>
+
+<p class="indent-2em">[檔名：p-***.html]  (本例為<code>p-005.xhtml</code>)</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>以文字為主和以圖片為主的頁面都相同</li>
+<li>頁面整體的對齊方向，於<code>&lt;div class="main"&gt;</code>裡，指定<code>class="align-***"</code></li>
+</ul>
+
+<pre><code>align-justify ： 對齊兩端（只有最後一行對齊行頭、文字內容內文以此為預設值）
+align-start   ： 對齊行首（只有圖片的頁面若為橫排的話，請注意start=對左靠齊）
+align-left    ： 對齊行首
+align-center  ： 對齊行中（橫排時為天地的中央，直排時為左右中央，圖片頁面的預設值）
+align-end     ： 對齊行尾
+align-right   ： 對齊行尾
+</code></pre>
+
+<ul>
+<li>以下為圖片頁面對左對齊的範例</li>
+</ul>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-blue">hltr</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body <span class="color-blue">class="p-image"</span>&gt;
+        &lt;div class="main <span class="color-red">align-left"</span>&gt;
+            <span class="color-black">&lt;p&gt;&lt;img class="fit" src="../image/img-001.jpg" alt=""/&gt;&lt;/p&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

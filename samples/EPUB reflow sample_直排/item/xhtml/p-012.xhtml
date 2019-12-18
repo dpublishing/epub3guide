@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="vrtl"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2>換頁（實驗性功能）</h2>
+
+<p class="indent-2em">一般內容中若需要切分到另一頁，最通用的做法是將內容切為兩個HTML檔案。</p>
+
+<p class="indent-2em">但在每一章的頁數少時，可以使用以下語法進行換頁指定。</p>
+
+<p class="indent-2em">不過因為page-break語法並非所有閱讀程式都支援，所以務必要另外進行測試。</p>
+
+<br/>
+<p class="pagebreak indent-2em">使用class="pagebreak"語法時，會於套用的區塊後換頁。</p>
+
+<p class="indent-2em">若閱讀程式支援，這一句會出現在新頁面。</p>
+
+<p class="pagebreak-before indent-2em">使用class="pagebreak-before"語法時，會於套用的區塊前換頁。若閱讀程式支援，這一句會出現在新頁面。</p>
+
+<p class="pagebreak-both indent-2em">另可使用class="pagebreak-both"語法，讓元素前後都換頁。</p>
+
+</div>
+</body>
+</html>

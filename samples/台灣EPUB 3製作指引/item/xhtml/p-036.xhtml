@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+<h3 id="toc_index_1">XHTML文件檔案</h3>
+
+<h4 id="toc_index_2"><u>關於範本內的顏色標注</u></h4>
+
+<p class="indent-2em">灰色：全作品共通部分（原則上不進行更動）</p>
+
+<p class="indent-2em">藍色：全作品共通部分中，依照作品不同而須變更的部分</p>
+
+<p class="indent-2em">紅色：使用範本時特別需要注意的部分</p>
+
+<p class="indent-2em">黑色：非固定部分（依照作品與出版社而可有所差異）</p>
+
+        <h4 id="toc_index_3"><u>封面頁</u></h4>
+
+<p class="indent-2em">[檔名：p-cover.xhtml]</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>下記三處藍色記載圖片原來尺寸</li>
+<li>圖片尺寸於書內請統一</li>
+</ul>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/<span class="color-red">fixed-layout.css</span>"/&gt;
+        &lt;meta name="viewport" content="width=<span class="color-blue">848</span>, height=<span class="color-blue">1200</span>"/&gt;
+    &lt;/head&gt;
+    &lt;body <span class="color-red">epub:type="cover"</span>&gt;
+        &lt;div class="main"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             width="100%" height="100%" viewBox="0 0 <span class="color-blue">848 1200</span>"&gt;
+                &lt;image width="<span class="color-blue">848</span>" height="<span class="color-blue">1200</span>" xlink:href="../image/<span class="color-red">cover.jpg</span>"/&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div> 
+    </body>
+</html>

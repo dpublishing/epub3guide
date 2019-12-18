@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h4 id="toc_index_1"><u>版權頁</u></h4>
+
+<p class="indent-2em">[檔名：p-colophon.xhtml]</p>
+
+<p class="indent-2em">備註：內容與排版方向，依照作品而有所不同（以下內容包含class名全為參考用）</p>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-blue">hltr</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body <span class="color-red">class="p-colophon"</span>&gt;
+        &lt;div class="main"&gt;
+            <span class="color-black">&lt;div class="book-title"&gt;
+                &lt;div class="book-title-before"&gt;
+                    &lt;p&gt;副標題・前&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="book-title-main"&gt;
+                    &lt;p&gt;主標題&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="book-title-after"&gt;
+                    &lt;p&gt;副標題・後&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="author"&gt;
+                &lt;p&gt;作者名１&lt;/p&gt;
+                &lt;p&gt;作者名２&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="label"&gt;
+                &lt;p class="label-logo"&gt;&lt;img src="../image/logo-bunko.png" alt=""/&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="release-date"&gt;
+                &lt;p&gt;民國xx年xx月xx日<span class="color-cyan">□</span>發行&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="publisher-data"&gt;
+                &lt;p class="publish-person"&gt;發行人<span class="color-cyan">□</span>●●●&lt;/p&gt;
+                &lt;p class="publish-company"&gt;出版社<span class="color-cyan">□</span>●●出版&lt;/p&gt;
+                &lt;p class="publish-address"&gt;台北市●●●●&lt;/p&gt;
+                &lt;p class="publish-url"&gt;http://www.***.com.tw/&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="copyright"&gt;
+                &lt;p&gt;(C) author01 20xx&lt;/p&gt;
+                &lt;p&gt;(C) author02 20xx&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="kotowarigaki"&gt;
+                &lt;p&gt;（版權警告）&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="original-books"&gt;
+                &lt;p&gt;本電子書基於以下書籍製作&lt;/p&gt;
+                &lt;p class="original-first-edition"&gt;《底本名》民國xx年xx月xx日初版&lt;/p&gt;
+                &lt;p class="original-used-edition"&gt;民國xx年xx月xx日第xx版&lt;/p&gt;
+            &lt;/div&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

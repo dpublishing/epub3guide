@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="unique-id"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ rendition: http://www.idpf.org/vocab/rendition/#"
+>
+
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<!-- 作品名 -->
+<dc:title id="title">台灣EPUB 3製作指引　流式版面範本</dc:title>
+
+<!-- 作者名 -->
+<dc:creator id="creator01">台灣數位出版聯盟</dc:creator>
+<meta refines="#creator01" property="role" scheme="marc:relators">aut</meta>
+<meta refines="#creator01" property="display-seq">1</meta>
+
+<dc:creator id="creator02">作者名２</dc:creator>
+<meta refines="#creator02" property="role" scheme="marc:relators">aut</meta>
+<meta refines="#creator02" property="display-seq">2</meta>
+
+<!-- 出版社名 -->
+<dc:publisher id="publisher">出版社名</dc:publisher>
+
+<!-- 語言 -->
+<dc:language>zh-TW</dc:language>
+
+<!-- 檔案id -->
+<dc:identifier id="unique-id">urn:uuid:d7a8d311-7cd0-40df-9443-65847561decf</dc:identifier>
+
+<!-- 更新時間 -->
+<meta property="dcterms:modified">2014-11-01T00:00:00Z</meta>
+
+<!-- iBook指定字體 -->
+<meta property="ibooks:specified-fonts">true</meta>
+
+
+</metadata>
+
+<manifest>
+
+<!-- navigation -->
+<item media-type="application/xhtml+xml" id="toc" href="navigation-documents.xhtml" properties="nav"/>
+
+<!-- style -->
+<item media-type="text/css" id="book-style"     href="style/book-style.css"/>
+<item media-type="text/css" id="style-reset"    href="style/style-reset.css"/>
+<item media-type="text/css" id="style-standard" href="style/style-standard.css"/>
+<item media-type="text/css" id="style-advance"  href="style/style-advance.css"/>
+<item media-type="text/css" id="style-check"    href="style/style-check.css"/>
+<item media-type="text/css" id="font"    		href="style/font.css"/>
+
+<!-- image -->
+<item media-type="image/jpeg" id="cover"      href="image/cover.jpg" properties="cover-image"/>
+<item media-type="image/png"  id="logo-bunko" href="image/logo-bunko.png"/>
+<item media-type="image/jpeg" id="kuchie-001" href="image/kuchie-001.jpg"/>
+<item media-type="image/jpeg" id="img-001"    href="image/img-001.jpg"/>
+<item media-type="image/jpeg" id="img-002"    href="image/img-002.jpg"/>
+<item media-type="image/png"  id="gaiji" href="image/gaiji.png"/>
+
+<!-- xhtml -->
+<item media-type="application/xhtml+xml" id="p-cover"       href="xhtml/p-cover.xhtml" properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-fmatter-001" href="xhtml/p-fmatter-001.xhtml" properties="svg"/>
+<item media-type="application/xhtml+xml" id="p-titlepage"   href="xhtml/p-titlepage.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-caution"     href="xhtml/p-caution.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-toc"         href="xhtml/p-toc.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-001"         href="xhtml/p-001.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-002"         href="xhtml/p-002.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-003"         href="xhtml/p-003.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-004"         href="xhtml/p-004.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-005"         href="xhtml/p-005.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-006"         href="xhtml/p-006.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-007"         href="xhtml/p-007.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-008"         href="xhtml/p-008.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-009"         href="xhtml/p-009.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-010"         href="xhtml/p-010.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-011"         href="xhtml/p-011.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-012"         href="xhtml/p-012.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-013"         href="xhtml/p-013.xhtml"/>
+<item media-type="application/xhtml+xml" id="p-colophon"    href="xhtml/p-colophon.xhtml"/>
+
+<!-- font -->
+<item media-type="application/vnd.ms-opentype" href="font/notosthai.otf" id="_source.otf" />
+
+</manifest>
+
+<spine page-progression-direction="rtl">
+<itemref linear="yes" idref="p-cover"       properties="rendition:layout-pre-paginated 
+													    rendition:spread-none 
+													    rendition:page-spread-center"/>
+<itemref linear="yes" idref="p-fmatter-001" properties="rendition:layout-pre-paginated 
+														rendition:spread-auto 
+														page-spread-left"/>
+<itemref linear="yes" idref="p-titlepage"   properties="page-spread-left"/>
+<itemref linear="yes" idref="p-caution"     properties="page-spread-left"/>
+<itemref linear="yes" idref="p-toc"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-001"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-002"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-003"         properties="page-spread-left"/>
+<itemref linear="yes" idref="p-004"/>
+<itemref linear="yes" idref="p-005"/>
+<itemref linear="yes" idref="p-006"/>
+<itemref linear="yes" idref="p-007"/>
+<itemref linear="yes" idref="p-008"/>
+<itemref linear="yes" idref="p-009"/>
+<itemref linear="yes" idref="p-010"/>
+<itemref linear="yes" idref="p-011"/>
+<itemref linear="yes" idref="p-012"/>
+<itemref linear="yes" idref="p-013"/>
+<itemref linear="yes" idref="p-colophon"    properties="page-spread-left"/>
+
+</spine>
+
+</package>

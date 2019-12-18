@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1" class="gfont">CSS檔案的使用規則</h3>
+
+<h4 id="toc_index_2"><u>支援<code>@import</code>讀入CSS</u></h4>
+
+<p class="indent-2em">範本為了讓XHTML檔案的內容能夠統一，XHTML側僅會讀入主要CSS，然後將其他CSS透過主要CSS以<code>@import</code>規則讀入。</p>
+
+<p class="indent-2em">但根據頁面不同，想要調整CSS時（例如要使用全客製化的CSS），則不在此限。</p>
+
+<h4 id="toc_index_3"><u>原則上不調整預設CSS</u></h4>
+
+<p class="indent-2em">原則上不修改範本中的CSS。</p>
+
+<p class="indent-2em">當要變更數值時，請於<code>book-style.css</code>末的客製化空間，或者出版社自行準備樣式表予以覆蓋。</p>
+
+<h4 id="toc_index_4"><u>修改、新增請自行負責</u></h4>
+
+<p class="indent-2em">本文件不使用複雜排版會用到的CSS，如果要進行以下調整，請自行進行檢查確認。</p>
+
+<ul>
+<li>修改Class所設定的值</li>
+<li>於Class中新增語法</li>
+<li>未調整優先順序，修改記載位置</li>
+<li>修改與其他Class連動的Class名稱</li>
+<li>新增Class</li>
+<li>新增出版社自己的樣式表</li>
+</ul>
+
+<p class="indent-2em">可以將不需要的Class刪除讓檔案縮小，註解行使用自動化刪除也不會影響動作，但請注意不要將使用到的Class等刪除。</p>
+
+<h4 id="toc_index_5"><u>避免id重複</u></h4>
+
+<p class="indent-2em">id只要在各XHTML檔案中不重複的話就沒問題，但考量到EPUB中有多數XHTML檔案，建議使用不重複的id。</p>
+
+<h4 id="toc_index_6"><u>製作或追加固定Class</u></h4>
+
+<p class="indent-2em">概要：</p>
+
+<p class="indent-2em">縮排或者尺寸指定等一部份樣式表，可能會遇到預設值不足的狀況，畢竟無法窮舉，在預設表中僅使用到常用的值而已。</p>
+
+<p class="indent-2em">例如調整字體尺寸，最大僅到300%，若要使用400%等不在預設值的數值，則需要自己新增逾樣式表中。</p>
+
+<p class="indent-2em">當新增數量不多時，請使用<code>book-style.css</code>裡的「作品特有客製化空間」。</p>
+
+<p class="indent-2em">當使用固定Class時，請使用既有的Class與語法，修改數值即可。未來在修改調整時，對方也可以一目了然知道該怎麼調整。</p>
+
+<p class="indent-2em">當新增數量多，或者想要使用於多數作品時，請準備自有的樣式表，於<code>book-style.css</code>中透過<code>@import</code>讀入。</p>
+
+<p class="indent-2em">例如版權頁、系列頁等會固定使用頁面專用的Class，建議使用獨立的CSS檔案進行管理。</p>
+
+<h4 id="toc_index_7"><u>固定Class的種類</u></h4>
+
+<h5 id="toc_index_8"><u>Ａ・不分直橫排，內容不需要修改的項目</u></h5>
+
+<p class="indent-2em">如字型大小與色彩指定等，無論直排與橫排都使用相同的語法。例如在<code>style-standard.css</code>中的字型尺寸語法為：</p>
+
+<pre><code class="css"><br />.font-1em20 { font-size: 1.20em; }
+
+</code></pre>
+
+<p class="indent-2em">像是1.25em等，需要用到不在範本中的尺寸時，可以如下面僅修改class名與值為尺寸數，建立新的Class來使用。</p>
+
+<pre><code>/* -------------------------------------------------------------
+ * 作品專屬客製化區塊
+ * ------------------------------------------------------------- */
+
+.font-1em25 { font-size: 1.25em; }
+
+</code></pre>
+
+<p class="indent-2em">小數點以下的值，請如上記一般到小數點後二位即可。由於Class名不能使用點號，所以整數值放在單位前，小數值放在單位後，沒有小數值時，請如下僅採用整數值作為Class名。</p>
+
+<pre><code class="css"><br />.font-1em { font-size: 1.00em; }
+
+</code></pre>
+
+<p class="indent-2em">當Class使用百分比時，請如下以三位數字並列來命名</p>
+
+<pre><code class="css"><br />.font-085per { font-size: 85%; }
+
+</code></pre>
+
+<h5 id="toc_index_9"><u>Ｂ・隨直橫排而需要調整語法的項目</u></h5>
+
+<p class="indent-2em">例如首行凸排語法，直排時會使用到上方的padding，橫排時會使用到左方的padding，但可以透過相同的Class名稱通用於直橫排。以下為實際在<code>style-standard.css</code>裡的凸排語法。</p>
+
+<pre><code class="css"><br />.hltr .h-indent-1em { text-indent: -1em; padding-left: 1em; }
+
+.vrtl .h-indent-1em { text-indent: -1em; padding-top:  1em; }
+
+</code></pre>
+
+<p class="indent-2em">針對橫排的語法請在Class前加上<code>.hltr</code>和半型空白，針對直排則是加上<code>.vltr</code>和半型空白。</p>
+
+<h5 id="toc_index_10"><u>參考資料（本文件不推薦使用）</u></h5>
+
+<h5 id="toc_index_11"><u>Ｃ・直排與橫排混排時的對應方法</u></h5>
+
+<p class="indent-2em">當直排與橫排混合顯示時，Ｂ的CSS會造成顯示結果不正確。</p>
+
+<p class="indent-2em">例如在橫排頁面裡頭加入直排的區塊時，使用上記凸排語法時，就會套用橫排用左邊的Padding與直排用的上方Padding。</p>
+
+<p class="indent-2em">為了解決這狀況，就需要刪除橫排用的左邊Padding。以下是當在橫排中有直排時，將左邊Padding指定為0；直排中有橫排時，將上方Padding指定為0的語法。</p>
+
+<pre><code class="css"><br />.hltr .vrtl .h-indent-1em { padding-left: 0; }
+
+.vrtl .hltr .h-indent-1em { padding-top:  0; }
+
+</code></pre>
+
+<p class="indent-2em">但這種方法也有缺點。當想要在凸排以外指定左邊Padding時就會有問題。像這種狀況實際處理上，可以如下記一般，將凸排與Padding處理分在不同元素裡。</p>
+
+<pre><code class="html"><br />&lt;div class="p-top-2em"&gt;
+
+    &lt;div class="h-indent-1em"&gt;
+
+        &lt;p&gt;文字&lt;/p&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+
+<p class="indent-2em">此外，如下記處理，一看不需要兩層<code>&lt;div&gt;</code>結構，但實際上橫排中的直排沒有問題，卻會造成直排中的橫排出現問題。</p>
+
+<pre><code class="css"><br />.hltr .h-indent-1em  { text-indent: -1em; padding: 0 0 0 1em; }
+
+.vrtl .h-indent-1em  { text-indent: -1em; padding: 1em 0 0 0; }
+
+</code></pre>
+
+<p class="indent-2em">若改變上下行記載，就會變成橫排中的直排出問題。因為後面的樣式優先於前面的樣式，是CSS的基本規則。</p>
+
+<p class="indent-2em">同樣的理由，使用本文件預設CSS，就算使用兩層<code>&lt;div&gt;</code>，也會出現問題。</p>
+
+<p class="indent-2em">無論如何都要使用直橫混排時，請進行充分的檢查。</p>
+
+<p class="indent-2em">除了凸排案例以外，縮排與行尾縮排，邊界、內部邊界、框線等具邏輯方向的class和線條等，在切換直橫混排時，都可能出現問題。</p>
+
+<h3 id="toc_index_12">客製化</h3>
+
+<p class="indent-2em">在<code>.book-style.css</code>中，已經準備好幾個可以修改的class和空Class。</p>
+
+<p class="indent-2em">以下案例為想要刪除連結旁線段的語法。</p>
+
+<pre><code class="css"><br />/* 基本設定（上：横排 下：直排） */
+
+.hltr a {
+
+}
+
+.vrtl a {
+
+}
+
+</code></pre>
+
+<pre><code class="css"><br />/* 基本設定（上：横排 下：直排） */
+
+.hltr a {
+
+  text-decoration: none;
+
+}
+
+.vrtl a {
+
+  text-decoration: none;
+
+}
+
+</code></pre>
+
+<p class="indent-2em">當對應直橫混合時，請在註解中追記處理方式。</p>
+
+<p class="indent-2em">當使用空Class時，請務必要在各RS上進行測試。若希望在大多數的RS上能夠安全顯示，請使用本文件預設的CSS進行組合，也建議不要設定得太過於複雜。</p>
+
+<p class="indent-2em">此外於測試時，可能如以下案例般，讓預設的CSS蓋過在<code>book-style.css</code>客製化區塊中定義的好字體與文字尺寸的Class，造成無法如預期般顯示。當使用客製化的Class時，請盡量不要使用其他的Class。</p>
+
+<pre><code class="html"><br />.hltr .oo-midashi {
+
+  font-size: 1.5em;
+
+}
+
+.vrtl .oo-midashi {
+
+  font-size: 1.5em;
+
+}
+
+&lt;h1 class="oo-midashi font-100per"&gt;標題&lt;/h1&gt;
+
+</code></pre>
+
+<h3 id="toc_index_13">製作自有的CSS</h3>
+
+<p class="indent-2em">基本上應存為UTF-8（無BOM）編碼，檔案開頭請務必要加入<code>@Charset "UTF-8”;</code></p>
+	    </div>
+    </body>
+</html>

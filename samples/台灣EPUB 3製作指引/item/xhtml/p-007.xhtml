@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">圖片</h3>
+
+<h4 id="toc_index_2"><u>圖片的種類</u></h4>
+
+<p class="indent-2em"><strong>必需</strong>能使用JPEG與PNG格式的圖片，<strong>選擇</strong>性支持GIF格式。</p>
+
+<p class="indent-2em"><strong>必需</strong>支援PNG的Alpha圖層，即能顯示透明色，若支援GIF，需比照支援。</p>
+
+<p class="indent-2em">圖片色彩須使用RGB，<strong>不得</strong>使用CMYK，推薦色域為sRGB。</p>
+
+<h4 id="toc_index_3"><u>造字圖片</u></h4>
+
+<p class="indent-2em">透過本文件的圖片縮小語法，讓圖片顯示為內文一字尺寸。用於填補生罕字等內建字體不支援的漢字。不特別指定圖片尺寸極限，但提供推薦值：</p>
+
+<pre><code>圖片尺寸：128x128 px
+圖片格式：8bit的白底PNG
+反鋸齒：無
+</code></pre>
+
+<blockquote>
+  <p class="gfont">說明：為對應各種閱讀程式的預設底色，以透明底色PNG較佳。但考量到現在多數閱讀程式有對應黑底白字的「夜間模式」，透明底色會讓圖片內容無法辨識，故推薦較為通用的白色底色）</p>
+</blockquote>
+
+<h4 id="toc_index_4"><u>指定圖片與Block元素的尺寸以及最大尺寸</u></h4>
+
+<p class="indent-2em">目前各瀏覽器上max-height與max-width的動作有所不同。於RS上實作時，這兩個值應該以RS內內容可顯示範圍為基礎，顯示上請以Readium作為基準。</p>
+
+<p class="indent-2em">若內容檔案中指定的圖片尺寸大於可顯示範圍，RS應以最大顯示範圍為主，忽略所指定的圖片尺寸。內容檔案也盡量不要以絕對值來指定圖片尺寸。</p>
+
+<p class="indent-2em">圖片或block元素以及inline-block元素，是否需要換頁</p>
+
+<p class="indent-2em">文字行內元素要是大於行內預設要讓元素可顯示的空間時，RS需要將元素送到下一行或者下一頁。</p>
+
+<p class="indent-2em">不管是Block或者inline-block元素，在RS頁面內，讓元素顯示的空間比要顯示的元素小時，RS需要將元素送到下一頁。</p>
+
+<h4 id="toc_index_5"><u>與頁面進行方向寬度相等或者小於寬度</u></h4>
+
+<p class="indent-2em">若元素無法放進顯示空間時，則於下一頁顯示該元素。當元素指定為與頁面等寬時，送到下一頁也需要與頁面等寬。</p>
+
+<p class="indent-2em">這時元素在非頁面進行方向那一端（直排時為高），在與頁面等寬的狀況下，超過螢幕內空間的話，則無法顯示。</p>
+
+<blockquote>
+  <p class="gfont">說明：當在可顯示區域為高800x寬600px的RS中，一張寬600px的圖片設定寬度為width: 100%。而置放頁面已經有數行文字佔用顯示空間時，RS需要將該圖片送到下一頁，以寬度600px顯示。</p>
+  
+  <p class="gfont">但若該圖片高度為1000px時，則會有200px的空間受到切割而無法顯示。製作方應該不指定寬度為Width: 100%，改為height: 100%，讓寬度依比例自動調整。</p>
+</blockquote>
+
+<h4 id="toc_index_6"><u>大於頁面進行方向時</u></h4>
+
+<p class="indent-2em">RS應縮放為與頁面等寬，即圖片不可跨頁切割顯示。</p>
+
+<blockquote>
+  <p class="gfont">說明：當在可顯示區域為高800x寬600px的RS中，一張寬1000px的圖片設定寬度為width: 100%。RS則不可於單頁中顯示600PX，將剩餘400PX移到下一頁顯示。而應該調整寬度為600PX，高度自動依比例調整。</p>
+</blockquote>
+
+<h4 id="toc_index_7"><u>縮小圖片，讓使用者操作放大</u></h4>
+
+<p class="indent-2em">透過指定圖片尺寸或者RS自動處理，使得圖片顯示比原來尺寸還要小時，推薦RS實作縮放功能，讓使用者能夠點擊圖片將圖片放大到原來尺寸。讓螢幕較小時，也能閱讀圖片中的文字。</p>
+	    </div>
+    </body>
+</html>

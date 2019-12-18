@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="vrtl"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2 id="toc-016">缺字圖片</h2>
+
+<p class="indent-2em">漢字經常會遇到內建字體缺字的狀況，包括「古籍罕用字」、「日韓越南用漢字」、「台客語用字」等。這些字或許包含在系統內建字體中，但不一定所有的閱讀程式都會包括這些字，所以會建議使用圖片的方式處理。</p>
+
+<p class="indent-2em">請將該字製作成至少128像素平方的圖片，可存成底色透明的PNG，考量到多數閱讀程式有黑白反轉的「夜間模式」，為了避免無法閱讀，也可存為底色為白色的PNG。</p>
+
+<p class="indent-2em">當在將字嵌入內容中，請使用css語法class="gaiji"。如&lt;img src="../image/gaiji.png" class="gaiji" alt="讀音"/&gt;。顯示結果為<img src="../image/gaiji.png" class="gaiji" alt="讀音"/>這樣的文字。</p>
+
+<p class="indent-2em">class="gaiji"是將圖片長寬各以元素內一字大小顯示，若遇到連續多字的狀況，直排可使用class="gaiji-line"指定為一字寬，橫排可使用class="gaiji-wide"指定為一字高。</p>
+
+<h2 id="toc-017">外文嵌入字體</h2>
+
+<p class="indent-2em">當遇到泰文、越南文、阿拉伯文等文字時，請嘗試使用嵌入字體的方式處理。</p>
+
+<p class="indent-2em">首先可使用Google提供的<a href="https://www.google.com/get/noto/">開放授權字體Noto</a>，下載對應語文的字體，置入item的font資料夾中，這裡以泰文為例：</p>
+
+<h3>・於OPF檔案中加入&lt;manifest&gt;宣告檔案</h3>
+
+<pre class="start-2em"><code>&lt;item media-type="application/vnd.ms-opentype" href="font/notosthai.otf" id="_source.otf" /&gt;</code></pre>
+
+<h3>・在font.css宣告字體名稱</h3>
+
+<pre class="start-2em"><code>@font-face {
+font-family: sourcethai;
+src: url('../font/notosthai.otf') format('OpenType');
+}</code></pre>
+
+<h3>・同時對應到相對的語言</h3>
+
+<pre class="start-2em"><code>lang(th) {
+	font-family: sourcethai;
+}</code></pre>
+
+<h3>・於book-style.css確認是否匯入font.css </h3>
+
+<pre class="start-2em"><code>@import "font.css";</code></pre>
+
+<h3>・以語言標籤標注內容中的泰文字</h3>
+
+<pre class="start-2em"><code>這裡有一句泰文：&lt;span lang="th"&gt;นายกรัฐมนตรี นำประชาชนทุกภาคส่วนปฏิบัติการจิตอาสา&lt;/span&gt; &lt;/p&gt;</code></pre>
+
+<p class="indent-2em">實際看起來會像：</p>
+
+<p class="indent-2em">這裡有一句泰文：<span lang="th">นายกรัฐมนตรี นำประชาชนทุกภาคส่วนปฏิบัติการจิตอาสา</span> </p>
+
+</div>
+</body>
+</html>

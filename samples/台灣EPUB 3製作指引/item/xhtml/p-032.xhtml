@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">【參考資訊】本文件不推薦的項目</h3>
+
+<h4 id="toc_index_2"><u>直排文字居中頁面</u></h4>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>混合排版方向支援狀況不一，需要確認是否每一款RS都能支援</li>
+<li>內容會溢出頁面而有部分受到裁切，需要確認顯示的螢幕尺寸</li>
+<li>橫排中直排區塊為子項目，更改排版方向時需要注意不會變更的Class的值（特別為邊界）</li>
+<li>由於天地的邊界為0，必要時需要在<code>&lt;div class="main"&gt;</code>的內部再加上一層<code>&lt;div&gt;</code>並且設定margin與padding。（使用本方法時，<code>&lt;body&gt;</code>以及<code>&lt;div class="main"&gt;</code>等不可以追加margin與padding。.p-text等於<code>&lt;body&gt;</code>指定的class，追加margin等可能不會如預期一般顯示</li>
+<li>文字頁面若將<code>vrtl block-align-center</code>指定於<code>&lt;div class="main"&gt;</code>，而不是<code>&lt;body&gt;</code>時，必須將<code>&lt;body&gt;</code>的margin與padding指定為0</li>
+<li>想要向左對齊時，請將下記的<code>block-align-center</code>更改為<code>block-align-left (or start)</code>（橫排頁面的end=right，請多加注意</li>
+<li>章名頁（.p-tobira）等使用方法相同</li>
+<li>橫排想要指定為頁面正中央時，請將以下的hltr更換成vrtl，這時，main若不指定為width-100per，就會向右對齊（基本上為直排，所以會由右向左排列元素）。</li>
+</ul>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-red">hltr</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body class="<span class="color-blue">p-text</span>"&gt;
+        &lt;div class="main <span class="color-red">vrtl block-align-center</span>"&gt;
+            <span class="color-red">&lt;div class="start-2em"&gt;      // ←頁面整體的縮排，指定於更裡面的&lt;div&gt;</span>
+               <span class="color-black">&lt;p&gt;天地玄黃，宇宙洪荒&lt;/p&gt;</span>
+            <span class="color-red">&lt;/div&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+
+<p class="indent-2em">以下為將圖片置放於左下角的範例</p>
+
+<p class="indent-2em">備註：</p>
+
+<ul>
+<li>想要對齊頁底時，若<code>&lt;body&gt;</code>下面一層的<code>&lt;div class="main"&gt;</code>的高不指定為100%的話，Webkit系的排版引擎位置可能會錯開（橫排時，請將寬度設定為100%）</li>
+<li>以下案例為了方便確認效果，圖片設定為整頁高度的50%（<code>&lt;img class="fit max-height-050per"/&gt;</code>）</li>
+</ul>
+
+<pre><code>
+<span class="color-gray">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="<span class="color-red">hltr</span>"
+&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"/&gt;
+        &lt;title&gt;<span class="color-blue">書名</span>&lt;/title&gt;
+        &lt;link rel="stylesheet" type="text/css" href="../style/book-style.css"/&gt;
+    &lt;/head&gt;
+    &lt;body class="<span class="color-blue">p-text</span>"&gt;
+        &lt;div class="main <span class="color-red">vrtl block-align-left height-100per</span>"&gt;
+            <span class="color-red">&lt;div class="align-end"&gt;  // ←位於頁面全體下方，請設定於內側的&lt;div&gt;</span>
+                <span class="color-black">&lt;p&gt;&lt;img class="fit max-height-050per" src="../image/img-001.jpg" alt=""/&gt;&lt;/p&gt;</span>
+            <span class="color-red">&lt;/div&gt;</span>
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</span>
+</code></pre>
+	    </div>
+    </body>
+</html>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2>文字處理</h2>
+
+<p class="indent-2em">這部分針對書籍內文的樣式進行說明。</p>
+
+<h3 id="toc-004">・字體</h3>
+
+<p class="indent-2em">字體預設使用「明體」顯示，若段落以及個別文字需要更改文字，可套用以下語法：</p>
+
+<p><br/></p>
+
+<p class="indent-2em"><span class="gfont">黑體為class="gfont"</span></p>
+
+<p class="indent-2em"><span class="kfont">楷體為class="kfont"，但是否能顯示，得依閱讀程式是否內建</span></p>
+
+<p class="indent-2em"><span class="mfont">明體為class="mfont"</span></p>
+
+<h3 id="toc-005">・文字尺寸</h3>
+
+<p class="indent-2em">文字尺寸以閱讀程式預設字級為主，針對不同段落、標題，可使用預設的CSS進行調整。</p>
+
+<p class="indent-2em">調整方式分為「以百分比指定」和「以預設字級字數指定」。</p>
+
+<p class="indent-2em">以百分比指定，將依照元素字級為基準變化，例如標題預設為2em，套用font-050per，即為1em。</p>
+
+<p class="indent-2em">可使用以下CSS於HTML元素：</p>
+
+<p><br/></p>
+
+<p class="indent-2em"><span class="font-050per">這一段使用font-050per，文字為元素字級的50%</span></p>
+
+<p class="indent-2em"><span class="font-060per">這一段使用font-060per，文字為元素字級的60%</span></p>
+
+<p class="indent-2em"><span class="font-070per">這一段使用font-070per，文字為元素字級的70%</span></p>
+
+<p class="indent-2em"><span class="font-075per">這一段使用font-075per，文字為元素字級的75%</span></p>
+
+<p class="indent-2em"><span class="font-080per">這一段使用font-080per，文字為元素字級的80%</span></p>
+
+<p class="indent-2em"><span class="font-085per">這一段使用font-085per，文字為元素字級的85%</span></p>
+
+<p class="indent-2em"><span class="font-090per">這一段使用font-090per，文字為元素字級的90%</span></p>
+
+<p class="indent-2em"><span class="font-100per">這一段使用font-100per，文字為元素字級</span></p>
+
+<p class="indent-2em"><span class="font-110per">這一段使用font-110per，文字為元素字級的110%</span></p>
+
+<p class="indent-2em"><span class="font-115per">這一段使用font-115per，文字為元素字級的115%</span></p>
+
+<p class="indent-2em"><span class="font-120per">這一段使用font-120per，文字為元素字級的120%</span></p>
+
+<p class="indent-2em"><span class="font-130per">這一段使用font-130per，文字為元素字級的130%</span></p>
+
+<p class="indent-2em"><span class="font-140per">這一段使用font-140per，文字為元素字級的140%</span></p>
+
+<p class="indent-2em"><span class="font-150per">這一段使用font-150per，文字為元素字級的150%</span></p>
+
+<p class="indent-2em"><span class="font-160per">這一段使用font-160per，文字為元素字級的160%</span></p>
+
+<p class="indent-2em"><span class="font-170per">這一段使用font-170per，文字為元素字級的170%</span></p>
+
+<p class="indent-2em"><span class="font-180per">這一段使用font-180per，文字為元素字級的180%</span></p>
+
+<p class="indent-2em"><span class="font-190per">這一段使用font-190per，文字為元素字級的190%</span></p>
+
+<p class="indent-2em"><span class="font-200per">這一段使用font-200per，文字為元素字級的200%</span></p>
+
+<p class="indent-2em"><span class="font-250per">這一段使用font-250per，文字為元素字級的250%</span></p>
+
+<p class="indent-2em"><span class="font-300per">這一段使用font-300per，文字為元素字級的300%</span></p>
+
+<p><br/></p>
+
+<p class="indent-2em">以預設字級字數指定，將以預設字級為基準變化，不受元素字級影響。</p>
+
+<p class="indent-2em">可使用以下CSS於HTML元素：</p>
+
+<p><br/></p>
+
+<p class="indent-2em"><span class="font-0em50">這一段使用font-0em50，文字為0.5預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-0em60">這一段使用font-0em60，文字為0.6預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-0em70">這一段使用font-0em70，文字為0.7預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-0em75">這一段使用font-0em75，文字為0.75預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-0em80">這一段使用font-0em80，文字為0.8預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-0em85">這一段使用font-0em85，文字為0.85預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-0em90">這一段使用font-0em90，文字為0.9預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em">這一段使用font-1em，文字為預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em10">這一段使用font-1em10，文字為1.1預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em15">這一段使用font-1em15，文字為1.15預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em20">這一段使用font-1em20，文字為1.2預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em30">這一段使用font-1em30，文字為1.3預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em40">這一段使用font-1em40，文字為1.4預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em50">這一段使用font-1em50，文字為1.5預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em60">這一段使用font-1em60，文字為1.6預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em70">這一段使用font-1em70，文字為1.7預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em80">這一段使用font-1em80，文字為1.8預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-1em90">這一段使用font-1em90，文字為1.9預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-2em">這一段使用font-2em，文字為2預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-2em50">這一段使用font-2em50，文字為2.5預設字級大小</span></p>
+
+<p class="indent-2em"><span class="font-3em">這一段使用font-3em，文字為3預設字級大小</span></p>
+
+<p class="indent-2em"><br/></p>
+
+<h3 id="toc-006">・粗、斜體字</h3>
+
+<h4>。粗體字</h4>
+
+<p class="indent-2em"><span class="bold">可使用HTML的&lt;b&gt;與&lt;strong&gt;標籤標註粗體字，也可使用class="bold"。</span></p>
+
+<p class="indent-2em"><span class="bold">在粗體字段落中，<span class="font-weight-normal">可使用class="font-weight-normal"來不加粗</span>。</span></p>
+
+
+<h4>。斜體字</h4>
+
+<p class="indent-2em"><span class="italic">可使用HTML的&lt;i&gt;標籤標註粗體字，也可使用class="italic"，但不建議套用在漢字上。</span></p>
+
+<p class="indent-2em"><span class="italic">在斜體字段落中，<span class="font-style-normal">可使用class="font-style-normal"轉正</span>。</span></p>
+
+<h3 id="toc-007">・上下標字</h3>
+
+<p class="indent-2em">內文中的<span class="super">上標字</span>（直排為偏右）可使用class="super"標註。</p>
+
+<p class="indent-2em">內文中的<span class="sub">下標字</span>（直排為偏左）可使用class="sub"標註。</p>
+
+<h3 id="toc-008">・直排中的橫排</h3>
+
+<p class="indent-2em">直排中的數字與英文，符號，如<span class="tcy">167</span>，請使用class="tcy"標註。</p>
+
+<p class="indent-2em">需注意，最大支援到四位數，且不得套用其他樣式，如希望A+在直排文字中佔一字寬橫排，同時+為上標字，則無法正常顯示，請將A+以缺字圖片的方式處理。</p>
+
+<h3 id="toc-009">・文字轉向</h3>
+
+<p class="indent-2em">直排中若希望英文與數字直立，請使用全型英文數字，如ＡＢＣ１２３。</p>
+
+<p class="indent-2em">若使用半型時，可套用class="upright-1"，效果如<span class="upright-1">1</span>。</p>
+
+<p class="indent-2em">若直排文字與符號希望與橫排相同，卻轉90度時，請使用class="upright"強制調整，如<span class="upright">「</span>。實務上使用到的機會不多。</p>
+
+<p class="indent-2em">若直排文字與符號應轉90度，卻未轉向時，請使用class="sideways"強制調整，如<span class="sideways">＝</span>。實務上常應用在數學符號。</p>
+
+<h3 id="toc-010">・文字色彩，背景色</h3>
+
+<p class="indent-2em">範本中預設有八種灰階的文字色彩，以及五種基本色和背景色，以及文字黑白反轉。</p>
+
+<p class="indent-2em">請注意，色彩無法在電子紙閱讀器上呈現，且文字顏色太淡也可能難以讓讀者閱讀。</p>
+
+<p><br/></p>
+
+<p class="indent-2em"><span class="color-black">預設文字黑色class="color-black"</span>，</p>
+
+<p class="indent-2em"><span class="bg-black">背景色為黑色class="bg-black"</span>。</p>
+
+<p class="indent-2em"><span class="color-dimgray">文字第一階段灰色class="color-dimgray"</span>，</p>
+
+<p class="indent-2em"><span class="bg-dimgray">背景色第一階段灰色class="bg-dimgray"</span>。</p>
+
+<p class="indent-2em"><span class="color-gray">文字第二階段灰色class="color-gray"</span>，</p>
+
+<p class="indent-2em"><span class="bg-gray">背景色第二階段灰色class="bg-gray"</span>。</p>
+
+<p class="indent-2em"><span class="color-darkgray">文字第三階段灰色class="color-darkgray"</span>，</p>
+
+<p class="indent-2em"><span class="bg-darkgray">背景色第三階段灰色class="bg-darkgray"</span>。</p>
+
+<p class="indent-2em"><span class="color-silver">文字第四階段灰色class="color-silver"</span>，</p>
+
+<p class="indent-2em"><span class="bg-silver">背景色第四階段灰色class="color-silver"</span>。</p>
+
+<p class="indent-2em"><span class="color-gainsboro">文字第五階段灰色class="color-gainsboro"</span>，</p>
+
+<p class="indent-2em"><span class="bg-gainsboro">背景色第五階段灰色class="color-gainsboro"</span>。</p>
+
+<p class="indent-2em"><span class="color-white">文字白色class="color-white"</span>，</p>
+
+<p class="indent-2em"><span class="bg-white">背景色為白色class="bg-white"</span>。</p>
+
+<p><br/></p>
+
+<p class="indent-2em"><span class="color-red">文字紅色class="color-red"</span>，</p>
+
+<p class="indent-2em"><span class="bg-red">背景色為紅色class="bg-red"</span>。</p>
+
+<p class="indent-2em"><span class="color-blue">文字藍色class="color-blue"</span>，</p>
+
+<p class="indent-2em"><span class="bg-blue">背景色為藍色class="bg-blue"</span>。</p>
+
+<p class="indent-2em"><span class="color-cyan">文字黃色class="color-cyan"</span>，</p>
+
+<p class="indent-2em"><span class="bg-cyan">背景色為黃色class="bg-cyan"</span>。</p>
+
+<p class="indent-2em"><span class="color-magenta">文字桃紅色class="color-magenta"</span>，</p>
+
+<p class="indent-2em"><span class="bg-magenta">背景色為桃紅色class="bg-magenta"</span>。</p>
+
+<p class="indent-2em"><span class="color-orangered">文字橘紅色class="color-orangered"</span>，</p>
+
+<p class="indent-2em"><span class="bg-orangered">背景色為橘紅色class="bg-orangered"</span>。</p>
+
+<p class="indent-2em"><span class="inverse">文字為白色，背景為黑色class="inverse"</span>，</p>
+
+<h3 id="toc-011">・刪除線</h3>
+
+<p class="indent-2em">若要顯示<span class="line-through">刪除線</span>，請使用class="line-through"</p>
+
+<h3 id="toc-012">・底線</h3>
+
+<p class="indent-2em"><span class="em-line">底線可以使用&lt;u&gt;元素或者class="em-line"來標註，橫排時為底線，直排時為左線。</span></p>
+
+<p class="indent-2em"><span class="em-line-outside">若要使用別方向的線條，可使用class="em-line-outside"，橫排時為上方線條，直排時右方線條。</span></p>
+
+<h3 id="toc-013">・分隔線</h3>
+
+<p class="indent-2em">若要加入段落中的分隔線，請直接輸入&lt;hr/&gt;，橫排時為水平線，直排時為垂直線，預設邊界兩側各為0.5預設字級。</p>
+<hr/>
+
+<h3 id="toc-014">・連結</h3>
+
+<p class="indent-2em">若要為書中內容加入超連結，或者內頁連結，請使用&lt;a href="網址或者內頁連結"&gt;包覆連結文字，預設顯示如<a href="p-001.xhtml">連結範例</a>。</p>
+
+<h3 id="toc-015">・英文長單字與網址的斷行</h3>
+
+<p class="indent-2em">若行內有網址、以及長單字時，可使用class="word-break-break-all"，來強制斷行，避免齊頭尾造成的問題</p>
+
+<p><br/></p>
+
+<p class="word-break-break-all">這裡有一個很長的連結<a href="p-001.xhtml">http://aaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbb.cccccccccccccccccc.dddddddddddddd.com</a>。</p>
+
+</div>
+</body>
+</html>

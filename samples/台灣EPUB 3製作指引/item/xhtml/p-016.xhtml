@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">RS需支援的HTML元素以及CSS屬性</h3>
+
+<h4 id="toc_index_2"><u>【HTML】</u></h4>
+
+<h5 id="toc_index_3">根元素</h5>
+
+<pre><code>html
+
+html
+</code></pre>
+
+<h5 id="toc_index_4">文件的metadata</h5>
+
+<pre><code>html
+
+head / title / link / meta / style
+</code></pre>
+
+<h5 id="toc_index_5">區塊元素</h5>
+
+<pre><code>html
+
+body / h1~h6 / nav（預設僅使用在導覽文件中）
+</code></pre>
+
+<h5 id="toc_index_6">內容群組化</h5>
+
+<pre><code>html
+
+div / p / hr / ol與ul（預設僅使用在導覽文件中）/ li（預設僅使用在導覽文件中）
+</code></pre>
+
+<h5 id="toc_index_7">為文字加入意義</h5>
+
+<pre><code>html
+
+a / br / ruby / rt / span
+</code></pre>
+
+<h5 id="toc_index_8">插入元素</h5>
+
+<pre><code>html
+
+img / SVG（僅用於固定版面SVG Wrapping與ImageMap）
+</code></pre>
+
+<h4 id="toc_index_9"><u>【CSS】</u></h4>
+
+<h5 id="toc_index_10">値</h5>
+
+<pre><code>css
+
+% / px / em / inherit / #RRGGBB / #RGB / rgb(R,G,B) / 色彩名（17色） / transparent
+</code></pre>
+
+<h5 id="toc_index_11">選擇器</h5>
+
+<pre><code>css
+
+Type Selector: ELEMENT
+
+Universal Selector: *
+
+Class Selector: .class
+
+同時指定複数Class: class="class class class ..."
+
+組合指定複数Class: .class.class
+
+ID Selector: #id
+</code></pre>
+
+<h5 id="toc_index_12">屬性選擇器</h5>
+
+<pre><code>css
+
+[att] / [att="val"] / [att~="val"] / [att|="val"]
+</code></pre>
+
+<h5 id="toc_index_13">關聯組合</h5>
+
+<pre><code>css
+
+子孫Selector「A B」 / 子Selector「A &gt; B」 / 兄弟Selector（隣接Selector）「A + B」 / 群組化「A, B」
+</code></pre>
+
+<h5 id="toc_index_14">虛擬元素</h5>
+
+<pre><code>css
+
+:link / :visited / :active / :hover（※僅用於能用滑鼠操作的RS）
+
+!important 宣告
+
+@規則
+
+@charset / @font-face / @import / @media
+</code></pre>
+
+<h5 id="toc_index_15">色彩、背景</h5>
+
+<pre><code>css
+
+color / background（僅限色彩） / background-color
+</code></pre>
+
+<h5 id="toc_index_16">Margin</h5>
+
+<pre><code>css
+
+margin / margin-top / margin-right / margin-bottom / margin-left
+</code></pre>
+
+<h5 id="toc_index_17">Padding</h5>
+
+<pre><code>css
+
+padding / padding-top / padding-right / padding-bottom / padding-left
+</code></pre>
+
+<h5 id="toc_index_18">Border</h5>
+
+<pre><code>css
+
+border / border-top / border-right / border-bottom / border-left
+
+border-width / border-top-width / border-right-width / border-bottom-width / border-left-width
+
+border-style / border-top-style / border-right-style / border-bottom-style / border-left-style
+
+border-color / border-top-color / border-right-color / border-bottom-color / border-left-color
+</code></pre>
+
+<h5 id="toc_index_19">Font</h5>
+
+<pre><code>css
+
+font / font-family / font-size / font-style / font-weight / line-height
+</code></pre>
+
+<h5 id="toc_index_20">Text</h5>
+
+<pre><code>css
+
+text-align / text-decoration / text-indent / letter-spacing / vertical-align / word-wrap
+</code></pre>
+
+<h5 id="toc_index_21">寬與高</h5>
+
+<pre><code>css
+
+width / height / max-width / max-height
+</code></pre>
+
+<h5 id="toc_index_22">顯示</h5>
+
+<pre><code>css
+
+display (display: block; / display: inline-block; / display: inline; / display: none;)
+</code></pre>
+
+<h5 id="toc_index_23">Paged Media</h5>
+
+<pre><code>css
+
+page-break-before / page-break-after / page-break-inside
+</code></pre>
+
+<h5 id="toc_index_24">CSS Text Level 3</h5>
+
+<pre><code>css
+
+line-break / word-break / text-align-last
+</code></pre>
+
+<h5 id="toc_index_25">CSS Writing Modes Module Level 3</h5>
+
+<pre><code>css
+
+writing-mode / text-orientation / text-combine / text-combine-horizontal
+</code></pre>
+
+<h5 id="toc_index_26">CSS Fonts Level 3</h5>
+
+<pre><code>css
+
+@font-face (font-family / font-style / font-weight / src / unicode-range)
+</code></pre>
+
+<h5 id="toc_index_27">CSS Text Decoration Level 3</h5>
+
+<pre><code>css
+
+text-emphasis / text-emphasis-color / text-emphasis-style / text-underline-position / text-decoration-style
+</code></pre>
+	    </div>
+    </body>
+</html>

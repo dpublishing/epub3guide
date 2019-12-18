@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引EPUB 3流式版面範本</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+<body class="p-text">
+<div class="main">
+
+<h2>區塊元素的排列</h2>
+
+<h3 id="toc-025">・區塊（Box）種類</h3>
+
+<p class="indent-2em">區塊的種類分為inline, inline-block, block三種，指定方式如下：</p>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="display-inline"指定為inline元素</p>
+
+<div class="display-inline bg-gray">
+<p>這是區塊內容</p>
+</div>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="display-inline-block"指定為inline-block元素</p>
+<div class="display-inline-block bg-gray">
+<p>這是區塊內容</p>
+</div>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="display-block"指定為block元素</p>
+<div class="display-block bg-gray">
+<p>這是區塊內容</p>
+</div>
+
+<h3 id="toc-026">・區塊的對齊方式</h3>
+
+<p class="indent-2em">對齊區塊元素可使用以下語法，分為絕對方向與邏輯方向。</p>
+
+<h4>。邏輯方向</h4>
+
+<p class="indent-2em">不因直橫排而有所改變。</p>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="block-align-start"對齊行頭</p>
+<div class="display-block width-2em height-1em block-align-start k-solid-black bg-red">
+</div>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="block-align-center"齊中</p>
+<div class="display-block width-2em height-1em block-align-center k-solid-black bg-red">
+</div>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="block-align-end"對齊行尾</p>
+<div class="display-block width-2em height-1em block-align-end k-solid-black bg-red">
+</div>
+
+<h4>。絕對方向</h4>
+
+<p class="indent-2em">左右僅能應用於橫排，上下僅能應用於直排。</p>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="block-align-left"對齊左側</p>
+<div class="display-block width-2em height-1em block-align-left k-solid-black bg-red">
+</div>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="block-align-center"齊中</p>
+<div class="display-block width-2em height-1em block-align-center k-solid-black bg-red">
+</div>
+
+<p><br/></p>
+
+<p class="indent-2em">使用class="block-align-right"對齊右側</p>
+<div class="display-block width-2em height-1em block-align-right k-solid-black bg-red">
+</div>
+
+<h3 id="toc-027">・Inline元素的對齊方式</h3>
+
+<p class="indent-2em">Inline行內元素與前後文字對齊可按照基準線作出調整，如以下語法：</p>
+
+<p><br/></p>
+
+<p>使用class="valign-baseline"對齊基線，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-baseline">字</div>對齊。
+
+<p>使用class="valign-sub"對齊sub基線，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-sub">字</div>對齊。
+
+<p>使用class="valign-super"對齊super基線，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-super">字</div>對齊。
+
+<p>使用class="valign-top"對齊top基線，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-top">字</div>對齊。
+
+<p>使用class="valign-text-top"對齊文字上緣，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-text-top">字</div>對齊。
+
+<p>使用class="valign-text-middle"對齊正中，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-text-middle">字</div>對齊。
+
+<p>使用class="valign-text-bottome"對齊bottom基線，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-text-bottom">字</div>對齊。
+
+<p>使用class="valign-text-bottom"對齊文字下緣，如：</p><div class="display-inline width-1em height-1em k-solid-black bg-red valign-text-bottom">字</div>對齊。
+
+<h3 id="toc-028">・框線</h3>
+
+<p class="indent-2em">若要為元素加上外框線，可使用以下四種語法直接套用到四邊。</p>
+
+<p><br/></p>
+
+<p>實心線請使用class="k-solid"。</p>
+<div class="display-block width-3em height-3em k-solid"></div>
+
+<p><br/></p>
+
+<p>點線請使用class="k-dotted"。</p>
+<div class="display-block width-3em height-3em k-dotted"></div>
+
+<p><br/></p>
+
+<p>雙重線請使用class="k-double"。</p>
+<div class="display-block width-3em height-3em k-double"></div>
+
+<p><br/></p>
+
+<p>虛線請使用class="k-dashed"。</p>
+<div class="display-block width-3em height-3em k-dashed"></div>
+
+<p><br/></p>
+
+<p class="indent-2em">同時預設四種灰階的實心線</p>
+
+<p><br/></p>
+
+<p>黑色實心線請使用class="k-solid-black"。</p>
+<div class="display-block width-3em height-3em k-solid-black bg-red"></div>
+
+<p><br/></p>
+
+<p>灰色實心線請使用class="k-solid-gray"。</p>
+<div class="display-block width-3em height-3em k-solid-gray bg-red"></div>
+
+<p><br/></p>
+
+<p>銀色實心線請使用class="k-solid-silver"。</p>
+<div class="display-block width-3em height-3em k-solid-silver bg-red"></div>
+
+<p><br/></p>
+
+<p>白色實心線請使用class="k-solid-white"。</p>
+<div class="display-block width-3em height-3em k-solid-white bg-red"></div>
+
+<p><br/></p>
+	
+<p class="indent-2em">其他預設框線語法如class="k-solid-top"，有四種線種：</p>
+
+<ul>
+<li>k-solid：實心線</li>
+<li>k-dotted：點線</li>
+<li>k-double：雙重線</li>
+<li>k-dashed：虛線</li>
+</ul>
+
+<p class="indent-2em">方向則有六種</p>
+
+<ul>
+<li>-top：上方</li>
+<li>-right：右側</li>
+<li>-bottom：下方</li>
+<li>-left：左側</li>
+<li>-topbottom：上下</li>
+<li>-rightleft：左右</li>
+</ul>
+
+<p class="indent-2em">線寬則可使用class="k-0px"</p>
+
+<ul>
+<li>k-0px：寬度為0</li>
+<li>k-1px：寬度為1</li>
+<li>中間不列舉</li>
+<li>k-8px：寬度為8</li>
+<li>k-thin：寬度為預設細</li>
+<li>k-medium：寬度為預設適中</li>
+<li>k-thick：寬度為預設粗</li>
+</ul>
+
+<p class="indent-2em">顏色灰階則可使用class="k-black"</p>
+
+<ul>
+<li>k-black：黑色</li>
+<li>k-dimgray：第一階灰</li>
+<li>k-gray：第二階灰</li>
+<li>k-darkgray：第三階灰</li>
+<li>k-silver：第四階灰</li>
+<li>k-gainsboro：第五階灰</li>
+<li>k-white：白色</li>
+<li>k-red：紅色</li>
+<li>k-blue：藍色</li>
+<li>k-cyan：黃色</li>
+<li>k-magenta：桃紅色</li>
+<li>k-orangered：橘紅色</li>
+</ul>
+
+<h3 id="toc-029">・尺寸</h3>
+
+<p class="indent-2em">針對區塊元素，可指定寬與高。可以對應在圖片以及文字元素上頭。</p>
+
+<p class="indent-2em">但請注意，若同時指定寬與高，可能會有文字無法完整顯示的狀況。</p>
+
+<h4>。高度</h4>
+
+<p class="indent-2em">高度可以使用佔螢幕尺寸的百分比，以及以文字數指定兩種方式。</p>
+
+<p class="indent-2em">在橫排中使用高度百分比會有無法顯示的狀況發生，請多加注意</p>
+
+<p><br/></p>
+
+<p>使用class="height-010per"指定區塊高度</p>
+<div class="display-block width-2em height-010per bg-red"></div>
+
+<p>使用class="height-020per"指定區塊高度</p>
+<div class="display-block width-2em height-020per bg-red"></div>
+
+<p>使用class="height-025per"指定區塊高度</p>
+<div class="display-block width-2em height-025per bg-red"></div>
+
+<p>使用class="height-030per"指定區塊高度</p>
+<div class="display-block width-2em height-030per bg-red"></div>
+
+<p>使用class="height-033per"指定區塊高度</p>
+<div class="display-block width-2em height-033per bg-red"></div>
+
+<p>使用class="height-040per"指定區塊高度</p>
+<div class="display-block width-2em height-040per bg-red"></div>
+
+<p>使用class="height-050per"指定區塊高度</p>
+<div class="display-block width-2em height-050per bg-red"></div>
+
+<p>使用class="height-060per"指定區塊高度</p>
+<div class="display-block width-2em height-060per bg-red"></div>
+
+<p>使用class="height-067per"指定區塊高度</p>
+<div class="display-block width-2em height-067per bg-red"></div>
+
+<p>使用class="height-070per"指定區塊高度</p>
+<div class="display-block width-2em height-070per bg-red"></div>
+
+<p>使用class="height-075per"指定區塊高度</p>
+<div class="display-block width-2em height-075per bg-red"></div>
+
+<p>使用class="height-080per"指定區塊高度</p>
+<div class="display-block width-2em height-080per bg-red"></div>
+
+<p>使用class="height-090per"指定區塊高度</p>
+<div class="display-block width-2em height-090per bg-red"></div>
+
+<p>使用class="height-100per"指定區塊高度</p>
+<div class="display-block width-2em height-100per bg-red"></div>
+
+<p><br/></p>
+
+<p>使用class="height-0em25"指定區塊高度為0.25個字級</p>
+<div class="display-block width-2em height-0em25 bg-red"></div>
+
+<p>使用class="height-0em50"指定區塊高度為0.5個字級</p>
+<div class="display-block width-2em height-0em50 bg-red"></div>
+
+<p>使用class="height-0em75"指定區塊高度為0.75個字級</p>
+<div class="display-block width-2em height-0em75 bg-red"></div>
+
+<p>使用class="height-1em"指定區塊高度為1個字級</p>
+<div class="display-block width-2em height-1em bg-red"></div>
+
+<p>使用class="height-1em25"指定區塊高度為1.25個字級</p>
+<div class="display-block width-2em height-1em25 bg-red"></div>
+
+<p>使用class="height-1em50"指定區塊高度為1.50個字級</p>
+<div class="display-block width-2em height-1em50 bg-red"></div>
+
+<p>使用class="height-1em75"指定區塊高度為1.75個字級</p>
+<div class="display-block width-2em height-1em75 bg-red"></div>
+
+<p>使用class="height-2em"指定區塊高度為2個字級</p>
+<div class="display-block width-2em height-2em bg-red"></div>
+
+<p>使用class="height-2em50"指定區塊高度為2.5個字級</p>
+<div class="display-block width-2em height-2em50 bg-red"></div>
+
+<p>使用class="height-3em"指定區塊高度為3個字級</p>
+<div class="display-block width-2em height-3em bg-red"></div>
+
+<p>使用class="height-4em"指定區塊高度為3個字級</p>
+<div class="display-block width-2em height-4em bg-red"></div>
+
+<p>使用class="height-5em"指定區塊高度為3個字級</p>
+<div class="display-block width-2em height-5em bg-red"></div>
+
+<p>使用class="height-5em25"指定區塊高度為5.25個字級</p>
+<div class="display-block width-2em height-5em25 bg-red"></div>
+
+<p>使用class="height-6em"指定區塊高度為3個字級</p>
+<div class="display-block width-2em height-6em bg-red"></div>
+
+<p>使用class="height-7em"指定區塊高度為3個字級</p>
+<div class="display-block width-2em height-7em bg-red"></div>
+
+<p>使用class="height-8em"指定區塊高度為3個字級</p>
+<div class="display-block width-2em height-8em bg-red"></div>
+
+<p>使用class="height-8em75"指定區塊高度為8.75個字級</p>
+<div class="display-block width-2em height-8em75 bg-red"></div>
+
+<p>使用class="height-9em"指定區塊高度為9個字級</p>
+<div class="display-block width-2em height-9em bg-red"></div>
+
+<p>使用class="height-10em"指定區塊高度為10個字級</p>
+<div class="display-block width-2em height-10em bg-red"></div>
+
+<p>使用class="height-11em"指定區塊高度為11個字級</p>
+<div class="display-block width-2em height-11em bg-red"></div>
+
+<p>使用class="height-12em"指定區塊高度為12個字級</p>
+<div class="display-block width-2em height-12em bg-red"></div>
+
+<p>使用class="height-13em"指定區塊高度為13個字級</p>
+<div class="display-block width-2em height-13em bg-red"></div>
+
+<p>使用class="height-14em"指定區塊高度為14個字級</p>
+<div class="display-block width-2em height-14em bg-red"></div>
+
+<p>使用class="height-15em"指定區塊高度為15個字級</p>
+<div class="display-block width-2em height-15em bg-red"></div>
+
+<p>使用class="height-20em"指定區塊高度為20個字級</p>
+<div class="display-block width-2em height-20em bg-red"></div>
+
+<p>使用class="height-30em"指定區塊高度為30個字級</p>
+<div class="display-block width-2em height-30em bg-red"></div>
+
+<p>使用class="height-40em"指定區塊高度為40個字級</p>
+<div class="display-block width-2em height-40em bg-red"></div>
+
+<h4>。寬度</h4>
+
+<p class="indent-2em">寬度可以使用佔螢幕尺寸的百分比，以及以文字數指定兩種方式。</p>
+
+<p class="indent-2em">數值與高度相同，不再重複列舉。</p>
+
+<p><br/></p>
+
+<p>使用class="width-050per"指定區塊寬度</p>
+<div class="display-block width-050per height-2em bg-red"></div>
+
+<p><br/></p>
+
+<p>使用class="width-5em"指定區塊寬度為5個字級</p>
+<div class="display-block width-5em height-2em bg-red"></div>
+
+<p><br/></p>
+
+<p class="indent-2em">另在高度與寬度，使用百分比指定時，可設定以字級為單位的最大值；使用文字數指定時，可設定以百分比的最大值。</p>
+
+<p class="indent-2em">也請注意，使用高度指定百分比可能不會正常運作。</p>
+
+<p><br/></p>
+
+<p>使用class="max-height-030per"讓設定高度為20個字級的區塊，高度不超過螢幕的30%。</p>
+<div class="display-block width-5em height-20em max-height-030per bg-red"></div>
+
+<p>使用class="max-height-10em"讓設定高度為50%的區塊，高度不超過10個字級。</p>
+<div class="display-block width-5em height-020per max-height-10em bg-red"></div>
+
+<p><br/></p>
+
+<p>使用class="max-width-030per"讓設定寬度為20個字級的區塊，寬度不超過螢幕的30%。</p>
+<div class="display-block height-5em width-20em max-width-030per bg-red"></div>
+
+<p>使用class="max-width-10em"讓設定寬度為50%的區塊，寬度不超過15個字級。</p>
+<div class="display-block height-5em width-50per max-width-15em bg-red"></div>
+
+<p><br/></p>
+
+<p class="indent-2em">也可同時指定最大尺寸的寬高，如：</p>
+
+<p><br/></p>
+
+<p>使用class="max-size-030per"設定寬高不能超過螢幕的30%</p>
+<div class="display-block height-10em width-10em max-size-030per bg-red"></div>
+
+<p>使用class="max-size-10em"設定寬高不能超過10個字級</p>
+<div class="display-block height-020per width-020per max-size-10em bg-red"></div>
+
+<h3 id="toc-030">・邊界（margin)</h3>
+
+<p class="indent-2em">對於圖片以及文字區塊，可以指定邊界所佔空間。</p>
+
+<p class="indent-2em">請注意，對於文字區塊，請不要同時指定縮排、凸排、提排在同樣的元素上，會產生優先順序問題。</p>
+
+<p class="indent-2em">這裡不一一列舉，請參考style-standard.css裡的數值。</p>
+
+<p><br/></p>
+
+<p>使用class="m-0"讓邊界為0。</p>
+<div class="display-block height-3em width-3em m-0 bg-red k-solid-black"></div>
+
+<p>使用class="m-005per"讓邊界為螢幕寬高的5%。</p>
+<div class="display-block height-3em width-3em m-005per bg-red k-solid-black"></div>
+
+<p>使用class="m-010per"讓邊界為螢幕寬高的10%。</p>
+<div class="display-block height-3em width-3em m-010per bg-red k-solid-black"></div>
+
+<p><br/></p>
+
+<p>使用class="m-0em50"讓邊界為0.5字級。</p>
+<div class="display-block height-3em width-3em m-0em50 bg-red k-solid-black"></div>
+
+<p>使用class="m-1em50"讓邊界為1字級。</p>
+<div class="display-block height-3em width-3em m-1em bg-red k-solid-black"></div>
+
+<p><br/></p>
+
+<p class="indent-2em">同樣可以指定絕對單一方向的邊界：</p>
+
+<p><br/></p>
+
+<p>使用class="m-top-010per"讓上方邊界為螢幕高的10%。</p>
+<div class="display-block height-3em width-3em m-top-010per bg-red k-solid-black"></div>
+
+<p>使用class="m-bottom-010per"讓下方邊界為螢幕高的10%。</p>
+<div class="display-block height-3em width-3em m-bottom-010per bg-red k-solid-black"></div>
+
+<p>使用class="m-left-010per"讓左方邊界為螢幕寬的10%。</p>
+<div class="display-block height-3em width-3em m-left-010per bg-red k-solid-black"></div>
+
+<p>使用class="m-right-010per"讓右方邊界為螢幕寬的10%。</p>
+<div class="display-block height-3em width-3em m-right-010per bg-red k-solid-black"></div>
+
+<p>使用class="m-top-1em"讓上方邊界為1字級。</p>
+<div class="display-block height-3em width-3em m-top-1em bg-red k-solid-black"></div>
+
+<p>使用class="m-bottom-1em"讓下方邊界為1字級。</p>
+<div class="display-block height-3em width-3em m-bottom-1em bg-red k-solid-black"></div>
+
+<p>使用class="m-left-1em"讓左方邊界為1字級。</p>
+<div class="display-block height-3em width-3em m-left-1em bg-red k-solid-black"></div>
+
+<p>使用class="m-right-1em"讓右方邊界為1字級。</p>
+<div class="display-block height-3em width-3em m-right-1em bg-red k-solid-black"></div>
+
+<h3 id="toc-031">・內邊界（Padding）</h3>
+
+<p class="indent-2em">對於圖片以及文字區塊，可以指定內邊界空間。</p>
+
+<p class="indent-2em">這裡不一一列舉，請參考style-standard.css裡的數值。</p>
+
+<p><br/></p>
+
+<p>使用class="p-0"讓內邊界為0。</p>
+<div class="display-block height-3em width-3em p-0 bg-red k-solid-black">內容</div>
+
+<p>使用class="p-005per"讓內邊界為螢幕寬高的5%。</p>
+<div class="display-block height-3em width-3em p-005per bg-red k-solid-black">內容</div>
+
+<p>使用class="p-010per"讓內邊界為螢幕寬高的10%。</p>
+<div class="display-block height-3em width-3em p-010per bg-red k-solid-black">內容</div>
+
+<p><br/></p>
+
+<p>使用class="p-0em50"讓內邊界為0.5字級。</p>
+<div class="display-block height-3em width-3em p-0em10 bg-red k-solid-black">內容</div>
+
+<p>使用class="p-1em"讓內邊界為1字級。</p>
+<div class="display-block height-3em width-3em p-1em bg-red k-solid-black">內容</div>
+
+<p><br/></p>
+
+<p class="indent-2em">同樣可以指定絕對單一方向的內邊界：</p>
+
+<p><br/></p>
+
+<p>使用class="p-top-010per"讓上方內邊界為螢幕高的10%。</p>
+<div class="display-block height-3em width-3em p-top-010per bg-red k-solid-black">內容</div>
+
+<p>使用class="p-bottom-010per"讓下方內邊界為螢幕高的10%。</p>
+<div class="display-block height-3em width-3em p-bottom-010per bg-red k-solid-black">內容</div>
+
+<p>使用class="p-left-010per"讓左方內邊界為螢幕寬的10%。</p>
+<div class="display-block height-3em width-3em p-left-010per bg-red k-solid-black">內容</div>
+
+<p>使用class="p-right-010per"讓右方內邊界為螢幕寬的10%。</p>
+<div class="display-block height-3em width-3em p-right-010per bg-red k-solid-black">內容</div>
+
+<p>使用class="p-top-1em"讓上方內邊界為1字級。</p>
+<div class="display-block height-3em width-3em p-top-1em bg-red k-solid-black">內容</div>
+
+<p>使用class="p-bottom-1em"讓下方內邊界為1字級。</p>
+<div class="display-block height-3em width-3em p-bottom-1em bg-red k-solid-black">內容</div>
+
+<p>使用class="p-left-1em"讓左方內邊界為1字級。</p>
+<div class="display-block height-3em width-3em p-left-1em bg-red k-solid-black">內容</div>
+
+<p>使用class="p-right-1em"讓右方內邊界為1字級。</p>
+<div class="display-block height-3em width-3em p-right-1em bg-red k-solid-black">內容</div>
+</div>
+</body>
+</html>

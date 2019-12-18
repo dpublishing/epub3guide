@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+ <h3 id="toc_index_1" class="gfont">包裝文件（Package Document/OPF檔案）</h3>
+
+<h4 id="toc_index_2"><u>遵守翻頁方向</u></h4>
+
+<p class="indent-2em">書的翻頁方向<strong>必需</strong>依從包裝文件中Spine元素的<code>page-progresson-direction</code>屬性，不管內容文件或者樣式表中使用哪一種<code>writing-mode</code>。</p>
+
+<p class="indent-2em">而XHTML內容文件中的文字排列方向，則依照各XHTML中Body元素所指定的<code>writing-mode</code>屬性。當<code>writing-mode</code>指定於html元素時，<strong>必需</strong>繼承於body元素。</p>
+
+<p class="indent-2em">例如<code>page-progression-direction</code>指定為<code>rtl</code>（由右向左）時，而xhtml的<code>writing-mode</code>指定為<code>horizontal-tb</code>（橫排）時，期待文字於螢幕內「由左向右」顯示，而新的頁面則是「由右向左」增加。</p>
+
+<h4 id="toc_index_3"><u>遵守Spine元素指定規則</u></h4>
+
+<p class="indent-2em"><strong>必需</strong>正確依照spine元素內的順序顯示內容。</p>
+
+<p class="indent-2em">也<strong>必需</strong>反應itemref元素內<code>linear</code>屬性的<code>yes</code>與<code>no</code>。當為<code>no</code>時則<strong>不應</strong>顯示，當為<code>yes</code>時，則<strong>不應</strong>隱藏。</p>
+
+<p class="indent-2em">也<strong>必需</strong>反應itemref元素中「properties」屬性所指定的<code>page-spread-right</code>與<code>page-spread-left</code>。</p>
+
+<p class="indent-2em">未記載於spine元素中的內容，就<strong>不應</strong>作為書的內頁所顯示。</p>
+
+<h4 id="toc_index_4"><u>不使用已廢止的元素</u></h4>
+
+<p class="indent-2em">guide元素已經廢止，故<strong>不應</strong>使用該語法。</p>
+
+<h4 id="toc_index_5"><u>處理Metadata等</u></h4>
+
+<p class="indent-2em">當RS支援<code>&lt;dc:title&gt;</code>資訊時，會將所記載內容的書名使用於RS中顯示。</p>
+
+<p class="indent-2em">當RS支援<code>&lt;dc:creator&gt;</code>資訊時，會將所記載內容的作者名使用於RS中顯示。顯示多數作者時的顯示方式及其角色，則由各RS自行判斷處理。</p>
+
+<p class="indent-2em">當有多數作者時，出版社可自行決定要在一個<code>&lt;dc:creator&gt;</code>中記載全員，或者分開記載。當分開記載時，出版社<strong>必需</strong>給予該作者<code>role</code>的值，以及顯示順序。</p>
+
+<p class="indent-2em">作者名為中文時，不另外加入<code>file-as</code>，而以<code>&lt;dc:creator&gt;</code>中文姓氏首字筆順排列。</p>
+
+<p class="indent-2em">檔案id（unique-identifier）基本上<strong>必需</strong>使用<code>urn:isbn:xxxxxxxxxxxxx</code>（x為數字）標記，不需加入連字號；若無isbn，則使用uuid<code>urn:uuid:xxxxxxxx:xxxx:xxxx:xxxx:xxxxxxxxxxxx</code>（x為16進位）。</p>
+
+<p class="indent-2em">更新日期若沒特別指示，設定為製作預計的出版日；這項日期RS<strong>不應</strong>顯示。</p>
+	    </div>
+    </body>
+</html>

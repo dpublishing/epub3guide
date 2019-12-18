@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+<meta charset="UTF-8"/>
+<title>台灣EPUB 3製作指引</title>
+<link rel="stylesheet" type="text/css" href="../style/book-style.css"/>
+</head>
+    <body class="p-text">
+	    <div class="main">
+
+        <h3 id="toc_index_1">其他HTML元素</h3>
+
+<h4 id="toc_index_2"><u>空白行所使用的<code>&lt;br/&gt;</code></u></h4>
+
+<p class="indent-2em">書籍中為了區分章節段落，會在段落之間加入空白行，可以使用<code>&lt;br/&gt;</code>處理為空白行。RS遇到<code>&lt;br/&gt;</code>或者<code>&lt;br /&gt;</code>都須正確處理。請注意不得使用<code>&lt;br&gt;</code>，會不符合XHTML規則發生錯誤。</p>
+
+<p class="indent-2em">當用於段落間時，為求行距一致，推薦使用<code>&lt;p&gt;&lt;br/&gt;&lt;/p&gt;</code>來確保空完整一行。</p>
+
+<h4 id="toc_index_3"><u>注音符號使用的<code>&lt;ruby&gt;</code></u></h4>
+
+<p class="indent-2em">目前注音符號的顯示還不能以Web技術完整達成。當注音出現在內文時，建議使用缺字圖片的方式製作。注於側旁的注音目前尚不能完美顯示。</p>
+
+<h4 id="toc_index_4"><u>頁面內連結（錨點連結）</u></h4>
+
+<p class="indent-2em">點擊<code>&lt;a href="檔名#錨點名"&gt;文字&lt;/a&gt;</code>中指定的連結（若在同一檔案中，檔名可省略）時，需要跳到<code>&lt;元素名 id="錨點名"&gt;</code>所在的元素位置。檔案名與錨點名於實際運用時，不應該使用全形文字與空白。</p>
+
+<p class="indent-2em">此外，跳到該元素時，該元素要顯示在第一行，或者預先演算出的頁面裡該元素所在頁，由各RS決定。</p>
+
+<h4 id="toc_index_5"><u>註釋連結</u></h4>
+
+<p class="indent-2em">當頁面內連結用於註解時，則需按照EPUB的推薦語法製作，如：</p>
+
+<pre><code>	&lt;a epub:type="noteref” class="noteref" href="#註解編號" rel="footnote" &gt;1&lt;/a&gt;
+
+	&lt;div epub:type="footnote" class="footnote" id="註解編號"&gt;
+		&lt;p&gt;注釋內容中的一個段落。&lt;/p&gt;
+	&lt;/div&gt;
+</code></pre>
+
+<p class="indent-2em">若需讓讀者閱讀註解後回到內文定點，則可雙向設定錨點：</p>
+
+<pre><code>	&lt;a epub:type="noteref" class="noteref"  id="位置編號" href="#註解編號" rel="footnote" &gt;1&lt;/a&gt;
+
+	&lt;div epub:type="footnote" class="footnote" id="註解編號"&gt;
+		&lt;p&gt;注釋內容中的一個段落。&lt;/p&gt;
+		&lt;a href="#位置編號"&gt;返回符號&lt;/a&gt;
+	&lt;div&gt;
+</code></pre>
+
+<p class="indent-2em">RS可以利用以上標準語法製作不同顯示方式，如跳出式註解，但應注意不得讓註解內元素無法顯示或受到裁切。但由於各RS支援程度不同，在製作時依然要保留以上語法。</p>
+
+<h4 id="toc_index_6"><u>nav與列表元素</u></h4>
+
+<p class="indent-2em">列表雖然應該依循語意，使用ol, ul, li等元素標註，但由於需要透過樣式表調整位置，所以建議使用<code>&lt;p&gt;</code>元素取代。</p>
+
+<p class="indent-2em">導覽文件如EPUB Content Documents 3.0.1所記載，列表元素不應該顯示其編號。</p>
+	    </div>
+    </body>
+</html>
