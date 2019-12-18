@@ -294,7 +294,7 @@ http://www.w3.org/TR/2014/CR-css-writing-modes-3-20140320/#central-baseline
 
 若內容檔案中指定的圖片尺寸大於可顯示範圍，RS應以最大顯示範圍為主，忽略所指定的圖片尺寸。內容檔案也盡量不要以絕對值來指定圖片尺寸。
 
-圖片或block元素以及inline-block元素，是否需要換頁
+#### 圖片或block元素以及inline-block元素，是否需要換頁
 
 文字行內元素要是大於行內預設要讓元素可顯示的空間時，RS需要將元素送到下一行或者下一頁。
 
@@ -414,7 +414,7 @@ EPUB規範中雖推薦使用MathML來顯示計算公式，但現在各瀏覽器�
 
 #### <u>書名號與私名號</u>
 
-當要在內容加上私名號時，請使用CSS的text-decoration語法，橫排時值為underline，直排時值為overline，而標注書名號時，則應該加上`text-decoration: wavy`（目前需-webkit- prefix）。
+當要在內容加上私名號時，請使用CSS的text-decoration語法，直橫排時值皆為underline，而標注書名號時，則應該加上`text-decoration: wavy`（目前需-webkit- prefix）。
 
 目前瀏覽器處理連續出現的私名號與書名號時，線段不會分開。建議RS自行開發切割線斷的功能。
 
