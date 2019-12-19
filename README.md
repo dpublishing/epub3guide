@@ -36,12 +36,12 @@ EPUB 3內使用HTML5與CSS3等網頁技術，各作業系統與瀏覽器組版�
 ### 範本全文
 
 - [Markdown 格式](https://github.com/dpublishing/epub3guide/blob/master/tdpf-epub3guide.md)
-- [EPUB 格式](https://github.com/dpublishing/epub3guide/blob/master/samples/%E5%8F%B0%E7%81%A3EPUB%203%E8%A3%BD%E4%BD%9C%E6%8C%87%E5%BC%95)
+- [EPUB 格式](https://github.com/dpublishing/epub3guide/tree/master/tdpf-epub3guide)
 
 ### 參考範例
 
 - [CSS 樣版](https://github.com/dpublishing/epub3guide/tree/master/samples/style_template)
-- 指引範本
+- 樣式參考範本
 	- [Fixed Layout](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20FXL%20sample)
 	- [Reflow 直排](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_%E7%9B%B4%E6%8E%92)
 	- [Reflow 橫排](https://github.com/dpublishing/epub3guide/blob/master/samples/EPUB%20reflow%20sample_%E6%A9%AB%E6%8E%92)
