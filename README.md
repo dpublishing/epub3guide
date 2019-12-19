@@ -94,10 +94,22 @@ EPUB 3內使用HTML5與CSS3等網頁技術，各作業系統與瀏覽器組版�
 
 ### 產生 EPUB 封裝檔
 
-為利於內容編修與版本管控，所有 EPUB 內容均以未封裝原始檔之方式存放。可使用 EPUBChecker 指令將本儲存庫中提供之 EPUB 原始內容產生為封裝後的 EPUB 檔案。關於更多 EPUBChecker 資訊可參考 EPUBChecker 官網： https://github.com/w3c/epubcheck 。
+為利於內容編修與版本管控，所有 EPUB 內容均以未封裝原始檔之方式存放。可使用 EPUBCheck 指令將本儲存庫中提供之 EPUB 原始內容產生為封裝後的 EPUB 檔案。關於更多 EPUBCheck 資訊可參考 EPUBChecker 官網。
 
-```shell
-epubcheck [目錄名稱] --mode exp --save
-```
+1. 下載 EPUBCheck，並安裝 Java 相依元件。下載網址： https://github.com/w3c/epubcheck/releases
 
-如需一次產生所有範例與參考之 EPUB 檔案，可參考 `pack-all.sh` 之指令自行產生。
+2. 執行 EPUBCheck，指定 EPUB 原始檔路徑進行內容檢查與封裝。以下指令以 EPUBCheck 4.2.2 為例，請自行更換範例中 `epubcheck.jar` 路徑。
+  
+   - 指令格式
+   
+     ```shell
+     java -jar [指向epubcheck.jar路徑] [EPUB內容路徑] -mode exp -save
+     ```
+   
+    - 指令範例
+   
+      ```shell
+      java -jar /epubcheck-4.2.2/epubcheck.jar ./practices/01_Reflow_Text_Horizontal -mode exp -save
+      ```
+
+3. 如需一次產生本指引所有範本與案例之 EPUB 檔案，可參考 `pack-all.sh` 之 shellscript 指令碼自行修改。
