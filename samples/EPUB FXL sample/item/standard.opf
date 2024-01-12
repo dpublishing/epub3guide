@@ -78,7 +78,7 @@
 
 </manifest>
 
-<spine page-progression-direction="rtl">
+<spine page-progression-direction="ltr">
 
 <itemref linear="yes" idref="p-cover"    properties="rendition:page-spread-center"/>
 <itemref linear="yes" idref="p-white"    properties="page-spread-right"/>
