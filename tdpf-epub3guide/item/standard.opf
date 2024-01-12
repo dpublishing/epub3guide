@@ -31,7 +31,7 @@
 <dc:identifier id="unique-id">urn:uuid:d7a8d311-7cd0-40df-9443-65847561dacf</dc:identifier>
 
 <!-- 更新時間 -->
-<meta property="dcterms:modified">2014-11-01T00:00:00Z</meta>
+<meta property="dcterms:modified">2023-01-13T00:00:00Z</meta>
 
 <!-- iBook指定字體 -->
 <meta property="ibooks:specified-fonts">true</meta>
